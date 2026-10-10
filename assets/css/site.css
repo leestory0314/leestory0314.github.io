@@ -1,7 +1,7 @@
 /* leestory.com
-   Sections: tokens · base · header · hero · reveal · fields · creed · development · footer · responsive */
+   Sections: variables · base · header · hero · reveal · fields · creed · development · footer · responsive */
 
-/* ---------- tokens ---------- */
+/* ---------- variables ---------- */
 :root {
   --bg: #fff;
   --bg-2: #f5f5f7;
