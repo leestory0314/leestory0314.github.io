@@ -31,6 +31,7 @@
 | `mockups/*.png` · `concept-*.html` | 현재 페이지 스크린샷과 콘셉트 시안 |
 | `docs/references.md` | 개인 홈페이지 레퍼런스 조사 |
 | `tools/serve.js` | 로컬 정적 서버 |
+| `tools/gen-interact.js` | 인터랙션 시안 생성기(시안 단계에만) |
 
 ## 로컬에서 보기
 ```sh

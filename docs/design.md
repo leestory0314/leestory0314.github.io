@@ -69,7 +69,23 @@
   3. 관점 — "The tool keeps changing. The goal doesn’t." / "So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them."
   - 1안의 보수적 변형: "From research to running systems." / "I design cloud platforms and AI systems and build on them end to end, from platform and models to product and operations. The study of technology is continuous; so is the building."
 
+### 히어로 카피 확정 (2026-10-10)
+주인님이 **3안(관점)** 을 택했다. 헤드라인 "The tool keeps changing. The goal doesn’t." / 리드 "So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them." `concept-blueprint.html` 에 반영했고 카피 전환 버튼은 제거했다.
+
+### 스테이지 인터랙션 후보 5안 (2026-10-10, 채택 대기) — `mockups/interact-*.html`
+`tools/gen-interact.js` 가 `concept-blueprint.html` 을 바탕으로 스테이지만 바꿔 생성한다(`node tools/gen-interact.js .`). 모두 `prefers-reduced-motion` 에서 정지하고, `#static` 해시로 완료 상태를 찍는다.
+
+| # | 파일 | 그래픽 | 사용자가 하는 것 | 기술 | 연상 |
+|---|---|---|---|---|---|
+| 1 | `interact-1-mesh.html` | 떠다니는 72개 노드와 거리별 연결선 | 포인터를 움직이면 근처 노드가 포인터로 연결되고 끌려온다 | canvas | 분산 시스템, 노드 네트워크 |
+| 2 | `interact-2-layers.html` | 등축 4층 스택(Platform · Models · Product · Operations) | 올리면 층이 벌어지며 라벨이 보이고, 클릭하면 그 층의 설명이 캡션에 뜬다 | SVG + CSS | 계층 아키텍처 |
+| 3 | `interact-3-scrolldraw.html` | 현재의 시스템 도면 | 스크롤에 맞춰 도면이 그려지고 되감긴다("n% drawn") | SVG + 스크롤 연동 | 설계 도면 |
+| 4 | `interact-4-flow.html` | 벡터장을 따라 흐르는 260개 추적선 | 포인터가 흐름을 휘게 한다 | canvas | 트래픽, 데이터 흐름 |
+| 5 | `interact-5-globe.html` | 520개 점으로 된 구와 6개 거점 사이의 호 | 드래그로 돌리고, 놓으면 다시 천천히 자전 | canvas | 클라우드, 분산 거점 |
+
+기준 시안(`concept-blueprint.html`)의 인터랙션은 "로드 시 선 그리기 + 신호 점 + 노드 호버 + 기울기"다. 채택되면 그 변형의 스테이지를 기준 시안으로 합치고 나머지 파일과 생성기를 지운다.
+
 ## 주인님 판단이 필요한 것
-- 히어로 카피 1·2·3 중 선택(또는 1안 보수 변형).
+- 인터랙션 1~5 중 선택(또는 기준 시안 유지, 또는 조합).
 - 이름: 헤더의 `leestory.com` 자리에 실명 한 줄을 둘지.
 - 언어: 공공 접점을 위해 한국어 한 줄 요약을 둘지.

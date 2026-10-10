@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#f4f2ee" />
   <title>Cloud Architect · AI Technologist · Builder</title>
-  <meta name="description" content="Always researching, always building. Cloud architecture, applied AI, strategy, and the products in development." />
+  <meta name="description" content="The tool keeps changing; the goal doesn’t. Cloud architecture, applied AI, strategy, and the products in development." />
   <meta property="og:title" content="Cloud Architect · AI Technologist · Builder" />
-  <meta property="og:description" content="Always researching. Always building." />
+  <meta property="og:description" content="The tool keeps changing. The goal doesn’t." />
   <meta property="og:url" content="https://leestory.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -108,9 +108,6 @@
 
     @media(prefers-reduced-motion:reduce){.js .draw,.js .fade{animation:none;stroke-dashoffset:0;opacity:1}.js .rv{opacity:1;transform:none}.stage{transition:none}}
     .static .draw,.static .fade{animation:none!important;stroke-dashoffset:0!important;opacity:1!important}.static .rv{opacity:1!important;transform:none!important}.static .pulse{display:none}
-    .mock-only{position:fixed;right:16px;bottom:16px;z-index:20;display:flex;gap:4px;align-items:center;padding:6px 8px;border:1px solid var(--hair-2);border-radius:999px;background:rgba(250,249,246,.92);font-size:12px;color:var(--muted)}
-    .mock-only button{font:inherit;font-weight:500;border:0;background:transparent;color:var(--ink-2);width:26px;height:26px;border-radius:50%;cursor:pointer}
-    .mock-only button.on{background:var(--ink);color:var(--bg)}
     @media(max-width:900px){.tiles{grid-template-columns:1fr}.tile{min-height:0}}
     @media(max-width:620px){.shell{width:min(calc(100% - 32px),var(--max))}.nav{height:54px}nav{gap:18px}.hero{padding:64px 0 0}h1{font-size:clamp(40px,12vw,60px)}h1 br{display:none}.actions{flex-direction:column;align-items:stretch}.stage-wrap{margin-top:48px}.stage{padding:18px 16px 14px}.stage figcaption{flex-direction:column;gap:3px}.fields{padding:72px 0;margin-top:72px}.tile{padding:26px}.tile h3{font-size:28px}.creed{padding:88px 0}.dev .head{flex-direction:column;gap:4px;align-items:flex-start}.foot{flex-direction:column;gap:6px}}
   </style>
@@ -124,8 +121,8 @@
   <main>
     <section class="hero shell">
       <div class="eyebrow">Cloud Architect · AI Technologist · Builder</div>
-      <h1 id="h1">Research it,<br><em>build it, run it.</em></h1>
-      <p class="lead" id="lead">I design cloud platforms and AI systems, then build on them end to end: platform, models, product, operations. The research never stops, and neither does the building.</p>
+      <h1>The tool keeps changing. <br><em>The goal doesn’t.</em></h1>
+      <p class="lead">So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them.</p>
       <div class="actions"><a href="#development">See what’s in development</a><a class="ghost" href="mailto:leestory0314@gmail.com">Get in touch</a></div>
 
       <div class="stage-wrap">
@@ -211,19 +208,7 @@
     <span>Updated October 2026</span>
   </div></footer>
 
-  <div class="mock-only" aria-label="Copy candidates (mockup only)"><span>Copy</span><button data-c="1" class="on">1</button><button data-c="2">2</button><button data-c="3">3</button></div>
   <script>
-    (function(){
-      // mockup only: switch hero copy candidates with #copy1 / #copy2 / #copy3
-      var COPY = {
-        1: ["Research it,<br><em>build it, run it.</em>", "I design cloud platforms and AI systems, then build on them end to end: platform, models, product, operations. The research never stops, and neither does the building."],
-        2: ["Complex ideas,<br><em>running in production.</em>", "I design systems, explore technology, and turn complex ideas into working realities: a production-grade cloud platform of my own, and the products that run on it today."],
-        3: ["The tool keeps changing.<br><em>The goal doesn’t.</em>", "So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them."]
-      };
-      function setCopy(n){ if(!COPY[n]) return; document.getElementById("h1").innerHTML = COPY[n][0]; document.getElementById("lead").textContent = COPY[n][1]; document.querySelectorAll(".mock-only button").forEach(function(b){ b.classList.toggle("on", b.dataset.c === String(n)); }); }
-      var m = location.hash.match(/copy([123])/); if (m) setCopy(m[1]);
-      document.querySelectorAll(".mock-only button").forEach(function(b){ b.addEventListener("click", function(){ setCopy(b.dataset.c); history.replaceState(null, "", "#copy" + b.dataset.c); }); });
-    })();
     (function(){
       var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
       // reveal on scroll, once

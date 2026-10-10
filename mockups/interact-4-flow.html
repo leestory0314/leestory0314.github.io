@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f2ee" />
+  <title>Cloud Architect · AI Technologist · Builder — interaction Flow</title>
+  <meta name="description" content="The tool keeps changing; the goal doesn’t. Cloud architecture, applied AI, strategy, and the products in development." />
+  <meta property="og:title" content="Cloud Architect · AI Technologist · Builder" />
+  <meta property="og:description" content="The tool keeps changing. The goal doesn’t." />
+  <meta property="og:url" content="https://leestory.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <script>document.documentElement.classList.add('js');if(location.hash.indexOf('static')>-1)document.documentElement.classList.add('static')</script>
+  <style>
+    :root{--bg:#f4f2ee;--bg-2:#ebe8e1;--paper:#faf9f6;--ink:#1c1b19;--ink-2:#4d4a44;--muted:#6f6a61;--hair:#d9d4cb;--hair-2:#c4bdb0;--bronze:#8a6a3b;--bronze-2:#b8955e;--max:1100px;--serif:"Cormorant Garamond",Georgia,serif;--sans:Inter,-apple-system,"Segoe UI","Noto Sans KR",sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .shell{width:min(calc(100% - 48px),var(--max));margin:0 auto}
+
+    header{position:sticky;top:0;z-index:10;background:rgba(244,242,238,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--hair)}
+    .nav{height:60px;display:flex;align-items:center;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+    nav{display:flex;gap:28px}
+    nav a{position:relative;padding:4px 0}
+    nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--bronze);transition:right .25s ease}
+    nav a:hover{color:var(--ink)} nav a:hover::after{right:0}
+
+    .hero{padding:104px 0 0;text-align:center}
+    .eyebrow{font-size:13px;color:var(--bronze);letter-spacing:.03em;margin-bottom:26px}
+    h1{margin:0 auto;font-family:var(--serif);font-weight:300;font-size:clamp(48px,7vw,98px);line-height:1;letter-spacing:-.015em;max-width:12em}
+    h1 br{display:block}
+    h1 em{font-style:italic;font-weight:300}
+    .lead{margin:30px auto 0;max-width:33em;font-size:clamp(17px,1.5vw,19px);color:var(--ink-2)}
+    .actions{margin-top:36px;display:flex;justify-content:center;gap:12px;font-size:14px;font-weight:500}
+    .actions a{padding:11px 20px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);transition:background .2s,color .2s,border-color .2s}
+    .actions a.ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+    .actions a:hover{background:var(--bronze);border-color:var(--bronze);color:#fff}
+    .actions a.ghost:hover{background:transparent;color:var(--bronze);border-color:var(--bronze)}
+
+    .stage-wrap{perspective:1400px;margin:72px auto 0;max-width:980px}
+    .stage{margin:0;border:1px solid var(--hair);background:linear-gradient(180deg,var(--paper),#f6f4ef);padding:36px 40px 26px;transition:transform .35s ease,box-shadow .35s ease;transform-style:preserve-3d;box-shadow:0 30px 70px -50px rgba(28,27,25,.35)}
+    .stage:hover{box-shadow:0 44px 90px -50px rgba(28,27,25,.45)}
+    .stage svg{width:100%;height:auto;display:block;font-family:var(--sans)}
+    .stage figcaption{margin-top:16px;display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted)}
+    .stage figcaption b{font-weight:500;color:var(--ink-2)}
+
+    /* drawing */
+    .wire{fill:none;stroke:var(--bronze);stroke-width:1;stroke-linecap:round}
+    .frame{fill:none;stroke:var(--hair-2);stroke-width:1}
+    .node rect,.node ellipse,.node path{fill:var(--paper);stroke:var(--bronze);stroke-width:1;transition:fill .25s ease,stroke .25s ease}
+    .node text{font-size:12px;fill:var(--ink-2);text-anchor:middle;transition:fill .25s ease}
+    .node{cursor:default}
+    .node:hover rect,.node:hover ellipse,.node:hover path{fill:rgba(138,106,59,.12);stroke:var(--ink)}
+    .node:hover text{fill:var(--ink)}
+    .node .hint{opacity:0;font-size:11px;fill:var(--bronze);transition:opacity .25s ease}
+    .node:hover .hint{opacity:1}
+    .pulse{fill:var(--bronze)}
+    .js .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s cubic-bezier(.4,0,.2,1) forwards}
+    .js .d1{animation-delay:.1s}.js .d2{animation-delay:.5s}.js .d3{animation-delay:.9s}.js .d4{animation-delay:1.3s}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    .js .fade{opacity:0;animation:fadein .8s ease forwards;animation-delay:1.6s}
+    @keyframes fadein{to{opacity:1}}
+
+    .rv{transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+    .js .rv{opacity:0;transform:translateY(18px)}
+    .js .rv.in{opacity:1;transform:none}
+
+    .fields{padding:104px 0;background:var(--bg-2);margin-top:104px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+    .head h2{margin:0 0 6px;font-family:var(--serif);font-weight:300;font-size:clamp(36px,4.2vw,56px);line-height:1;letter-spacing:-.01em}
+    .head p{margin:0 0 40px;color:var(--muted);font-size:15px}
+    .tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .tile{position:relative;background:var(--paper);border:1px solid var(--hair);padding:36px;min-height:240px;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease}
+    .tile::after{content:"";position:absolute;left:36px;right:36px;bottom:0;height:1px;background:var(--bronze);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+    .tile:hover{transform:translateY(-4px);border-color:var(--hair-2);box-shadow:0 30px 60px -40px rgba(28,27,25,.35)}
+    .tile:hover::after{transform:scaleX(1)}
+    .tile svg{width:30px;height:30px;stroke:var(--bronze);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+    .tile h3{margin:auto 0 8px;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.05}
+    .tile p{margin:0;color:var(--ink-2);font-size:15.5px;max-width:30em}
+
+    .creed{padding:128px 0;text-align:center}
+    .creed .rule{width:40px;height:1px;background:var(--bronze);margin:0 auto 32px}
+    .creed h2{margin:0 auto;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(38px,5.4vw,72px);line-height:1.06;max-width:15em}
+    .creed p{margin:26px auto 0;max-width:36em;color:var(--ink-2);font-size:16px}
+
+    .dev{padding:0 0 120px}
+    .dev .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px}
+    .dev .head h2{font-size:clamp(30px,3.4vw,42px);margin:0}
+    .dev .head span{font-size:13px;color:var(--muted)}
+    .dev ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;list-style:none;padding:0;margin:0}
+    .dev a{position:relative;display:block;padding:18px 20px;border:1px solid var(--hair);background:var(--paper);transition:border-color .3s ease,transform .3s cubic-bezier(.2,.7,.2,1)}
+    .dev a::after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--bronze);transform:scaleY(0);transform-origin:top;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+    .dev a:hover{border-color:var(--hair-2);transform:translateY(-2px)}
+    .dev a:hover::after{transform:scaleY(1)}
+    .dev .name{font-weight:500;font-size:15.5px;display:flex;justify-content:space-between;align-items:baseline;line-height:1.3}
+    .dev .name i{font-style:normal;font-size:13px;color:var(--muted);transition:transform .3s ease,color .3s ease}
+    .dev a:hover .name i{transform:translate(3px,-3px);color:var(--bronze)}
+    .dev .what{display:block;margin-top:6px;color:var(--ink-2);font-size:13.5px;line-height:1.5}
+    .dev .host{display:block;margin-top:10px;color:var(--muted);font-size:12.5px}
+
+    footer{border-top:1px solid var(--hair);padding:28px 0 52px;font-size:13px;color:var(--muted)}
+    .foot{display:flex;justify-content:space-between}
+    .foot a{color:var(--ink-2)}
+
+    @media(prefers-reduced-motion:reduce){.js .draw,.js .fade{animation:none;stroke-dashoffset:0;opacity:1}.js .rv{opacity:1;transform:none}.stage{transition:none}}
+    .static .draw,.static .fade{animation:none!important;stroke-dashoffset:0!important;opacity:1!important}.static .rv{opacity:1!important;transform:none!important}.static .pulse{display:none}
+    @media(max-width:900px){.tiles{grid-template-columns:1fr}.tile{min-height:0}}
+    @media(max-width:620px){.shell{width:min(calc(100% - 32px),var(--max))}.nav{height:54px}nav{gap:18px}.hero{padding:64px 0 0}h1{font-size:clamp(40px,12vw,60px)}h1 br{display:none}.actions{flex-direction:column;align-items:stretch}.stage-wrap{margin-top:48px}.stage{padding:18px 16px 14px}.stage figcaption{flex-direction:column;gap:3px}.fields{padding:72px 0;margin-top:72px}.tile{padding:26px}.tile h3{font-size:28px}.creed{padding:88px 0}.dev .head{flex-direction:column;gap:4px;align-items:flex-start}.foot{flex-direction:column;gap:6px}}
+      .stage canvas{width:100%;height:auto;display:block;aspect-ratio:880/420;cursor:crosshair}
+  </style>
+</head>
+<body>
+  <header><div class="shell nav">
+    <span>leestory.com</span>
+    <nav><a href="#fields">Fields</a><a href="#development">In development</a><a href="mailto:leestory0314@gmail.com">Contact</a></nav>
+  </div></header>
+
+  <main>
+    <section class="hero shell">
+      <div class="eyebrow">Cloud Architect · AI Technologist · Builder</div>
+      <h1>The tool keeps changing. <br><em>The goal doesn’t.</em></h1>
+      <p class="lead">So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them.</p>
+      <div class="actions"><a href="#development">See what’s in development</a><a class="ghost" href="mailto:leestory0314@gmail.com">Get in touch</a></div>
+
+      <div class="stage-wrap">
+      <figure class="stage" id="stage2">
+        <canvas id="flow" width="880" height="420" aria-label="Flowing lines of traffic across a field; the pointer bends the flow"></canvas>
+        <figcaption><span><b>Traffic, as weather.</b> Streams flow across the field; the pointer bends them.</span><span>Flow field · 260 tracers</span></figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="fields" id="fields"><div class="shell">
+      <div class="head rv"><h2>What defines the work</h2><p>Technology, architecture, strategy, and execution.</p></div>
+      <div class="tiles">
+        <article class="tile rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l9-4 9 4-9 4-9-4Z"/><path d="M3 12l9 4 9-4M3 16l9 4 9-4"/></svg><h3>Architecture</h3><p>Designing scalable, resilient cloud foundations for what’s next.</p></article>
+        <article class="tile rv"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><path d="M7 12h3M14 11l3-4M14 13l3 4"/></svg><h3>AI &amp; Technology</h3><p>Exploring AI and emerging technology to solve real-world problems.</p></article>
+        <article class="tile rv"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2Z"/></svg><h3>Strategy</h3><p>Connecting technology, people, and opportunity with practical direction.</p></article>
+        <article class="tile rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg><h3>Build</h3><p>Turning ideas into working products, platforms, and measurable progress.</p></article>
+      </div>
+    </div></section>
+
+    <section class="creed shell rv">
+      <div class="rule"></div>
+      <h2>Technology is a tool. A better tomorrow is the goal.</h2>
+      <p>I believe in the power of technology to expand human potential, not replace it. I build thoughtful systems, explore bold ideas, and focus on solutions that create practical, lasting value.</p>
+    </section>
+
+    <section class="dev shell" id="development">
+      <div class="head rv"><h2>In development</h2><span>Products in operation. Each opens in a new tab.</span></div>
+      <ul>
+        <li class="rv"><a href="https://am.leestory.com/" target="_blank" rel="noopener"><span class="name">Auto-Minutes<i aria-hidden="true">↗</i></span><span class="what">Meeting minutes from a recording, with decisions and action items.</span><span class="host">am.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
+        <li class="rv"><a href="https://omni.leestory.com/" target="_blank" rel="noopener"><span class="name">OmniSecure<i aria-hidden="true">↗</i></span><span class="what">Web and AI security assessment mapped to public-sector standards.</span><span class="host">omni.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
+        <li class="rv"><a href="https://archlens.leestory.com/" target="_blank" rel="noopener"><span class="name">ArchLens<i aria-hidden="true">↗</i></span><span class="what">Monolith-to-services design, verified against the build.</span><span class="host">archlens.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer><div class="shell foot">
+    <a href="mailto:leestory0314@gmail.com">leestory0314@gmail.com</a>
+    <span>Updated October 2026</span>
+  </div></footer>
+
+  <script>
+    (function(){
+      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // reveal on scroll, once
+      var items = document.querySelectorAll('.rv');
+      if (reduce || !('IntersectionObserver' in window)) { items.forEach(function(el){ el.classList.add('in'); }); }
+      else {
+        var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .12 });
+        items.forEach(function(el, i){ el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+      }
+      // stage tilt follows the pointer
+      var st = document.getElementById('stage');
+      if (st && !reduce && matchMedia('(hover: hover)').matches) {
+        st.addEventListener('mousemove', function(e){
+          var r = st.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+          st.style.transform = 'rotateX(' + (-y * 3).toFixed(2) + 'deg) rotateY(' + (x * 3).toFixed(2) + 'deg)';
+        });
+        st.addEventListener('mouseleave', function(){ st.style.transform = ''; });
+      }
+    })();
+  </script>
+  <script>
+    (function(){var c=document.getElementById('flow');if(!c)return;var ctx=c.getContext('2d');var W=880,H=420,dpr=Math.min(window.devicePixelRatio||1,2);c.width=W*dpr;c.height=H*dpr;ctx.scale(dpr,dpr);
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches||document.documentElement.classList.contains('static');
+var seed=11;function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+var P=[];for(var i=0;i<260;i++)P.push({x:rnd()*W,y:rnd()*H,l:40+rnd()*120});
+var mouse=null;c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();mouse={x:(e.clientX-r.left)*W/r.width,y:(e.clientY-r.top)*H/r.height}});c.addEventListener('mouseleave',function(){mouse=null});
+function ang(x,y,t){var a=Math.sin(x*.011+t*.5)*.9+Math.cos(y*.013-t*.4)*.9+Math.sin((x-y)*.005+t*.25)*.6;if(mouse){var dx=x-mouse.x,dy=y-mouse.y,d=Math.hypot(dx,dy);if(d<150){a+=(1-d/150)*2.2}}return a}
+ctx.fillStyle='#faf9f6';ctx.fillRect(0,0,W,H);var t=0;
+function frame(){t+=.012;ctx.fillStyle='rgba(250,249,246,.035)';ctx.fillRect(0,0,W,H);ctx.lineWidth=1;for(var i=0;i<P.length;i++){var p=P[i],a=ang(p.x,p.y,t);var nx=p.x+Math.cos(a)*1.7,ny=p.y+Math.sin(a)*1.7;ctx.strokeStyle='rgba(138,106,59,.5)';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(nx,ny);ctx.stroke();p.x=nx;p.y=ny;p.l--;if(p.l<0||p.x<0||p.x>W||p.y<0||p.y>H){p.x=rnd()*W;p.y=rnd()*H;p.l=60+rnd()*120}}if(!still)requestAnimationFrame(frame)}
+if(still){for(var k=0;k<140;k++)frame()}else frame()})();
+  </script>
+</body>
+</html>
