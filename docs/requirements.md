@@ -24,6 +24,7 @@
 | REQ-015 | 2026-10-10 | "in development만 리스트형" · "인터랙티브 1번과 5번에 내 강점에 대한 텍스트를 넣어서" · "5번은 좀더 원구형체처럼" · "둘다 배경도 어울리게" | 세션 지시 | 완료 — 기준 시안·변형 재생성, 채택 대기 |
 | REQ-016 | 2026-10-10 | "레이아웃은 concept-signal.html 스타일은 concept-clear.html 였다" | 세션 지시 | `mockups/final-mesh.html` · `final-globe.html` 보고, 채택 대기 |
 | REQ-017 | 2026-10-10 | "In development는 목록화 되어 있던 시안 journal 처럼 해봐 그리고 mesh에만 적용해" · "한글버전과 영문 버전을 두고 기본을 영문으로" · "전체 사이트를 영문과 국문으로" | 세션 지시 | 완료 — `final-mesh.html` 행 목록, 두 시안 모두 EN 기본 + KO 전환. 채택 대기 |
+| REQ-018 | 2026-10-10 | "한글 표기에 대해 … 우주최강 번역가와 카피라이터를 소환해서 … asis tobe 변경 사항을 보고후 변경" · "hero 영역의 mesh영역은 영문 그대로" · (확정 표 전달) "수정사항 반영해" | 세션 지시 | 완료 — `docs/copy-ko.md`, `tools/gen-final.js` T.ko 확정본, 그래픽 라벨 영문 유지 |
 
 ## 결정
 
