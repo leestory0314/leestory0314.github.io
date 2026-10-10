@@ -13,9 +13,9 @@ curl -sI https://leestory.com/ | head -5   # Server: GitHub.com, 200
 
 ## 2. 프로젝트 링크가 죽었다
 ```sh
-for h in https://am.leestory.com/ https://omni.leestory.com/ https://archlens.leestory.com/ https://runon.life/; do curl -s -m 10 -o /dev/null -w "$h %{http_code}\n" "$h"; done
+for h in https://am.leestory.com/ https://omni.leestory.com/ https://archlens.leestory.com/; do curl -s -m 10 -o /dev/null -w "$h %{http_code}\n" "$h"; done
 ```
-- 000 / 5xx 면 **이 저장소 문제가 아니다.** 해당 프로젝트 세션(`auto-minutes` · `omnisecure` · `ArchLens` · `runon`)에 `!exchange` 로 알린다: `TO-<프로젝트>-FROM-leestory-<호스트>-down-<YYYYMMDD-HHMM>.md`. 페이지에서 링크를 빼지 않는다(주인님 결정 사항).
+- 000 / 5xx 면 **이 저장소 문제가 아니다.** 해당 프로젝트 세션(`auto-minutes` · `omnisecure` · `ArchLens`)에 `!exchange` 로 알린다: `TO-<프로젝트>-FROM-leestory-<호스트>-down-<YYYYMMDD-HHMM>.md`. 페이지에서 링크를 빼지 않는다(주인님 결정 사항).
 
 ## 3. 글꼴이 깨져 보인다
 - Google Fonts 차단·장애. 폴백(시스템 세리프)으로 읽히는지 확인하고, 길어지면 주인님과 자체 호스팅 여부를 정한다.
