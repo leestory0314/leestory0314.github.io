@@ -1,101 +1,74 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f6fbff" />
-  <meta name="description" content="LEESTORY — Cloud Architect · AI Technologist · Builder" />
-  <meta property="og:title" content="LEESTORY" />
-  <meta property="og:description" content="Cloud Architect · AI Technologist · Builder" />
-  <title>LEESTORY — Cloud Architect · AI Technologist · Builder</title>
+  <meta name="theme-color" content="#ffffff" />
+  <title>Cloud Architect · AI Technologist · Builder</title>
+  <meta name="description" content="The tool keeps changing; the goal doesn’t. Cloud architecture, AI systems, strategy, and the products in development." />
+  <meta property="og:title" content="Cloud Architect · AI Technologist · Builder" />
+  <meta property="og:description" content="The tool keeps changing. The goal doesn’t." />
+  <meta property="og:url" content="https://leestory.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Inter:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script>document.documentElement.classList.add('js');if(location.hash.indexOf('static')>-1)document.documentElement.classList.add('static')</script>
   <link rel="stylesheet" href="assets/css/site.css" />
 </head>
 <body>
-  <header>
-    <div class="shell nav">
-      <a class="brand" href="#top" aria-label="LEESTORY home">LEESTORY</a>
-      <nav class="navlinks" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#philosophy">Philosophy</a>
-        <a class="pill" href="mailto:leestory0314@gmail.com">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <header><div class="shell nav">
+    <a class="brand" href="#top" aria-label="leestory.com"><svg class="mark" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 13.5 9 4.5l5.5 9" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M3.5 13.5h11" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".35"/><circle cx="9" cy="4.5" r="2.2" fill="#0a58e0"/><circle cx="3.5" cy="13.5" r="1.7" fill="currentColor"/><circle cx="14.5" cy="13.5" r="1.7" fill="currentColor"/></svg><span><b>leestory</b><em>.com</em></span></a>
+    <nav><a href="#fields" data-i18n="nav_fields">Fields</a><a href="#development" data-i18n="nav_dev">In development</a><a class="cta" href="mailto:leestory0314@gmail.com" data-i18n="nav_contact">Contact</a><button class="lang" id="lang" type="button" aria-label="한국어로 보기">KO</button></nav>
+  </div></header>
 
-  <main id="top">
-    <section class="hero" id="about">
-      <div class="shell hero-grid">
-        <div>
-          <div class="kicker">Ideas · Systems · People · A Brighter Tomorrow</div>
-          <h1><span>LEE</span><span class="accent">STORY</span></h1>
-          <div class="roles">Cloud Architect · AI Technologist · Builder</div>
-          <div class="rule"></div>
-          <div class="lead">I design systems, explore technology, and turn complex ideas into working realities.</div>
-          <div class="micro">Technology for a more human tomorrow</div>
-        </div>
-        <div class="visual" aria-label="Futuristic city and technology visual">
-          <img src="./assets/hero.jpg" alt="A person looking toward a futuristic city skyline" />
-        </div>
-      </div>
-    </section>
-
-    <section class="identity">
+  <main>
+    <section class="hero" id="top">
+      <div class="grid" aria-hidden="true"></div>
+      <div class="art"><canvas id="mesh" width="880" height="720" aria-label="A network of nodes; six larger nodes carry the fields of work and connect toward the pointer"></canvas></div>
       <div class="shell">
-        <div class="section-head">
-          <div><div class="label">What defines me</div></div>
-          <p>Technology, architecture, strategy, and execution.</p>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <div class="card-top"><div class="icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 35h23a8 8 0 0 0 1-15.94A13 13 0 0 0 12.4 16.9 9 9 0 0 0 13 35Z"/></svg></div><div class="num">01</div></div>
-            <div class="content"><h2>Architecture</h2><p>Designing scalable, resilient cloud foundations for what’s next.</p><div class="tags">People · Platforms · Possibilities</div></div>
-          </article>
-          <article class="card">
-            <div class="card-top"><div class="icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M8 24h32M24 8c5 5 8 10 8 16s-3 11-8 16c-5-5-8-10-8-16s3-11 8-16Z"/><path d="M13 14c7 4 15 4 22 0M13 34c7-4 15-4 22 0"/></svg></div><div class="num">02</div></div>
-            <div class="content"><h2>AI &amp; Technology</h2><p>Exploring AI and emerging technology to solve real-world problems.</p><div class="tags">Curiosity · Research · Real Impact</div></div>
-          </article>
-          <article class="card">
-            <div class="card-top"><div class="icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7 40 39 24 31 8 39 24 7Z"/><path d="M24 7v24"/></svg></div><div class="num">03</div></div>
-            <div class="content"><h2>Strategy</h2><p>Connecting technology, people, and opportunity with practical direction.</p><div class="tags">Insight · Alignment · Lasting Value</div></div>
-          </article>
-          <article class="card">
-            <div class="card-top"><div class="icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m15 11 9-5 9 5-9 5-9-5Z"/><path d="m7 27 9-5 9 5-9 5-9-5Zm16 0 9-5 9 5-9 5-9-5Z"/><path d="M16 32v9m16-9v9M24 16v9"/></svg></div><div class="num">04</div></div>
-            <div class="content"><h2>Build</h2><p>Turning ideas into working products, platforms, and measurable progress.</p><div class="tags">Ideas · Execution · Real-world Results</div></div>
-          </article>
+        <div class="eyebrow reveal"><i aria-hidden="true"></i><span data-i18n="eyebrow">Cloud Architect · AI Technologist · Builder</span></div>
+        <h1 class="reveal"><span data-i18n="h1a">The tool keeps changing.</span><span data-i18n="h1b">The goal doesn’t.</span></h1>
+        <p class="lead reveal" data-i18n="lead">So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them.</p>
+        <div class="meta reveal">
+          <div><b data-i18n="m_focus">Focus</b><span data-i18n="m_focus_v">Cloud platforms · Applied AI · Security</span></div>
+          <div><b data-i18n="m_dev">In development</b><span data-i18n="m_dev_v">Products in operation</span></div>
+          <div><b data-i18n="m_contact">Contact</b><a href="mailto:leestory0314@gmail.com">leestory0314@gmail.com</a></div>
         </div>
       </div>
     </section>
 
-    <section class="philosophy" id="philosophy">
-      <div class="shell philosophy-box">
-        <div class="philosophy-visual"><div class="words">Human<br>Ideas<br>Brighter<br>Tomorrow</div></div>
-        <div class="philosophy-copy">
-          <div><div class="label">My philosophy</div><div class="statement">Technology is a tool.<br>A better tomorrow is the goal.</div></div>
-          <div><p>I believe in the power of technology to expand human potential — not replace it. I build thoughtful systems, explore bold ideas, and focus on solutions that create practical, lasting value.</p><div class="tiny-rule"></div><div class="smallcaps">Same curiosity. A brighter tomorrow.</div></div>
-        </div>
+    <section class="fields shell" id="fields">
+      <div class="head rv"><h2 data-i18n="f_h2">What defines the work</h2><span data-i18n="f_sub">Technology, architecture, strategy, and execution.</span></div>
+      <div class="cards">
+        <article class="card rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l9-4 9 4-9 4-9-4Z"/><path d="M3 12l9 4 9-4M3 16l9 4 9-4"/></svg><h3 data-i18n="c1">Architecture</h3><p data-i18n="c1p">Designing scalable, resilient cloud foundations for what’s next.</p></article>
+        <article class="card rv"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><path d="M7 12h3M14 11l3-4M14 13l3 4"/></svg><h3 data-i18n="c2">AI & Technology</h3><p data-i18n="c2p">Exploring AI and emerging technology to solve real-world problems.</p></article>
+        <article class="card rv"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2Z"/></svg><h3 data-i18n="c3">Strategy</h3><p data-i18n="c3p">Connecting technology, people, and opportunity with practical direction.</p></article>
+        <article class="card rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg><h3 data-i18n="c4">Build</h3><p data-i18n="c4p">Turning ideas into working products, platforms, and measurable progress.</p></article>
       </div>
     </section>
 
-    <section class="projects" id="projects" aria-labelledby="projects-label">
-      <div class="shell">
-        <div class="projects-bar">
-          <div class="label" id="projects-label">Now building</div>
-          <ul class="project-list">
-            <li><a href="https://am.leestory.com/" target="_blank" rel="noopener"><span class="host">am.leestory.com</span><span class="desc">Auto-Minutes — meeting notes from a recording</span></a></li>
-            <li><a href="https://omni.leestory.com/" target="_blank" rel="noopener"><span class="host">omni.leestory.com</span><span class="desc">OmniSecure — security assessment for web &amp; AI</span></a></li>
-            <li><a href="https://archlens.leestory.com/" target="_blank" rel="noopener"><span class="host">archlens.leestory.com</span><span class="desc">ArchLens — monolith-to-services design and architecture checks</span></a></li>          </ul>
-        </div>
+    <section class="creed shell">
+      <div class="box rv">
+        <h2 data-i18n="creed_h">Technology is a tool. A better tomorrow is the goal.</h2>
+        <p data-i18n="creed_p">I believe in the power of technology to expand human potential, not replace it. I build thoughtful systems, explore bold ideas, and focus on solutions that create practical, lasting value.</p>
       </div>
+    </section>
+
+    <section class="dev dev-list shell" id="development">
+      <div class="head rv"><h2 data-i18n="d_h2">In development</h2><span data-i18n="d_sub">Products in operation. Each opens in a new tab.</span></div>
+      <ul>
+        <li class="rv"><a href="https://am.leestory.com/" target="_blank" rel="noopener"><span class="name">Auto-Minutes</span><span class="what" data-i18n="p1">Meeting minutes from a recording, with decisions and action items.</span><span class="host">am.leestory.com</span><span class="sr" data-i18n="newtab">(opens in a new tab)</span></a></li>
+        <li class="rv"><a href="https://omni.leestory.com/" target="_blank" rel="noopener"><span class="name">OmniSecure</span><span class="what" data-i18n="p2">Web and AI security assessment mapped to public-sector standards.</span><span class="host">omni.leestory.com</span><span class="sr" data-i18n="newtab">(opens in a new tab)</span></a></li>
+        <li class="rv"><a href="https://archlens.leestory.com/" target="_blank" rel="noopener"><span class="name">ArchLens</span><span class="what" data-i18n="p3">Monolith-to-services design, verified against the build.</span><span class="host">archlens.leestory.com</span><span class="sr" data-i18n="newtab">(opens in a new tab)</span></a></li>
+      </ul>
     </section>
   </main>
 
-  <footer>
-    <div class="shell foot">
-      <div class="footbrand">LEESTORY</div>
-      <a class="contact" href="mailto:leestory0314@gmail.com">Contact point · leestory0314@gmail.com</a>
-      <div class="footnote">Ideas · People · Progress · Always</div>
-    </div>
-  </footer>
+  <footer><div class="shell foot">
+    <a href="mailto:leestory0314@gmail.com">leestory0314@gmail.com</a>
+    <span data-i18n="foot">Updated October 2026</span>
+  </div></footer>
+
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

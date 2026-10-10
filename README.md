@@ -1,6 +1,6 @@
 # leestory.com
 
-`https://leestory.com` 개인 홈페이지. 프로필 랜딩 한 장이고, 진행 중인 프로젝트는 푸터 위 작은 띠에 링크로만 표기한다.
+`https://leestory.com` 개인 홈페이지. 프로필 랜딩 한 장(영문 기본, 국문 전환)이고, 진행 중인 프로젝트는 아래쪽 행 목록에 링크로만 표기한다.
 
 ## 어디서 도나
 - **GitHub Pages.** 저장소 `leestory0314/leestory0314.github.io`, 브랜치 `main` 루트. `CNAME` = `leestory.com`.
@@ -19,8 +19,8 @@
 | 파일 | 역할 |
 |---|---|
 | `index.html` | 페이지 구조와 내용 |
-| `assets/css/site.css` | 스타일 (마지막 절이 프로젝트 띠) |
-| `assets/hero.jpg` | 히어로 이미지 |
+| `assets/css/site.css` | 스타일(변수·배치·반응형) |
+| `assets/js/site.js` | 언어 사전(EN/KO)과 전환, 스크롤 리빌, 히어로 Mesh |
 | `CNAME` | 사용자 지정 도메인. 지우지 않는다 |
 | `ads.txt` | AdSense 소유 확인. 지우지 않는다 |
 | `CLAUDE.md` | 에이전트 규칙 (agent-baseline v1.0 + 이 저장소 규칙) |

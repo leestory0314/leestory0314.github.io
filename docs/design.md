@@ -113,5 +113,6 @@
 ### 폴더 정리 (2026-10-10)
 - `mockups/decided/` = 채택된 것과 결정 기록(`DECISIONS.md`). `mockups/old/` = 검토가 끝난 대안과 이전 라운드. 생성기는 `tools/gen-final.js` 만 현역, `tools/old/gen-interact.js` 는 보관.
 
-## 주인님 판단이 필요한 것
-- 헤더 표기 A안 확정 여부(또는 B·C·D).
+## 채택 (2026-10-10)
+- 헤더 표기 A안 확정. `mockups/decided/final-mesh.html` 을 운영 파일로 옮겼다: 구조는 `index.html`, 스타일은 `assets/css/site.css`, 언어 사전·전환·스크롤 리빌·Mesh 는 `assets/js/site.js`. `assets/hero.jpg` 는 쓰지 않아 삭제. 생성기는 `tools/old/` 로.
+- 이후 수정은 운영 파일에서 직접 한다. **프로젝트 추가**: `index.html` 의 `#development` 목록에 `<li>` 하나 복사(이름·호스트), 설명은 `assets/js/site.js` 의 `I18N.en`·`I18N.ko` 에 `p4` 처럼 키를 더하고 `<span class="what" data-i18n="p4">` 로 연결. **문구 수정**: 두 사전만 고치면 양쪽 언어가 바뀐다. 영문 기본값은 `index.html` 본문에도 같은 문구가 있어야 한다(JS 없이 보이는 값).

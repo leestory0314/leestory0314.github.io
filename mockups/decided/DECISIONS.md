@@ -11,8 +11,8 @@
 | In development | Journal 식 행 목록(이름 · 한 줄 · 호스트 ↗) | `final-mesh.html` |
 | 프로젝트 | Auto-Minutes · OmniSecure · ArchLens (늘어나면 행 추가) | `final-mesh.html` |
 | 언어 | 영문 기본, 헤더 KO/EN 토글로 국문 전환. 국문 카피는 주인님 확정본 | `final-mesh.html`, `tools/gen-final.js` `T.ko` |
-| 헤더 표기 | 실명 없음. 노드 글리프 + leestory 굵게 + .com 회색 (A안, 확정 대기) | `brand-options.png` |
+| 헤더 표기 | 실명 없음. 노드 글리프 + leestory 굵게 + .com 회색 (A안 확정, 2026-10-10) | `brand-options.png` |
 | 분야 카드 | 제목을 아이콘 아래 고정 높이에 정렬 | `final-mesh.html` |
 
 확인용 스크린샷: `final-mesh-1280.png` · `final-mesh-390.png` (영문), `final-mesh-ko-1280.png` · `final-mesh-ko-390.png` (국문).
-생성기: `node tools/gen-final.js .` 가 이 파일을 다시 만든다. 채택이 끝나면 `index.html` + `assets/css/site.css` 로 옮기고 생성기는 `tools/old/` 로 보낸다.
+2026-10-10 채택 완료: `index.html` + `assets/css/site.css` + `assets/js/site.js` 가 원본이다. 이 폴더의 `final-mesh.html` 은 채택 시점 사본, 생성기는 `tools/old/gen-final.js` 에 보관.

@@ -13,7 +13,7 @@
 
 ## 되돌리기
 - 직전 커밋으로: `git revert HEAD` → 승인 → push. (`reset --hard` · `--force` 금지.)
-- 2026-09-15 브랜딩 페이지로 통째 복원(프로젝트 띠까지 제거): `git checkout 83e6f39 -- index.html assets/hero.jpg && git rm -q assets/css/site.css` → 커밋 → 승인 → push.
+- 2026-09-15 브랜딩 페이지로 통째 복원: `git checkout 83e6f39 -- index.html` 뒤 `git show 83e6f39:image/hero.jpg > assets/hero.jpg` 로 이미지 복원, `assets/css/site.css` · `assets/js/site.js` 삭제 → 커밋 → 승인 → push.
 
 ## 주인님만 하는 일
 - GitHub 저장소 설정 → Pages → 사용자 지정 도메인·HTTPS 강제. DNS(`leestory.com` A/CNAME) 변경.

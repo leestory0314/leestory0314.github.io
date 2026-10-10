@@ -25,6 +25,7 @@
 | REQ-016 | 2026-10-10 | "레이아웃은 concept-signal.html 스타일은 concept-clear.html 였다" | 세션 지시 | `mockups/decided/final-mesh.html` · `final-globe.html` 보고, 채택 대기 |
 | REQ-017 | 2026-10-10 | "In development는 목록화 되어 있던 시안 journal 처럼 해봐 그리고 mesh에만 적용해" · "한글버전과 영문 버전을 두고 기본을 영문으로" · "전체 사이트를 영문과 국문으로" | 세션 지시 | 완료 — `final-mesh.html` 행 목록, 두 시안 모두 EN 기본 + KO 전환. 채택 대기 |
 | REQ-018 | 2026-10-10 | "한글 표기에 대해 … 우주최강 번역가와 카피라이터를 소환해서 … asis tobe 변경 사항을 보고후 변경" · "hero 영역의 mesh영역은 영문 그대로" · (확정 표 전달) "수정사항 반영해" | 세션 지시 | 완료 — `docs/copy-ko.md`, `tools/gen-final.js` T.ko 확정본, 그래픽 라벨 영문 유지 |
+| REQ-019 | 2026-10-10 | "1. 히어로그래픽은 Mesh로 / 2. 실명은 안 넣는다. leestory.com … 디자인 한번 해봐" · "A로 결정 / 푸시 승인" · "목업 폴더도 결정된것은 … old로" | 세션 지시 | 완료 — index.html 반영, push 승인 획득 |
 
 ## 결정
 
@@ -36,6 +37,7 @@
 | ADR-0004 | 2026-10-10 | ~~사용하지 않게 된 `assets/hero.jpg` 는 삭제~~ → ADR-0006 으로 취소, 복원 | 새 디자인이 반려됐다 |
 | ADR-0005 | 2026-10-10 | 디렉토리 배치: 루트 = Pages 필수 파일만(`index.html` · `CNAME` · `ads.txt`), `assets/` 스타일·이미지, `docs/` 문서, `mockups/` 스크린샷·목업, `tools/` 로컬 도구 | REQ-007. GitHub Pages 는 소스를 루트 또는 `/docs` 로만 잡을 수 있어 `index.html` 은 루트를 떠날 수 없다(Pages 설정 변경은 주인님 권한이고 `docs/` 는 문서용으로 쓴다) |
 | ADR-0006 | 2026-10-10 | 2026-09-15 브랜딩 페이지를 그대로 되살리고(`assets/hero.jpg` 복원), 프로젝트는 철학 영역과 푸터 사이 `#projects` 띠에 칩 3개로만 표기. 다크 모드·새 글꼴은 도입하지 않는다 | REQ-008. 주인님이 목업을 보고 "기존처럼 프로필만, 프로젝트는 작은 영역에 표기만" 으로 정했다 |
+| ADR-0007 | 2026-10-10 | 최종 디자인 채택: Signal 레이아웃 + Clear 스타일 + Mesh 히어로 + 카피 3안 + 행 목록 + EN 기본/KO 전환 + 노드 글리프 헤더. 소스는 `index.html` · `assets/css/site.css` · `assets/js/site.js`. 외부 글꼴은 Google Fonts(Manrope · Inter · Noto Sans KR), 스크립트는 자체 파일만 | REQ-012~019. ADR-0001(빌드 없음)·ADR-0005(디렉토리) 유지. 2026-09-15 페이지 복원 경로는 `git checkout 83e6f39 -- index.html` + `image/hero.jpg` 복원 |
 
 ## 추적표 (요건 → 결정 → 산출물)
 
