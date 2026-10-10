@@ -1,6 +1,6 @@
 # leestory.com
 
-`https://leestory.com` 개인 홈페이지. 프로필과, 서브도메인으로 운영하는 프로젝트 소개.
+`https://leestory.com` 개인 홈페이지. 프로필 랜딩 한 장이고, 진행 중인 프로젝트는 푸터 위 작은 띠에 링크로만 표기한다.
 
 ## 어디서 도나
 - **GitHub Pages.** 저장소 `leestory0314/leestory0314.github.io`, 브랜치 `main` 루트. `CNAME` = `leestory.com`.
@@ -19,7 +19,8 @@
 | 파일 | 역할 |
 |---|---|
 | `index.html` | 페이지 구조와 내용 |
-| `assets/css/site.css` | 디자인 토큰·배치·다크 모드 |
+| `assets/css/site.css` | 스타일 (마지막 절이 프로젝트 띠) |
+| `assets/hero.jpg` | 히어로 이미지 |
 | `CNAME` | 사용자 지정 도메인. 지우지 않는다 |
 | `ads.txt` | AdSense 소유 확인. 지우지 않는다 |
 | `CLAUDE.md` | 에이전트 규칙 (agent-baseline v1.0 + 이 저장소 규칙) |
@@ -27,7 +28,7 @@
 | `docs/core/agent-rules.md` | 에이전트 실행·커밋·게이트 규칙 |
 | `docs/requirements.md` | 요건(REQ)·결정(ADR) 추적표 |
 | `docs/runbook/` | 배포·장애 런북 |
-| `mockups/*.png` | 데스크톱 1280 · 폰 390 · 다크 스크린샷 |
+| `mockups/*.png` | 데스크톱 1280 · 폰 390 스크린샷 |
 | `tools/serve.js` | 로컬 정적 서버 |
 
 ## 로컬에서 보기
@@ -37,7 +38,7 @@ node tools/serve.js
 ```
 
 ## 프로젝트 항목 추가
-`docs/design.md` 마지막 절. 싣는 프로젝트는 주인님 지시로만 늘린다(현재 `am` · `omni` · `runon.life`).
+`docs/design.md` 마지막 절. `#projects` 띠에 칩 하나를 더하는 것뿐이며, 싣는 프로젝트는 주인님 지시로만 늘린다(현재 `am` · `omni` · `runon.life`).
 
 ## 연락
 `leestory0314@gmail.com`

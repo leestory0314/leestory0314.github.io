@@ -4,7 +4,7 @@
 - **push 가 곧 배포다.** 보통 1~3분 안에 반영되고 CDN 캐시 `max-age=600` 이라 최대 10분 지연될 수 있다.
 
 ## 배포 (에이전트)
-1. 로컬 확인: `node tools/serve.js` → `http://127.0.0.1:8765` 를 390px · 1280px · 다크 모드로 본다. 스크린샷은 `mockups/` 에 `desktop-1280.png` · `mobile-390.png` · `dark-1280.png` 로 덮어쓴다.
+1. 로컬 확인: `node tools/serve.js` → `http://127.0.0.1:8765` 를 390px · 1280px 로 본다. 스크린샷은 `mockups/` 에 `desktop-1280.png` · `mobile-390.png` 로 덮어쓴다.
 2. 게이트: `docs/core/agent-rules.md` 의 세 줄.
 3. 커밋: `git add -A && git commit -m "feat(site): …"`.
 4. `[승인 대기]` 로 주인님께 변경 요약과 `mockups/` 스크린샷 경로를 보고한다.
@@ -13,7 +13,7 @@
 
 ## 되돌리기
 - 직전 커밋으로: `git revert HEAD` → 승인 → push. (`reset --hard` · `--force` 금지.)
-- 2026-09-15 브랜딩 페이지로 통째 복원: `git checkout 83e6f39 -- index.html assets/hero.jpg` → 커밋 → 승인 → push.
+- 2026-09-15 브랜딩 페이지로 통째 복원(프로젝트 띠까지 제거): `git checkout 83e6f39 -- index.html assets/hero.jpg && git rm -q assets/css/site.css` → 커밋 → 승인 → push.
 
 ## 주인님만 하는 일
 - GitHub 저장소 설정 → Pages → 사용자 지정 도메인·HTTPS 강제. DNS(`leestory.com` A/CNAME) 변경.
