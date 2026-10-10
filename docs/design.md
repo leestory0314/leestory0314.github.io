@@ -36,18 +36,19 @@
 - CSS 는 건드릴 필요 없다. 넷째 칩부터는 자동으로 다음 줄로 흐른다.
 - 확인: `node tools/serve.js` → `mockups/desktop-1280.png` · `mockups/mobile-390.png` 를 같은 이름으로 다시 찍는다.
 
-## 콘셉트 시안 (2026-10-10 2차, 채택 대기)
-1차 시안(기존 틀의 변형 3종)은 반려됐다. 2차는 `docs/references.md` 의 조사를 바탕으로 **목표·독자·관점이 다른 셋**을 만들고 UI/UX 비평 에이전트의 지적을 반영했다. 공통: 프로필 우선, 프로젝트는 작은 영역에 링크만(새 탭, ↗ 표시, 스크린리더 문구), `leestory` 는 작은 도메인 표기뿐, LS 마크 없음, `:focus-visible` 스타일, 메타 설명·og 태그, 작은 글자 대비 4.5:1 이상.
+## 콘셉트 시안 (2026-10-10 3차, 채택 대기)
+1차(기존 틀 변형)와 2차(레퍼런스식 미니멀)는 "전문가답지도 고급스럽지도 않다"로 반려됐다. 3차는 주인님이 고른 **세 톤에 하나씩**, 첫 화면은 **코드로 그린 추상 그래픽**, 메시지는 "집에서 운영"이 아니라 **기술을 계속 연구하고 개발해 나간다**로 잡았다.
 
-| 콘셉트 | 파일 | 목표·독자 | 구조 | 글꼴 | 바탕 |
+공통: 프로필 우선, 프로젝트는 아래쪽 작은 영역에 링크만(새 탭, ↗, 스크린리더 문구), 목록은 `auto-fill` 격자나 행 목록이라 **항목이 늘어도 그대로 흐른다**(개수를 문구에 박지 않는다). `leestory` 는 작은 도메인 표기뿐, 사진 없음, `:focus-visible`, 메타 설명·og 태그, `prefers-reduced-motion` 존중.
+
+| 콘셉트 | 파일 | 톤 | 첫 화면 | 글꼴 | 바탕·강조 |
 |---|---|---|---|---|---|
-| Dossier | `mockups/concept-dossier.html` | 30초 안에 신뢰 · 채용·협업·공공 담당자 | 역할 선언 H1 + 프로필 레코드(사진·역할·초점·거점·연락) → Fields 표(주장 + In practice 근거) → Building now 압축 목록 → 철학 | IBM Plex Serif + Plex Sans | 웜그레이 `#f6f6f3`, 남색 링크 |
-| Essay | `mockups/concept-essay.html` | 생각과 관점 · 동료 | 1열 680px 산문. "I am a cloud architect…" H1 → 리드 → Fields 원문 + 이탤릭 한 문장씩 → 철학 → Now building(각 "왜 만들었나" 1인칭 한 줄) | Newsreader | 흰색, 녹색 링크 |
-| Index | `mockups/concept-index.html` | 한 화면에서 다 보고 떠남 · 급한 방문자 | 600px 색인. 역할 H1 → Fields → Philosophy → Now building → 푸터. 다크 모드 자동 | Geist | 흑백, 다크 모드 |
+| Signal | `mockups/concept-signal.html` | 다크 시네마틱 (Linear · Vercel 류) | "Researching what’s next. Building what works." + 천천히 도는 궤도 다이어그램, 은은한 격자와 필름 그레인 | Inter Tight + Inter | `#06080f`, 파랑→하늘 빛 |
+| Clear | `mockups/concept-clear.html` | 라이트 프리미엄 (Apple · Stripe 류) | 가운데 정렬 "Always researching. Always building." + 흰 스테이지 위 등축 계층 다이어그램(Platform·Models·Product·Operations) | Manrope + Inter | 흰색/`#f5f5f7`, 파랑 `#0a58e0` |
+| Journal | `mockups/concept-journal.html` | 에디토리얼 럭셔리 (매거진 류) | 가벼운 세리프 "The quiet work of researching, and building, what comes next." + 브론즈 선으로 그린 계기판 다이얼 | Cormorant Garamond + Inter | 본색 `#f4f2ee`, 브론즈 `#8a6a3b` |
 
-비평 결과 순위: Dossier > Index > Essay (근거는 보고 본문). 채택되면 해당 HTML 의 `<style>` 을 `assets/css/site.css` 로 옮기고 `index.html` 을 맞춘 뒤 나머지 두 파일을 지운다.
+채택되면 해당 HTML 의 `<style>` 을 `assets/css/site.css` 로, 본문을 `index.html` 로 옮기고 나머지 두 파일을 지운다. 프로젝트 추가는 `#development` 목록에 `<li>` 하나를 복사해 이름·한 줄·호스트를 바꾸는 것뿐이다.
 
 ## 주인님 판단이 필요한 것
-- 이름: 세 시안 어디에도 주인님 이름이 없다(도메인 강조 금지 지시 때문). 헤더의 `leestory.com` 자리에 실명 한 줄을 둘지.
-- 사진: 현재 `assets/hero.jpg` 에는 "BIGGER IDEAS A BRIGHTER TOMORROW" 문구가 박혀 있어 Essay·Index 는 사진을 쓰지 않고 Dossier 는 문구가 안 보이게 잘랐다. 문구 없는 사진으로 교체할지.
+- 이름: 도메인 강조 금지 지시로 세 시안 어디에도 실명이 없다. 헤더의 `leestory.com` 자리에 이름 한 줄을 둘지.
 - 언어: 공공 접점을 위해 한국어 한 줄 요약(역할·연락처)을 둘지.

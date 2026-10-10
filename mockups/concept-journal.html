@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f2ee" />
+  <title>Cloud Architect · AI Technologist · Builder</title>
+  <meta name="description" content="The quiet work of researching, and building, what comes next. Cloud architecture, applied AI, strategy, and the products in development." />
+  <meta property="og:title" content="Cloud Architect · AI Technologist · Builder" />
+  <meta property="og:description" content="The quiet work of researching, and building, what comes next." />
+  <meta property="og:url" content="https://leestory.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#f4f2ee;--ink:#1c1b19;--ink-2:#4d4a44;--muted:#6f6a61;--hair:#d9d4cb;--bronze:#8a6a3b;--max:1180px;--serif:"Cormorant Garamond",Georgia,serif;--sans:Inter,-apple-system,"Segoe UI","Noto Sans KR",sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .shell{width:min(calc(100% - 48px),var(--max));margin:0 auto}
+
+    header .shell{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--hair);font-size:13px;color:var(--muted)}
+    nav{display:flex;gap:28px}
+    nav a:hover{color:var(--ink)}
+
+    .hero{padding:88px 0 80px;display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
+    .kicker{font-size:13px;color:var(--bronze);margin-bottom:30px;letter-spacing:.03em}
+    h1{margin:0;font-family:var(--serif);font-weight:300;font-size:clamp(52px,7vw,104px);line-height:.98;letter-spacing:-.015em;max-width:9.5em}
+    h1 em{font-style:italic;font-weight:300}
+    .lead{margin:36px 0 0;max-width:30em;font-size:16.5px;color:var(--ink-2)}
+    .byline{margin-top:44px;display:grid;grid-template-columns:repeat(3,auto);gap:36px;font-size:13px;color:var(--muted);justify-content:start}
+    .byline span{border-top:1px solid var(--hair);padding-top:12px}
+    .byline b{display:block;color:var(--ink);font-weight:500;margin-bottom:2px}
+    .dial{aspect-ratio:1}
+    .dial svg{width:100%;height:100%;display:block}
+
+    .fields{padding:72px 0 88px;border-top:1px solid var(--hair)}
+    .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:44px}
+    .head h2{margin:0;font-family:var(--serif);font-weight:300;font-size:42px;line-height:1}
+    .head span{font-size:13px;color:var(--muted)}
+    .cols{display:grid;grid-template-columns:repeat(4,1fr)}
+    .col{padding-right:32px;margin-right:32px;border-right:1px solid var(--hair)}
+    .col:last-child{border-right:0;margin-right:0;padding-right:0}
+    .col h3{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.1}
+    .col p{margin:0;color:var(--ink-2)}
+    .col .tag{margin-top:18px;font-size:12.5px;color:var(--muted)}
+
+    .creed{padding:96px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);text-align:center}
+    .creed .rule{width:40px;height:1px;background:var(--bronze);margin:0 auto 32px}
+    .creed h2{margin:0 auto;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(36px,5vw,68px);line-height:1.08;max-width:15em}
+    .creed p{margin:28px auto 0;max-width:36em;color:var(--ink-2)}
+
+    .dev{padding:72px 0 96px}
+    .dev .head{margin-bottom:12px}
+    .dev .head h2{font-size:34px}
+    .dev ul{list-style:none;margin:0;padding:0}
+    .dev li{border-top:1px solid var(--hair)}
+    .dev li:last-child{border-bottom:1px solid var(--hair)}
+    .dev a{display:grid;grid-template-columns:240px 1fr auto;gap:28px;padding:20px 0;align-items:baseline}
+    .dev a:hover .name{color:var(--bronze)}
+    .dev .name{font-family:var(--serif);font-size:27px;font-weight:400;transition:color .15s}
+    .dev .what{color:var(--ink-2)}
+    .dev .host{font-size:13px;color:var(--muted)}
+    .dev .host::after{content:" \2197"}
+
+    footer .shell{padding:28px 0 56px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between}
+    footer a{color:var(--ink-2)}
+
+    @media(max-width:980px){.hero{grid-template-columns:1fr;gap:40px}.dial{max-width:460px}.cols{grid-template-columns:1fr 1fr;gap:36px 0}.col:nth-child(2){border-right:0;margin-right:0;padding-right:0}.dev a{grid-template-columns:1fr;gap:4px}}
+    @media(max-width:620px){.shell{width:min(calc(100% - 32px),var(--max))}header .shell{height:64px}nav{gap:18px}.hero{padding:56px 0 48px}h1{font-size:clamp(44px,12vw,64px)}.byline{grid-template-columns:1fr;gap:14px}.dial{max-width:320px}.fields{padding:56px 0 64px}.cols{grid-template-columns:1fr;gap:28px}.col{border-right:0;margin-right:0;padding-right:0}.head{flex-direction:column;gap:6px;align-items:flex-start}.creed{padding:64px 0}.dev .name{font-size:24px}footer .shell{flex-direction:column;gap:6px}}
+  </style>
+</head>
+<body>
+  <header><div class="shell">
+    <span>leestory.com</span>
+    <nav><a href="#fields">Fields</a><a href="#development">In development</a><a href="mailto:leestory0314@gmail.com">Contact</a></nav>
+  </div></header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <div class="kicker">Cloud Architect · AI Technologist · Builder</div>
+        <h1>The quiet work of <em>researching</em>, and building, what comes next.</h1>
+        <p class="lead">I design systems, explore technology, and turn complex ideas into working realities. Technology keeps moving; the work is to keep studying it, and to keep making things that hold up.</p>
+        <div class="byline">
+          <span><b>Fields</b>Architecture · AI · Strategy · Build</span>
+          <span><b>In development</b>Products in operation</span>
+          <span><b>Contact</b><a href="mailto:leestory0314@gmail.com">leestory0314@gmail.com</a></span>
+        </div>
+      </div>
+      <div class="dial" aria-hidden="true">
+        <svg viewBox="0 0 600 600">
+          <defs><line id="t" x1="300" y1="18" x2="300" y2="34" stroke="#8a6a3b" stroke-width="1"/><line id="s" x1="300" y1="18" x2="300" y2="26" stroke="#8a6a3b" stroke-width=".8" opacity=".55"/></defs>
+          <g>
+            <use href="#t"/><use href="#t" transform="rotate(30 300 300)"/><use href="#t" transform="rotate(60 300 300)"/><use href="#t" transform="rotate(90 300 300)"/><use href="#t" transform="rotate(120 300 300)"/><use href="#t" transform="rotate(150 300 300)"/><use href="#t" transform="rotate(180 300 300)"/><use href="#t" transform="rotate(210 300 300)"/><use href="#t" transform="rotate(240 300 300)"/><use href="#t" transform="rotate(270 300 300)"/><use href="#t" transform="rotate(300 300 300)"/><use href="#t" transform="rotate(330 300 300)"/>
+            <use href="#s" transform="rotate(10 300 300)"/><use href="#s" transform="rotate(20 300 300)"/><use href="#s" transform="rotate(40 300 300)"/><use href="#s" transform="rotate(50 300 300)"/><use href="#s" transform="rotate(70 300 300)"/><use href="#s" transform="rotate(80 300 300)"/><use href="#s" transform="rotate(100 300 300)"/><use href="#s" transform="rotate(110 300 300)"/><use href="#s" transform="rotate(130 300 300)"/><use href="#s" transform="rotate(140 300 300)"/><use href="#s" transform="rotate(160 300 300)"/><use href="#s" transform="rotate(170 300 300)"/><use href="#s" transform="rotate(190 300 300)"/><use href="#s" transform="rotate(200 300 300)"/><use href="#s" transform="rotate(220 300 300)"/><use href="#s" transform="rotate(230 300 300)"/><use href="#s" transform="rotate(250 300 300)"/><use href="#s" transform="rotate(260 300 300)"/><use href="#s" transform="rotate(280 300 300)"/><use href="#s" transform="rotate(290 300 300)"/><use href="#s" transform="rotate(310 300 300)"/><use href="#s" transform="rotate(320 300 300)"/><use href="#s" transform="rotate(340 300 300)"/><use href="#s" transform="rotate(350 300 300)"/>
+          </g>
+          <g fill="none" stroke="#8a6a3b" stroke-width="1">
+            <circle cx="300" cy="300" r="250" opacity=".35"/>
+            <circle cx="300" cy="300" r="214" opacity=".5" stroke-dasharray="1010 340" transform="rotate(-70 300 300)"/>
+            <circle cx="300" cy="300" r="178" opacity=".4" stroke-dasharray="640 480" transform="rotate(40 300 300)"/>
+            <circle cx="300" cy="300" r="142" opacity=".6" stroke-dasharray="520 372" transform="rotate(150 300 300)"/>
+            <circle cx="300" cy="300" r="106" opacity=".35"/>
+            <circle cx="300" cy="300" r="70" opacity=".6" stroke-dasharray="300 140" transform="rotate(-20 300 300)"/>
+            <circle cx="300" cy="300" r="34" opacity=".45"/>
+          </g>
+          <g stroke="#8a6a3b" stroke-width="1">
+            <path d="M300 300 L452 164" opacity=".8"/>
+            <path d="M300 300 L214 418" opacity=".45"/>
+          </g>
+          <g fill="#8a6a3b"><circle cx="452" cy="164" r="4"/><circle cx="214" cy="418" r="2.5" opacity=".7"/><circle cx="300" cy="300" r="3"/></g>
+          <g fill="none" stroke="#8a6a3b" stroke-width="1" opacity=".9"><circle cx="452" cy="164" r="10"/></g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="fields" id="fields">
+      <div class="head"><h2>What defines the work</h2><span>Technology, architecture, strategy, and execution.</span></div>
+      <div class="cols">
+        <article class="col"><h3>Architecture</h3><p>Designing scalable, resilient cloud foundations for what’s next.</p><div class="tag">People · Platforms · Possibilities</div></article>
+        <article class="col"><h3>AI &amp; Technology</h3><p>Exploring AI and emerging technology to solve real-world problems.</p><div class="tag">Curiosity · Research · Real impact</div></article>
+        <article class="col"><h3>Strategy</h3><p>Connecting technology, people, and opportunity with practical direction.</p><div class="tag">Insight · Alignment · Lasting value</div></article>
+        <article class="col"><h3>Build</h3><p>Turning ideas into working products, platforms, and measurable progress.</p><div class="tag">Ideas · Execution · Real-world results</div></article>
+      </div>
+    </section>
+
+    <section class="creed">
+      <div class="rule"></div>
+      <h2>Technology is a tool. A better tomorrow is the goal.</h2>
+      <p>I believe in the power of technology to expand human potential, not replace it. I build thoughtful systems, explore bold ideas, and focus on solutions that create practical, lasting value.</p>
+    </section>
+
+    <section class="dev" id="development">
+      <div class="head"><h2>In development</h2><span>Products in operation. Each opens in a new tab.</span></div>
+      <ul>
+        <li><a href="https://am.leestory.com/" target="_blank" rel="noopener"><span class="name">Auto-Minutes</span><span class="what">Meeting minutes from a recording, with decisions and action items.</span><span class="host">am.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
+        <li><a href="https://omni.leestory.com/" target="_blank" rel="noopener"><span class="name">OmniSecure</span><span class="what">Web and AI security assessment mapped to public-sector standards.</span><span class="host">omni.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
+        <li><a href="https://archlens.leestory.com/" target="_blank" rel="noopener"><span class="name">ArchLens</span><span class="what">Monolith-to-services design, verified against the build.</span><span class="host">archlens.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer><div class="shell">
+    <a href="mailto:leestory0314@gmail.com">leestory0314@gmail.com</a>
+    <span>Updated October 2026</span>
+  </div></footer>
+</body>
+</html>
