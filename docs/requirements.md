@@ -26,6 +26,9 @@
 | REQ-017 | 2026-10-10 | "In development는 목록화 되어 있던 시안 journal 처럼 해봐 그리고 mesh에만 적용해" · "한글버전과 영문 버전을 두고 기본을 영문으로" · "전체 사이트를 영문과 국문으로" | 세션 지시 | 완료 — `final-mesh.html` 행 목록, 두 시안 모두 EN 기본 + KO 전환. 채택 대기 |
 | REQ-018 | 2026-10-10 | "한글 표기 … asis tobe 변경 사항을 보고후 변경" · "hero 영역의 mesh영역은 영문 그대로" · (확정 표 전달) "수정사항 반영해" | 세션 지시 | 완료 — `docs/copy-ko.md`, `tools/gen-final.js` T.ko 확정본, 그래픽 라벨 영문 유지 |
 | REQ-019 | 2026-10-10 | "1. 히어로그래픽은 Mesh로 / 2. 실명은 안 넣는다. leestory.com … 디자인 한번 해봐" · "A로 결정 / 푸시 승인" · "목업 폴더도 결정된것은 … old로" | 세션 지시 | 완료 — index.html 반영, push 승인 획득 |
+| REQ-020 | 2026-10-10 | "Technology is a tool. <줄바꿈> A better…" · "Archlens 설명에 Monolith-to-Microservices … 로 변경" · "Cloud Architect -> Cloud Native Architect 로 변경" | 세션 지시 | 완료 — `a442516` · `0748318` · `34a46a6`, push 승인 획득 |
+| REQ-021 | 2026-10-10 | "Hero title … 강조점이 뭐가 있을까 … The goal doesn’t. 가 더 상징적" → "C 시안으로 하고 The tool keeps changing.의 사이즈를 약간 작게(B보다는 크지만 줄바꿈은 안되게)" | 세션 지시 | 완료 — `d1cdeed`, 첫 줄 .72em·회색, 둘째 줄 파랑. `mockups/decided/hero-emphasis*` |
+| REQ-022 | 2026-10-10 | "L자를 모티브로 … favicon … 시안 5개(3개는 L, 2개는 자유)" → "파비콘은 1로 하자" | 세션 지시 | 완료 — `d1cdeed`, `assets/img/favicon.svg`·`favicon-32.png`·`apple-touch-icon.png`. 비교 시트 `mockups/decided/favicon/sheet.png` |
 
 ## 결정
 
@@ -54,3 +57,6 @@
 | REQ-012 | — (채택 후 ADR) | `mockups/old/concept-signal.html` · `concept-clear.html` · `concept-journal.html` + 1280/390 스크린샷 · `docs/design.md` 3차 표 |
 | REQ-013 | — (채택 후 ADR) | `mockups/old/concept-blueprint.html` + 1280/390/copy1~3 스크린샷 · `docs/design.md` 4차 절 |
 | REQ-014 | — (채택 후 ADR) | `mockups/old/interact-*.html` + 스크린샷 · `tools/old/gen-interact.js` · `docs/design.md` 인터랙션 표 |
+| REQ-020 | — | `index.html` 신조 `span` 2개 · `assets/js/site.js` `creed_a`/`creed_b`·`p3`·`title`/`eyebrow` |
+| REQ-021 | ADR-0007 보완 | `assets/css/site.css` `h1 span` 규칙 · `mockups/decided/DECISIONS.md` · `docs/design.md` 2026-10-11 절 |
+| REQ-022 | ADR-0005 유지(루트에 두지 않음) | `assets/img/` 3파일 · `index.html` `<link rel="icon">` 3줄 |
