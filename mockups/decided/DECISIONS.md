@@ -10,7 +10,7 @@
 | 히어로 카피 | 3안 "The tool keeps changing. / The goal doesn’t." | `final-mesh.html` |
 | In development | Journal 식 행 목록(이름 · 한 줄 · 호스트 ↗) | `final-mesh.html` |
 | 프로젝트 | Auto-Minutes · OmniSecure · ArchLens (늘어나면 행 추가) | `final-mesh.html` |
-| 언어 | 영문 기본, 헤더 KO/EN 토글로 국문 전환. 국문 카피는 주인님 확정본 | `final-mesh.html`, `tools/gen-final.js` `T.ko` |
+| 언어 | 영문 기본, 헤더 KO/EN 토글로 국문 전환. 국문 카피는 주인님 확정본 | `index.html`, `assets/js/site.js` `COPY.ko` |
 | 헤더 표기 | 실명 없음. 노드 글리프 + leestory 굵게 + .com 회색 (A안 확정, 2026-10-10) | `brand-options.png` |
 | 분야 카드 | 제목을 아이콘 아래 고정 높이에 정렬 | `final-mesh.html` |
 

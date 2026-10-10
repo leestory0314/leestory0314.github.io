@@ -3,7 +3,7 @@
 - 호스팅: GitHub Pages. 저장소 `leestory0314/leestory0314.github.io`, 브랜치 `main`, 루트 디렉터리. `CNAME` 이 `leestory.com` 을 가리키고 DNS 는 `leestory0314.github.io` 로 CNAME 돼 있다(2026-10-10 실측 `nslookup leestory.com`).
 - **push 가 곧 배포다.** 보통 1~3분 안에 반영되고 CDN 캐시 `max-age=600` 이라 최대 10분 지연될 수 있다.
 
-## 배포 (에이전트)
+## 배포
 1. 로컬 확인: `node tools/serve.js` → `http://127.0.0.1:8765` 를 390px · 1280px 로 본다. 스크린샷은 `mockups/decided/` 에 둔다.
 2. 게이트: `docs/core/agent-rules.md` 의 세 줄.
 3. 커밋: `git add -A && git commit -m "feat(site): …"`.

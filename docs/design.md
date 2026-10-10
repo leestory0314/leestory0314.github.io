@@ -50,7 +50,7 @@
 채택되면 해당 HTML 의 `<style>` 을 `assets/css/site.css` 로, 본문을 `index.html` 로 옮기고 나머지 두 파일을 지운다. 프로젝트 추가는 `#development` 목록에 `<li>` 하나를 복사해 이름·한 줄·호스트를 바꾸는 것뿐이다.
 
 ## 채택 방향 (2026-10-10 4차) — `mockups/old/concept-blueprint.html`
-주인님 지시: **B(Clear) 레이아웃 + C(Journal) 스타일**, 인터랙티브 요소 강조, 원형 다이얼 대신 **클라우드·아키텍트를 연상시키는 추상 요소**, "In development" 는 **A(Signal) 레이아웃**(촘촘한 카드), 히어로 카피는 카피라이터 후보 3안.
+주인님 지시: **B(Clear) 레이아웃 + C(Journal) 스타일**, 인터랙티브 요소 강조, 원형 다이얼 대신 **클라우드·아키텍트를 연상시키는 추상 요소**, "In development" 는 **A(Signal) 레이아웃**(촘촘한 카드), 히어로 카피는 후보 3안.
 
 - 구조: 가운데 정렬 히어로(역할 줄 · 세리프 헤드라인 · 리드 · 버튼 둘) → 도면 스테이지 → 2×2 Fields 타일 → 가운데 정렬 신조 → 촘촘한 프로젝트 카드(auto-fill) → 푸터.
 - 재료: Cormorant Garamond 300/이탤릭 + Inter. 본색 `#f4f2ee`, 종이 `#faf9f6`, 브론즈 `#8a6a3b`, 헤어라인 `#d9d4cb`.
@@ -63,7 +63,7 @@
   5. 섹션·타일·카드가 **스크롤에 맞춰 한 번 떠오른다**(IntersectionObserver).
   6. 타일 호버 시 브론즈 밑줄이 왼쪽에서 그어지고, 프로젝트 카드 호버 시 왼쪽 브론즈 막대와 ↗ 이동.
 - 시안 전용 장치: `#static` 해시 = 애니메이션 완료 상태(스크린샷용). 오른쪽 아래 "Copy 1·2·3" 버튼과 `#copy1~3` 해시 = 히어로 카피 후보 전환. **채택 시 둘 다 제거**한다.
-- 히어로 카피 후보(카피라이터 에이전트, 영문):
+- 히어로 카피 후보(영문):
   1. 방법 — "Research it, build it, run it." / "I design cloud platforms and AI systems, then build on them end to end: platform, models, product, operations. The research never stops, and neither does the building." (추천)
   2. 결과 — "Complex ideas, running in production." / "I design systems, explore technology, and turn complex ideas into working realities: a production-grade cloud platform of my own, and the products that run on it today."
   3. 관점 — "The tool keeps changing. The goal doesn’t." / "So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them."
