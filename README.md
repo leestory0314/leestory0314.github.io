@@ -4,12 +4,22 @@
 
 ## 어디서 도나
 - **GitHub Pages.** 저장소 `leestory0314/leestory0314.github.io`, 브랜치 `main` 루트. `CNAME` = `leestory.com`.
-- 빌드 도구 없음. `index.html` 한 장에 CSS 내장. **`main` push 가 곧 배포**다(승인 후).
+- 빌드 도구 없음. **`main` push 가 곧 배포**다(승인 후).
+
+## 디렉토리
+| 자리 | 무엇 |
+|---|---|
+| `/` (루트) | GitHub Pages 가 읽는 파일만: `index.html` · `CNAME` · `ads.txt` |
+| `assets/` | 스타일(`css/site.css`)·이미지 |
+| `docs/` | 요건·결정·규칙·런북·디자인 문서 |
+| `mockups/` | 확인용 스크린샷·목업 |
+| `tools/` | 로컬 확인용 도구(`serve.js`) |
 
 ## 파일
 | 파일 | 역할 |
 |---|---|
-| `index.html` | 페이지 전체 |
+| `index.html` | 페이지 구조와 내용 |
+| `assets/css/site.css` | 디자인 토큰·배치·다크 모드 |
 | `CNAME` | 사용자 지정 도메인. 지우지 않는다 |
 | `ads.txt` | AdSense 소유 확인. 지우지 않는다 |
 | `CLAUDE.md` | 에이전트 규칙 (agent-baseline v1.0 + 이 저장소 규칙) |
@@ -17,11 +27,13 @@
 | `docs/core/agent-rules.md` | 에이전트 실행·커밋·게이트 규칙 |
 | `docs/requirements.md` | 요건(REQ)·결정(ADR) 추적표 |
 | `docs/runbook/` | 배포·장애 런북 |
+| `mockups/*.png` | 데스크톱 1280 · 폰 390 · 다크 스크린샷 |
+| `tools/serve.js` | 로컬 정적 서버 |
 
 ## 로컬에서 보기
 ```sh
-python -m http.server 8765
-# http://localhost:8765
+node tools/serve.js
+# http://127.0.0.1:8765
 ```
 
 ## 프로젝트 항목 추가
