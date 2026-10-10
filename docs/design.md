@@ -35,3 +35,14 @@
 - `index.html` 의 `<ul class="project-list">` 에 `<li>` 하나를 복사해 주소(`.host`)와 한 줄 설명(`.desc`)을 바꾼다. 설명은 "이름 — 무엇" 한 줄, 60자 안.
 - CSS 는 건드릴 필요 없다. 넷째 칩부터는 자동으로 다음 줄로 흐른다.
 - 확인: `node tools/serve.js` → `mockups/desktop-1280.png` · `mockups/mobile-390.png` 를 같은 이름으로 다시 찍는다.
+
+## 고도화 시안 (2026-10-10, 채택 대기)
+세 시안 모두 구조·문구·사진은 기존 그대로이고, LS 마크는 없다. 파일은 `mockups/variant-*.html`, 사진은 `../assets/hero.jpg` 를 참조한다.
+
+| 시안 | 한 줄 | 글꼴 | 바탕 | 프로젝트 띠 |
+|---|---|---|---|---|
+| A · Quiet | 여백과 가는 선으로 정리한 밝은 편집 디자인. 카드·그림자·격자 배경을 걷어냄 | Cormorant Garamond + Inter | 쿨 화이트 `#f9fafc` | 밑줄 링크 한 줄 |
+| B · Midnight | 짙은 남색 히어로에 사진을 녹이고 제목에 빛을 줌. 아래는 밝은 카드 | Fraunces + Inter | 남색 `#06102a` ↔ 밝은 `#f5f8fe` | 흰 칩 |
+| C · Gallery | 사진이 왼쪽 절반을 꽉 채우는 분할 히어로. 네 기둥은 큰 제목의 행 목록 | Newsreader + Inter | 순백 `#fff`, 파랑 `#0b4fd6` 한 점 | 타일 3칸 |
+
+채택되면 그 시안의 CSS 를 `assets/css/site.css` 로 옮기고 `index.html` 을 맞춘 뒤 이 문서의 "기존 페이지의 시각 언어" 절을 갱신한다. 나머지 두 시안 파일은 지운다.

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEESTORY — 시안 C · Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#fff;--ink:#101828;--ink-2:#394357;--muted:#7a8494;--accent:#0b4fd6;--line:#e6e9ef;--max:1280px;--serif:Newsreader,Georgia,serif;--sans:Inter,-apple-system,"Segoe UI","Noto Sans KR",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .shell{width:min(calc(100% - 56px),var(--max));margin:0 auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{height:80px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:var(--serif);font-size:24px;font-weight:400;letter-spacing:.1em}
+    .navlinks{display:flex;gap:34px;font-size:13.5px;color:var(--ink-2)}
+    .navlinks .cta{color:var(--accent)}
+    .hero{display:grid;grid-template-columns:1fr 1fr;min-height:min(calc(100vh - 80px),780px)}
+    .hero figure{margin:0;position:relative;overflow:hidden}
+    .hero img{width:100%;height:100%;object-fit:cover;object-position:60% center;display:block}
+    .hero figcaption{position:absolute;left:28px;bottom:24px;font-size:11.5px;letter-spacing:.14em;color:rgba(255,255,255,.85)}
+    .hero-copy{padding:72px clamp(28px,6vw,96px);display:flex;flex-direction:column;justify-content:center}
+    .kicker{font-size:12px;letter-spacing:.18em;color:var(--muted);margin-bottom:30px}
+    h1{margin:0;font-family:var(--serif);font-weight:300;font-size:clamp(72px,9.5vw,136px);line-height:.92;letter-spacing:-.035em}
+    .roles{margin-top:22px;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(22px,2.2vw,30px);color:var(--ink-2)}
+    .rule{width:40px;height:2px;background:var(--accent);margin:34px 0}
+    .lead{max-width:26em;font-size:clamp(18px,1.5vw,20px);line-height:1.65;color:var(--ink-2);margin:0}
+    .identity{padding:104px 0 72px}
+    .label{font-size:12px;letter-spacing:.18em;color:var(--muted)}
+    .intro{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;padding-bottom:28px;border-bottom:1px solid var(--ink)}
+    .intro p{margin:0;font-family:var(--serif);font-size:clamp(24px,2.4vw,32px);font-weight:300;line-height:1.3}
+    .rows{list-style:none;margin:0;padding:0}
+    .rows li{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:40px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line)}
+    .rows h2{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.2vw,44px);line-height:1}
+    .rows p{margin:0;font-size:16px;line-height:1.6;color:var(--ink-2)}
+    .rows .tags{font-size:12.5px;color:var(--muted);text-align:right}
+    .philosophy{padding:96px 0 120px;text-align:center}
+    .philosophy .rule{margin:0 auto 34px}
+    .statement{margin:0 auto;max-width:13em;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(40px,6vw,88px);line-height:1;letter-spacing:-.025em}
+    .philosophy p{max-width:36em;margin:38px auto 0;font-size:16px;line-height:1.75;color:var(--ink-2)}
+    .philosophy .small{margin-top:24px;font-size:12px;letter-spacing:.16em;color:var(--muted)}
+    .projects{padding:0 0 104px}
+    .projects .label{display:block;margin-bottom:16px}
+    .tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+    .tiles li+li{border-left:1px solid var(--line)}
+    .tiles a{display:block;padding:20px 22px;transition:background .2s}
+    .tiles a:hover{background:#f5f7fb}
+    .tiles .host{display:block;font-weight:500;font-size:15px}
+    .tiles .desc{display:block;margin-top:4px;font-size:13px;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:40px 0 56px}
+    .foot{display:flex;justify-content:space-between;gap:24px;font-size:13px;color:var(--ink-2)}
+    .foot .brand{font-size:18px}
+    @media(max-width:980px){.hero{grid-template-columns:1fr;min-height:0}.hero figure{order:2;aspect-ratio:16/10}.hero-copy{padding:64px 28px 56px}.rows li{grid-template-columns:1fr 1.6fr}.rows .tags{display:none}.intro{grid-template-columns:1fr;gap:16px}.tiles{grid-template-columns:1fr}.tiles li+li{border-left:0;border-top:1px solid var(--line)}}
+    @media(max-width:620px){.shell{width:min(calc(100% - 32px),var(--max))}.nav{height:66px}.navlinks a:not(.cta){display:none}h1{font-size:clamp(48px,16vw,88px)}.hero-copy{padding:48px 16px 40px}.hero figure{aspect-ratio:4/5}.identity{padding:72px 0 48px}.rows li{grid-template-columns:1fr;gap:12px;padding:26px 0}.philosophy{padding:72px 0 80px}.foot{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header><div class="shell nav">
+    <a class="brand" href="#top">LEESTORY</a>
+    <nav class="navlinks" aria-label="Primary"><a href="#about">About</a><a href="#projects">Projects</a><a href="#philosophy">Philosophy</a><a class="cta" href="mailto:leestory0314@gmail.com">Contact</a></nav>
+  </div></header>
+
+  <main id="top">
+    <section class="hero" id="about">
+      <figure><img src="../assets/hero.jpg" alt="A person looking toward a futuristic city skyline" /><figcaption>Technology for a more human tomorrow</figcaption></figure>
+      <div class="hero-copy">
+        <div class="kicker">Ideas · Systems · People · A Brighter Tomorrow</div>
+        <h1>LEESTORY</h1>
+        <div class="roles">Cloud Architect · AI Technologist · Builder</div>
+        <div class="rule"></div>
+        <p class="lead">I design systems, explore technology, and turn complex ideas into working realities.</p>
+      </div>
+    </section>
+
+    <section class="identity"><div class="shell">
+      <div class="intro"><div class="label">What defines me</div><p>Technology, architecture, strategy, and execution.</p></div>
+      <ul class="rows">
+        <li><h2>Architecture</h2><p>Designing scalable, resilient cloud foundations for what’s next.</p><div class="tags">People · Platforms · Possibilities</div></li>
+        <li><h2>AI &amp; Technology</h2><p>Exploring AI and emerging technology to solve real-world problems.</p><div class="tags">Curiosity · Research · Real Impact</div></li>
+        <li><h2>Strategy</h2><p>Connecting technology, people, and opportunity with practical direction.</p><div class="tags">Insight · Alignment · Lasting Value</div></li>
+        <li><h2>Build</h2><p>Turning ideas into working products, platforms, and measurable progress.</p><div class="tags">Ideas · Execution · Real-world Results</div></li>
+      </ul>
+    </div></section>
+
+    <section class="philosophy" id="philosophy"><div class="shell">
+      <div class="rule"></div>
+      <h2 class="statement">Technology is a tool. A better tomorrow is the goal.</h2>
+      <p>I believe in the power of technology to expand human potential — not replace it. I build thoughtful systems, explore bold ideas, and focus on solutions that create practical, lasting value.</p>
+      <div class="small">Same curiosity. A brighter tomorrow.</div>
+    </div></section>
+
+    <section class="projects" id="projects"><div class="shell">
+      <span class="label">Now building</span>
+      <ul class="tiles">
+        <li><a href="https://am.leestory.com/"><span class="host">am.leestory.com</span><span class="desc">Auto-Minutes — meeting notes from a recording</span></a></li>
+        <li><a href="https://omni.leestory.com/"><span class="host">omni.leestory.com</span><span class="desc">OmniSecure — security assessment for web &amp; AI</span></a></li>
+        <li><a href="https://runon.life/"><span class="host">runon.life</span><span class="desc">RUNON — verified local sports coaches</span></a></li>
+      </ul>
+    </div></section>
+  </main>
+
+  <footer><div class="shell foot">
+    <div class="brand">LEESTORY</div>
+    <a href="mailto:leestory0314@gmail.com">leestory0314@gmail.com</a>
+    <div>Ideas · People · Progress · Always</div>
+  </div></footer>
+</body>
+</html>

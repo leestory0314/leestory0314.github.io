@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEESTORY — 시안 B · Midnight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{--navy:#06102a;--navy-2:#0b1a3f;--ice:#eef3ff;--ice-2:#b9c6e4;--ink:#0b1630;--ink-2:#3b4a63;--muted:#7383a0;--blue:#4aa3ff;--cyan:#7fe7ff;--bg:#f5f8fe;--line:rgba(11,22,48,.1);--max:1200px;--serif:Fraunces,Georgia,serif;--sans:Inter,-apple-system,"Segoe UI","Noto Sans KR",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .shell{width:min(calc(100% - 48px),var(--max));margin:0 auto}
+    .dark{background:radial-gradient(900px 600px at 80% 20%,rgba(74,163,255,.22),transparent 60%),linear-gradient(160deg,var(--navy),var(--navy-2));color:var(--ice)}
+    header{position:absolute;top:0;left:0;right:0;z-index:10}
+    .nav{height:88px;display:flex;align-items:center;justify-content:space-between;color:var(--ice)}
+    .brand{font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:.12em}
+    .navlinks{display:flex;align-items:center;gap:32px;font-size:13.5px;color:var(--ice-2)}
+    .navlinks a:hover{color:#fff}
+    .navlinks .cta{padding:9px 16px;border:1px solid rgba(238,243,255,.35);border-radius:999px;color:var(--ice)}
+    .hero{position:relative;min-height:min(92vh,820px);display:grid;align-items:center;padding:140px 0 100px;overflow:hidden}
+    .hero img{position:absolute;right:0;top:0;height:100%;width:70%;object-fit:cover;object-position:center;opacity:.85;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 50%);mask-image:linear-gradient(90deg,transparent 0%,#000 50%)}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,16,42,.05),rgba(6,16,42,.72));pointer-events:none}
+    .hero .shell{position:relative;z-index:2}
+    .kicker{font-size:12px;letter-spacing:.2em;color:var(--ice-2);margin-bottom:26px}
+    h1{margin:0;font-family:var(--serif);font-weight:300;font-size:clamp(80px,11vw,160px);line-height:.9;letter-spacing:-.03em;background:linear-gradient(100deg,#fff 20%,var(--blue) 65%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .roles{margin-top:22px;font-family:var(--serif);font-size:clamp(20px,2.3vw,28px);font-weight:300;color:var(--ice)}
+    .rule{width:64px;height:1px;background:linear-gradient(90deg,var(--blue),var(--cyan));margin:32px 0}
+    .lead{max-width:28em;font-size:clamp(18px,1.6vw,21px);line-height:1.6;color:var(--ice);margin:0}
+    .micro{margin-top:28px;font-size:12px;letter-spacing:.16em;color:var(--ice-2)}
+    .identity{padding:96px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:36px}
+    .label{font-size:12px;letter-spacing:.18em;color:var(--muted)}
+    .section-head p{margin:0;font-family:var(--serif);font-size:20px;color:var(--ink-2)}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{position:relative;padding:30px 26px;border-radius:18px;background:#fff;box-shadow:0 20px 50px -30px rgba(11,22,48,.25)}
+    .card::before{content:"";position:absolute;inset:0;border-radius:18px;padding:1px;background:linear-gradient(160deg,rgba(74,163,255,.6),rgba(127,231,255,.15) 50%,rgba(11,22,48,.06));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+    .card h2{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.1}
+    .card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+    .tags{margin-top:26px;font-size:12px;color:var(--muted)}
+    .philosophy{padding:0 0 96px}
+    .phil-box{border-radius:26px;padding:72px 64px;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+    .phil-box .label{color:var(--ice-2)}
+    .statement{margin:14px 0 0;font-family:var(--serif);font-weight:300;font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-.02em;color:#fff}
+    .phil-box p{margin:0;color:var(--ice);font-size:16px;line-height:1.75}
+    .phil-box .small{margin-top:24px;font-size:12px;letter-spacing:.16em;color:var(--ice-2)}
+    .projects{padding:0 0 96px}
+    .projects-bar{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+    .project-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+    .project-list a{display:inline-flex;align-items:baseline;gap:10px;padding:10px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13.5px;transition:.2s}
+    .project-list a:hover{border-color:var(--blue);box-shadow:0 10px 30px -14px rgba(74,163,255,.6)}
+    .project-list .host{font-weight:500}.project-list .desc{color:var(--muted);font-size:12.5px}
+    footer.dark{padding:44px 0}
+    .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:13px;color:var(--ice-2)}
+    .foot .brand{color:var(--ice);font-size:18px}
+    @media(max-width:980px){.hero img{width:100%;opacity:.35;-webkit-mask-image:linear-gradient(180deg,transparent,#000 40%);mask-image:linear-gradient(180deg,transparent,#000 40%)}.cards{grid-template-columns:1fr 1fr}.phil-box{grid-template-columns:1fr;padding:52px 40px;gap:36px}}
+    @media(max-width:620px){.shell{width:min(calc(100% - 32px),var(--max))}.nav{height:70px}.navlinks a:not(.cta){display:none}.hero{min-height:0;padding:120px 0 72px}h1{font-size:clamp(48px,16vw,92px)}.identity{padding:64px 0}.cards{grid-template-columns:1fr}.phil-box{padding:40px 26px;border-radius:20px}.projects-bar{flex-direction:column;align-items:flex-start;gap:16px}.project-list{flex-direction:column;width:100%}.project-list a{flex-direction:column;gap:3px;border-radius:14px;align-items:flex-start}.foot{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <header><div class="shell nav">
+    <a class="brand" href="#top">LEESTORY</a>
+    <nav class="navlinks" aria-label="Primary"><a href="#about">About</a><a href="#projects">Projects</a><a href="#philosophy">Philosophy</a><a class="cta" href="mailto:leestory0314@gmail.com">Contact</a></nav>
+  </div></header>
+
+  <main id="top">
+    <section class="hero dark" id="about">
+      <img src="../assets/hero.jpg" alt="" />
+      <div class="shell">
+        <div class="kicker">Ideas · Systems · People · A Brighter Tomorrow</div>
+        <h1>LEESTORY</h1>
+        <div class="roles">Cloud Architect · AI Technologist · Builder</div>
+        <div class="rule"></div>
+        <p class="lead">I design systems, explore technology, and turn complex ideas into working realities.</p>
+        <div class="micro">Technology for a more human tomorrow</div>
+      </div>
+    </section>
+
+    <section class="identity"><div class="shell">
+      <div class="section-head"><div class="label">What defines me</div><p>Technology, architecture, strategy, and execution.</p></div>
+      <div class="cards">
+        <article class="card"><h2>Architecture</h2><p>Designing scalable, resilient cloud foundations for what’s next.</p><div class="tags">People · Platforms · Possibilities</div></article>
+        <article class="card"><h2>AI &amp; Technology</h2><p>Exploring AI and emerging technology to solve real-world problems.</p><div class="tags">Curiosity · Research · Real Impact</div></article>
+        <article class="card"><h2>Strategy</h2><p>Connecting technology, people, and opportunity with practical direction.</p><div class="tags">Insight · Alignment · Lasting Value</div></article>
+        <article class="card"><h2>Build</h2><p>Turning ideas into working products, platforms, and measurable progress.</p><div class="tags">Ideas · Execution · Real-world Results</div></article>
+      </div>
+    </div></section>
+
+    <section class="philosophy" id="philosophy"><div class="shell">
+      <div class="phil-box dark">
+        <div><div class="label">My philosophy</div><h2 class="statement">Technology is a tool.<br>A better tomorrow is the goal.</h2></div>
+        <div><p>I believe in the power of technology to expand human potential — not replace it. I build thoughtful systems, explore bold ideas, and focus on solutions that create practical, lasting value.</p><div class="small">Same curiosity. A brighter tomorrow.</div></div>
+      </div>
+    </div></section>
+
+    <section class="projects" id="projects"><div class="shell projects-bar">
+      <div class="label">Now building</div>
+      <ul class="project-list">
+        <li><a href="https://am.leestory.com/"><span class="host">am.leestory.com</span><span class="desc">Auto-Minutes — meeting notes from a recording</span></a></li>
+        <li><a href="https://omni.leestory.com/"><span class="host">omni.leestory.com</span><span class="desc">OmniSecure — security assessment for web &amp; AI</span></a></li>
+        <li><a href="https://runon.life/"><span class="host">runon.life</span><span class="desc">RUNON — verified local sports coaches</span></a></li>
+      </ul>
+    </div></section>
+  </main>
+
+  <footer class="dark"><div class="shell foot">
+    <div class="brand">LEESTORY</div>
+    <a href="mailto:leestory0314@gmail.com">leestory0314@gmail.com</a>
+    <div>Ideas · People · Progress · Always</div>
+  </div></footer>
+</body>
+</html>

@@ -15,6 +15,7 @@
 | REQ-006 | 2026-10-10 | "상위 base-environment 폴더 확인해서 에이전트 규칙 준수" | 세션 지시 | 완료 (CLAUDE.md · docs/) |
 | REQ-007 | 2026-10-10 | "스크린샷은 지금 프로젝트 폴더 아래로 폴더 만들어서 옮겨" · "소스와 문서 목업등은 다 디렉토리로 나누어서 저장해" | 세션 지시 | 완료 |
 | REQ-008 | 2026-10-10 | "기본 랜딩은 그냥 기존처럼 내 프로필만 표시하고, 진행중인 프로젝트는 별도로 작은 영역에 표기만 해야해" | 세션 지시 | 완료 |
+| REQ-009 | 2026-10-10 | "기존 랜딩페이지를 좀더 고급스럽게 고도화해서 시안 3가지 보고해. 그리고 LS라고 적힌 부분은 빼" | 세션 지시 | 시안 3종 `mockups/variant-{a,b,c}.html` 보고, LS 제거 완료(e33bcff). 채택 대기 |
 
 ## 결정
 
@@ -37,3 +38,4 @@
 | REQ-006 | — | `CLAUDE.md` · `docs/**` · `README.md` |
 | REQ-007 | ADR-0005 · ADR-0001 개정 | `assets/css/site.css` · `mockups/` · `tools/serve.js` · `README.md` 디렉토리 표 |
 | REQ-008 | ADR-0006 | `index.html` `#projects` · `assets/css/site.css` 마지막 절 · `docs/design.md` |
+| REQ-009 | — (채택 후 ADR) | `mockups/variant-a.html` · `variant-b.html` · `variant-c.html` + 각 1280/390 스크린샷 |
