@@ -91,7 +91,16 @@
 - Globe 구체감: 몸체 방사 음영, 가장자리 어두움(limb), 좌상단 광택, 경위선(30° 간격, 앞면만), 깊이에 따른 점 크기, 바깥 후광. 스테이지 배경을 **짙은 먹색**으로 바꿔 밝은 페이지 안의 한 장면처럼 보이게 했다.
 - Mesh 배경: 종이 그라데이션 + 20px 점 격자.
 
+## 채택 방향 정정 (2026-10-10) — `mockups/final-mesh.html` · `mockups/final-globe.html`
+주인님 정정: **레이아웃은 `concept-signal.html`, 스타일은 `concept-clear.html`**. (앞서 B+C 로 만든 `concept-blueprint.html` 과 `interact-*.html` 은 반대로 적용한 것이라 참고용으로만 남긴다.)
+
+- 레이아웃(Signal): 투명 헤더 → 왼쪽 정렬 히어로(역할 줄 · 두 줄 헤드라인 · 리드 · Focus/In development/Contact 메타) + 오른쪽 그래픽 → 4열 카드 → 두 열 신조 박스 → 촘촘한 프로젝트 카드(auto-fill) → 푸터.
+- 스타일(Clear): 흰 바탕 `#fff`/`#f5f5f7`, 먹색 `#1d1d1f`, 파랑 `#0a58e0`, Manrope 700 제목 + Inter, 둥근 모서리 16–22px, 부드러운 그림자, 헤어라인 `#e5e5ea`.
+- 카피: 3안 확정("The tool keeps changing. The goal doesn’t."). 프로젝트는 Auto-Minutes · OmniSecure · ArchLens, 늘어나면 자동으로 흐름.
+- 히어로 그래픽(두 판, 선택 대기): **Mesh** = 포인터에 반응하는 노드망, 허브 6개에 강점 라벨(호버 시 보조 한 줄). **Globe** = 흰 구체(음영·광택·경위선·후광), 파란 점 720개, 강점 6개 지시선 라벨, 드래그 회전·자전. 둘 다 `prefers-reduced-motion` 에서 정지, `#static` 캡처 모드.
+- 생성기: `tools/gen-final.js` (`node tools/gen-final.js .`). 채택 시 해당 HTML 을 `index.html`/`assets/css/site.css` 로 옮기고 시안·생성기를 정리한다.
+
 ## 주인님 판단이 필요한 것
-- 인터랙션 1~5 중 선택(또는 기준 시안 유지, 또는 조합).
+- 히어로 그래픽 Mesh / Globe 중 선택.
 - 이름: 헤더의 `leestory.com` 자리에 실명 한 줄을 둘지.
 - 언어: 공공 접점을 위해 한국어 한 줄 요약을 둘지.
