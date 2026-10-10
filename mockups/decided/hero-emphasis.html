@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hero emphasis options</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../assets/css/site.css" />
+<style>
+  body { background: #e9eaee; }
+  .sheet { display: grid; gap: 24px; padding: 24px; }
+  .opt { position: relative; background: #fff; border-radius: 18px; overflow: hidden; }
+  .opt .hero { min-height: 0; padding: 72px 0 64px; }
+  .opt .tag { position: absolute; top: 18px; left: 24px; z-index: 3; font: 600 13px/1 Manrope, sans-serif; color: #0a58e0; letter-spacing: .02em; }
+  .opt .tag small { color: #6e6e73; font-weight: 500; margin-left: 10px; letter-spacing: 0; }
+  .reveal { animation: none; }
+
+  /* A. invert: first line steps back, second line carries the weight */
+  .a h1 span:first-child { color: var(--ink-2); font-weight: 500; }
+  .a h1 span + span { color: var(--ink); font-weight: 700; }
+
+  /* B. scale: first line as a smaller lead-in, second line at full size */
+  .b h1 span:first-child { font-size: .5em; font-weight: 500; color: var(--ink-2); letter-spacing: -.02em; margin-bottom: .45em; }
+  .b h1 span + span { color: var(--ink); font-weight: 700; }
+
+  /* C. color: second line in the accent blue */
+  .c h1 span:first-child { color: var(--ink-2); font-weight: 500; }
+  .c h1 span + span { color: var(--accent); font-weight: 700; }
+
+  /* D. fade: first line dissolves toward its end, second line stays solid */
+  .d h1 span:first-child { font-weight: 500; background: linear-gradient(90deg, var(--ink-2) 20%, rgba(81,81,84,.14) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .d h1 span + span { color: var(--ink); font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="opt a"><span class="tag">A<small>Invert — first line muted, second line bold</small></span>
+    <section class="hero"><div class="grid"></div><div class="shell">
+      <div class="eyebrow"><i></i><span>Cloud Native Architect · AI Technologist · Builder</span></div>
+      <h1><span>The tool keeps changing.</span><span>The goal doesn’t.</span></h1>
+      <p class="lead">So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them.</p>
+    </div></section></div>
+
+  <div class="opt b"><span class="tag">B<small>Scale — first line as a small lead-in</small></span>
+    <section class="hero"><div class="grid"></div><div class="shell">
+      <div class="eyebrow"><i></i><span>Cloud Native Architect · AI Technologist · Builder</span></div>
+      <h1><span>The tool keeps changing.</span><span>The goal doesn’t.</span></h1>
+      <p class="lead">So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them.</p>
+    </div></section></div>
+
+  <div class="opt c"><span class="tag">C<small>Color — second line in the accent blue</small></span>
+    <section class="hero"><div class="grid"></div><div class="shell">
+      <div class="eyebrow"><i></i><span>Cloud Native Architect · AI Technologist · Builder</span></div>
+      <h1><span>The tool keeps changing.</span><span>The goal doesn’t.</span></h1>
+      <p class="lead">So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them.</p>
+    </div></section></div>
+
+  <div class="opt d"><span class="tag">D<small>Fade — first line dissolves, second line stays</small></span>
+    <section class="hero"><div class="grid"></div><div class="shell">
+      <div class="eyebrow"><i></i><span>Cloud Native Architect · AI Technologist · Builder</span></div>
+      <h1><span>The tool keeps changing.</span><span>The goal doesn’t.</span></h1>
+      <p class="lead">So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them.</p>
+    </div></section></div>
+</div>
+<script>
+  if (location.hash === '#ko') {
+    document.documentElement.lang = 'ko';
+    var ko = [['클라우드 네이티브 아키텍트 · AI 엔지니어 · 서비스 구축 전문가'], ['도구들은 끊임없이 변합니다.', '목표는 변하지 않습니다.'],
+      ['저는 끊임없이 변화를 탐구하고, 변화 속에서도 견고하게 작동하는 것을 만듭니다. 클라우드 플랫폼과 AI 시스템을 설계하고, 두 기술을 결합해 실제 사용자가 필요로 하는 제품으로 구현합니다.']];
+    document.querySelectorAll('.eyebrow span').forEach(function (e) { e.textContent = ko[0][0]; });
+    document.querySelectorAll('h1').forEach(function (h) { h.children[0].textContent = ko[1][0]; h.children[1].textContent = ko[1][1]; });
+    document.querySelectorAll('.lead').forEach(function (p) { p.textContent = ko[2][0]; });
+  }
+</script>
+</body>
+</html>

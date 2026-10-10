@@ -116,3 +116,10 @@
 ## 채택 (2026-10-10)
 - 헤더 표기 A안 확정. `mockups/decided/final-mesh.html` 을 운영 파일로 옮겼다: 구조는 `index.html`, 스타일은 `assets/css/site.css`, 언어 사전·전환·스크롤 리빌·Mesh 는 `assets/js/site.js`. `assets/hero.jpg` 는 쓰지 않아 삭제. 생성기는 `tools/old/` 로.
 - 이후 수정은 운영 파일에서 직접 한다. **프로젝트 추가**: `index.html` 의 `#development` 목록에 `<li>` 하나 복사(이름·호스트), 설명은 `assets/js/site.js` 의 `I18N.en`·`I18N.ko` 에 `p4` 처럼 키를 더하고 `<span class="what" data-i18n="p4">` 로 연결. **문구 수정**: 두 사전만 고치면 양쪽 언어가 바뀐다. 영문 기본값은 `index.html` 본문에도 같은 문구가 있어야 한다(JS 없이 보이는 값).
+
+## 2026-10-11 결정
+
+- **히어로 제목 위계**: 시안 A(반전)·B(크기)·C(색)·D(페이드) 중 **C + 첫 줄 축소** 채택. 첫 줄은 `h1 span:first-child` 에서 `.72em`·500·`--ink-2`, 둘째 줄은 `--accent`·700. 1280/390 EN·KO 모두 첫 줄이 한 줄에 들어가는 것을 확인했다. 시트는 `mockups/decided/hero-emphasis-*.png`.
+- **파비콘**: 5안 중 **1안 L · Block** 채택. `assets/img/favicon.svg`(원본) · `favicon-32.png`(대체) · `apple-touch-icon.png`(180, 모서리 없는 정사각형 — iOS 가 자체 마스크를 씌운다). 루트에는 두지 않고 `<link rel="icon">` 으로 연결한다. 비교 시트 `mockups/decided/favicon/sheet.png`.
+- **신조 제목**: 두 문장을 각각 블록 `span` 으로 나눠 줄바꿈 위치를 고정했다(언어 키 `creed_a` / `creed_b`).
+- **직함**: "Cloud Architect" → "Cloud Native Architect"(제목·OG·아이브로우). ArchLens 설명은 "Monolith-to-Microservices design, verified against the build."

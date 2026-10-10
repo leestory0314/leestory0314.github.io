@@ -16,3 +16,11 @@
 
 확인용 스크린샷: `final-mesh-1280.png` · `final-mesh-390.png` (영문), `final-mesh-ko-1280.png` · `final-mesh-ko-390.png` (국문).
 2026-10-10 채택 완료: `index.html` + `assets/css/site.css` + `assets/js/site.js` 가 원본이다. 이 폴더의 `final-mesh.html` 은 채택 시점 사본, 생성기는 `tools/old/gen-final.js` 에 보관.
+
+## 2026-10-11 추가 결정
+
+| 항목 | 결정 | 파일 |
+|---|---|---|
+| 히어로 제목 위계 | C안 + 첫 줄 축소. 첫 줄 "The tool keeps changing." 은 72% 크기·회색·중간 굵기로 한 줄에, 둘째 줄 "The goal doesn’t." 은 본래 크기·파랑 `#0a58e0`·굵게 | `hero-emphasis.html`, `hero-emphasis-en.png`, `hero-emphasis-ko.png` |
+| 파비콘 | 1안 L · Block — 파랑 둥근 사각형에 흰 기하학 L. SVG 원본 + 32px PNG 대체 + 180px 터치 아이콘 | `favicon/f1.svg` → `assets/img/favicon.svg`, 비교 시트 `favicon/sheet.png` |
+| 신조 제목 | 문장 단위 두 줄 고정("Technology is a tool." / "A better tomorrow is the goal.") | `index.html` |
