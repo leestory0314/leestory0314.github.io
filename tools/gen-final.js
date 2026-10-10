@@ -123,7 +123,11 @@ const page = (art, extraCss, js, devHtml, devCss) => `<!DOCTYPE html>
 
     header{position:absolute;top:0;left:0;right:0;z-index:5}
     .nav{height:84px;display:flex;align-items:center;justify-content:space-between;font-size:14px}
-    .site{color:var(--muted)}
+    .brand{display:inline-flex;align-items:center;gap:9px;color:var(--ink);font-size:14px}
+    .brand .mark{width:18px;height:18px;flex:none}
+    .brand b{font-family:var(--display);font-weight:700;letter-spacing:-.01em}
+    .brand em{font-style:normal;color:var(--muted);font-weight:500}
+    .brand:hover em{color:var(--ink-2)}
     nav{display:flex;align-items:center;gap:30px;color:var(--ink-2)}
     nav a:hover{color:var(--ink)}
     nav .cta{padding:8px 15px;border:1px solid var(--line-2);border-radius:999px;color:var(--ink);background:rgba(255,255,255,.7);backdrop-filter:blur(8px)}
@@ -196,7 +200,7 @@ const page = (art, extraCss, js, devHtml, devCss) => `<!DOCTYPE html>
 </head>
 <body>
   <header><div class="shell nav">
-    <span class="site">leestory.com</span>
+    <a class="brand" href="#top" aria-label="leestory.com"><svg class="mark" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 13.5 9 4.5l5.5 9" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M3.5 13.5h11" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".35"/><circle cx="9" cy="4.5" r="2.2" fill="#0a58e0"/><circle cx="3.5" cy="13.5" r="1.7" fill="currentColor"/><circle cx="14.5" cy="13.5" r="1.7" fill="currentColor"/></svg><span><b>leestory</b><em>.com</em></span></a>
     <nav><a href="#fields" ${t("nav_fields")}>${en.nav_fields}</a><a href="#development" ${t("nav_dev")}>${en.nav_dev}</a><a class="cta" href="mailto:leestory0314@gmail.com" ${t("nav_contact")}>${en.nav_contact}</a><button class="lang" id="lang" type="button" aria-label="${en.lang_aria}">${en.lang_btn}</button></nav>
   </div></header>
 
