@@ -280,7 +280,7 @@ const meshArt = `<canvas id="mesh" width="880" height="720" aria-label="A networ
 const meshCss = `.art canvas{cursor:crosshair}`;
 const meshJs = `(function(){var c=document.getElementById('mesh');if(!c)return;var ctx=c.getContext('2d');var W=880,H=720,dpr=Math.min(window.devicePixelRatio||1,2);c.width=W*dpr;c.height=H*dpr;ctx.scale(dpr,dpr);
 var still=matchMedia('(prefers-reduced-motion: reduce)').matches||document.documentElement.classList.contains('static');
-function S(){return (I18N[LANG]||I18N.en).S}
+function S(){return I18N.en.S}
 var seed=7;function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
 var hubs=[[330,200],[560,140],[720,265],[300,430],[520,500],[700,465]];
 var N=70,nodes=[],i,j;
@@ -303,7 +303,7 @@ const globeArt = `<canvas id="globe" width="880" height="720" aria-label="A shad
 const globeCss = `.art canvas{cursor:grab;touch-action:none}.art canvas:active{cursor:grabbing}`;
 const globeJs = `(function(){var c=document.getElementById('globe');if(!c)return;var ctx=c.getContext('2d');var W=880,H=720,dpr=Math.min(window.devicePixelRatio||1,2);c.width=W*dpr;c.height=H*dpr;ctx.scale(dpr,dpr);
 var still=matchMedia('(prefers-reduced-motion: reduce)').matches||document.documentElement.classList.contains('static');
-function S(){return (I18N[LANG]||I18N.en).S}
+function S(){return I18N.en.S}
 var FONT='Inter, "Noto Sans KR", system-ui, sans-serif';
 var R=236,cx=450,cy=360,N=720,pts=[],i;for(i=0;i<N;i++){var y=1-(i/(N-1))*2,r=Math.sqrt(1-y*y),th=i*2.399963;pts.push([r*Math.cos(th),y,r*Math.sin(th)])}
 function ll(la,lo){la*=Math.PI/180;lo*=Math.PI/180;return [Math.cos(la)*Math.cos(lo),Math.sin(la),Math.cos(la)*Math.sin(lo)]}

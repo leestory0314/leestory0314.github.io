@@ -195,7 +195,7 @@
     })();
     (function(){var c=document.getElementById('mesh');if(!c)return;var ctx=c.getContext('2d');var W=880,H=720,dpr=Math.min(window.devicePixelRatio||1,2);c.width=W*dpr;c.height=H*dpr;ctx.scale(dpr,dpr);
 var still=matchMedia('(prefers-reduced-motion: reduce)').matches||document.documentElement.classList.contains('static');
-function S(){return (I18N[LANG]||I18N.en).S}
+function S(){return I18N.en.S}
 var seed=7;function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
 var hubs=[[330,200],[560,140],[720,265],[300,430],[520,500],[700,465]];
 var N=70,nodes=[],i,j;

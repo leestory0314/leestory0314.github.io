@@ -182,7 +182,7 @@
     })();
     (function(){var c=document.getElementById('globe');if(!c)return;var ctx=c.getContext('2d');var W=880,H=720,dpr=Math.min(window.devicePixelRatio||1,2);c.width=W*dpr;c.height=H*dpr;ctx.scale(dpr,dpr);
 var still=matchMedia('(prefers-reduced-motion: reduce)').matches||document.documentElement.classList.contains('static');
-function S(){return (I18N[LANG]||I18N.en).S}
+function S(){return I18N.en.S}
 var FONT='Inter, "Noto Sans KR", system-ui, sans-serif';
 var R=236,cx=450,cy=360,N=720,pts=[],i;for(i=0;i<N;i++){var y=1-(i/(N-1))*2,r=Math.sqrt(1-y*y),th=i*2.399963;pts.push([r*Math.cos(th),y,r*Math.sin(th)])}
 function ll(la,lo){la*=Math.PI/180;lo*=Math.PI/180;return [Math.cos(la)*Math.cos(lo),Math.sin(la),Math.cos(la)*Math.sin(lo)]}
