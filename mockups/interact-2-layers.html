@@ -91,16 +91,17 @@
     .dev .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px}
     .dev .head h2{font-size:clamp(30px,3.4vw,42px);margin:0}
     .dev .head span{font-size:13px;color:var(--muted)}
-    .dev ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;list-style:none;padding:0;margin:0}
-    .dev a{position:relative;display:block;padding:18px 20px;border:1px solid var(--hair);background:var(--paper);transition:border-color .3s ease,transform .3s cubic-bezier(.2,.7,.2,1)}
-    .dev a::after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--bronze);transform:scaleY(0);transform-origin:top;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
-    .dev a:hover{border-color:var(--hair-2);transform:translateY(-2px)}
-    .dev a:hover::after{transform:scaleY(1)}
-    .dev .name{font-weight:500;font-size:15.5px;display:flex;justify-content:space-between;align-items:baseline;line-height:1.3}
-    .dev .name i{font-style:normal;font-size:13px;color:var(--muted);transition:transform .3s ease,color .3s ease}
-    .dev a:hover .name i{transform:translate(3px,-3px);color:var(--bronze)}
-    .dev .what{display:block;margin-top:6px;color:var(--ink-2);font-size:13.5px;line-height:1.5}
-    .dev .host{display:block;margin-top:10px;color:var(--muted);font-size:12.5px}
+    .dev ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+    .dev li{border-bottom:1px solid var(--hair)}
+    .dev a{position:relative;display:grid;grid-template-columns:230px 1fr auto;gap:28px;padding:20px 0 20px 0;align-items:baseline;transition:padding-left .35s cubic-bezier(.2,.7,.2,1)}
+    .dev a::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:2px;background:var(--bronze);transform:scaleY(0);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+    .dev a:hover{padding-left:16px}
+    .dev a:hover::before{transform:scaleY(1)}
+    .dev .name{font-family:var(--serif);font-size:27px;font-weight:400;line-height:1.1;transition:color .2s}
+    .dev a:hover .name{color:var(--bronze)}
+    .dev .what{color:var(--ink-2);font-size:15px;line-height:1.5}
+    .dev .host{font-size:13px;color:var(--muted);white-space:nowrap}
+    .dev .host::after{content:" ↗"}
 
     footer{border-top:1px solid var(--hair);padding:28px 0 52px;font-size:13px;color:var(--muted)}
     .foot{display:flex;justify-content:space-between}
@@ -108,8 +109,8 @@
 
     @media(prefers-reduced-motion:reduce){.js .draw,.js .fade{animation:none;stroke-dashoffset:0;opacity:1}.js .rv{opacity:1;transform:none}.stage{transition:none}}
     .static .draw,.static .fade{animation:none!important;stroke-dashoffset:0!important;opacity:1!important}.static .rv{opacity:1!important;transform:none!important}.static .pulse{display:none}
-    @media(max-width:900px){.tiles{grid-template-columns:1fr}.tile{min-height:0}}
-    @media(max-width:620px){.shell{width:min(calc(100% - 32px),var(--max))}.nav{height:54px}nav{gap:18px}.hero{padding:64px 0 0}h1{font-size:clamp(40px,12vw,60px)}h1 br{display:none}.actions{flex-direction:column;align-items:stretch}.stage-wrap{margin-top:48px}.stage{padding:18px 16px 14px}.stage figcaption{flex-direction:column;gap:3px}.fields{padding:72px 0;margin-top:72px}.tile{padding:26px}.tile h3{font-size:28px}.creed{padding:88px 0}.dev .head{flex-direction:column;gap:4px;align-items:flex-start}.foot{flex-direction:column;gap:6px}}
+    @media(max-width:900px){.tiles{grid-template-columns:1fr}.tile{min-height:0}.dev a{grid-template-columns:200px 1fr;gap:10px 24px}.dev .host{grid-column:2}}
+    @media(max-width:620px){.shell{width:min(calc(100% - 32px),var(--max))}.nav{height:54px}nav{gap:18px}.hero{padding:64px 0 0}h1{font-size:clamp(40px,12vw,60px)}h1 br{display:none}.actions{flex-direction:column;align-items:stretch}.stage-wrap{margin-top:48px}.stage{padding:18px 16px 14px}.stage figcaption{flex-direction:column;gap:3px}.fields{padding:72px 0;margin-top:72px}.tile{padding:26px}.tile h3{font-size:28px}.creed{padding:88px 0}.dev .head{flex-direction:column;gap:4px;align-items:flex-start}.dev a{grid-template-columns:1fr;gap:4px;padding:16px 0}.dev .name{font-size:24px}.foot{flex-direction:column;gap:6px}}
       .layer{transition:transform .55s cubic-bezier(.2,.7,.2,1);cursor:pointer}.layer path{fill:var(--paper);fill-opacity:.94;stroke:var(--bronze);stroke-width:1;transition:fill .3s,stroke .3s}.layer text{font-family:var(--sans);font-size:12px;fill:var(--muted);opacity:0;transition:opacity .35s}
 .stage:hover .layer[data-i="0"],.static .layer[data-i="0"]{transform:translateY(-60px)}.stage:hover .layer[data-i="1"],.static .layer[data-i="1"]{transform:translateY(-40px)}.stage:hover .layer[data-i="2"],.static .layer[data-i="2"]{transform:translateY(-20px)}
 .stage:hover .layer text,.static .layer text{opacity:1}.layer.on path{fill:url(#lg);stroke:var(--ink)}.layer.on text{fill:var(--ink)}.layer:hover path{stroke:var(--ink)}
@@ -162,9 +163,9 @@
     <section class="dev shell" id="development">
       <div class="head rv"><h2>In development</h2><span>Products in operation. Each opens in a new tab.</span></div>
       <ul>
-        <li class="rv"><a href="https://am.leestory.com/" target="_blank" rel="noopener"><span class="name">Auto-Minutes<i aria-hidden="true">↗</i></span><span class="what">Meeting minutes from a recording, with decisions and action items.</span><span class="host">am.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
-        <li class="rv"><a href="https://omni.leestory.com/" target="_blank" rel="noopener"><span class="name">OmniSecure<i aria-hidden="true">↗</i></span><span class="what">Web and AI security assessment mapped to public-sector standards.</span><span class="host">omni.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
-        <li class="rv"><a href="https://archlens.leestory.com/" target="_blank" rel="noopener"><span class="name">ArchLens<i aria-hidden="true">↗</i></span><span class="what">Monolith-to-services design, verified against the build.</span><span class="host">archlens.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
+        <li class="rv"><a href="https://am.leestory.com/" target="_blank" rel="noopener"><span class="name">Auto-Minutes</span><span class="what">Meeting minutes from a recording, with decisions and action items.</span><span class="host">am.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
+        <li class="rv"><a href="https://omni.leestory.com/" target="_blank" rel="noopener"><span class="name">OmniSecure</span><span class="what">Web and AI security assessment mapped to public-sector standards.</span><span class="host">omni.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
+        <li class="rv"><a href="https://archlens.leestory.com/" target="_blank" rel="noopener"><span class="name">ArchLens</span><span class="what">Monolith-to-services design, verified against the build.</span><span class="host">archlens.leestory.com</span><span class="sr">(opens in a new tab)</span></a></li>
       </ul>
     </section>
   </main>
