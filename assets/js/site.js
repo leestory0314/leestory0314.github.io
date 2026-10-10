@@ -30,7 +30,7 @@
       d_h2: 'In development', d_sub: 'Products in operation. Each opens in a new tab.',
       p1: 'Meeting minutes from a recording, with decisions and action items.',
       p2: 'Web and AI security assessment mapped to public-sector standards.',
-      p3: 'Monolith-to-services design, verified against the build.',
+      p3: 'Monolith-to-Microservices design, verified against the build.',
       newtab: '(opens in a new tab)',
       foot: 'Updated October 2026',
       lang_btn: 'KO', lang_aria: '한국어로 보기'
