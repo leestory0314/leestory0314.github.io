@@ -38,7 +38,7 @@ node tools/serve.js
 ```
 
 ## 프로젝트 항목 추가
-`docs/design.md` 마지막 절. `#projects` 띠에 칩 하나를 더하는 것뿐이며, 싣는 프로젝트는 주인님 지시로만 늘린다(현재 `am` · `omni` · `runon.life`).
+`docs/design.md` 마지막 절. `#projects` 띠에 칩 하나를 더하는 것뿐이며, 싣는 프로젝트는 주인님 지시로만 늘린다(현재 `am` · `omni` · `archlens` · `runon.life`).
 
 ## 연락
 `leestory0314@gmail.com`
