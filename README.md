@@ -28,11 +28,12 @@
 | `docs/core/agent-rules.md` | 에이전트 실행·커밋·게이트 규칙 |
 | `docs/requirements.md` | 요건(REQ)·결정(ADR) 추적표 |
 | `docs/runbook/` | 배포·장애 런북 |
-| `mockups/*.png` · `concept-*.html` | 현재 페이지 스크린샷과 콘셉트 시안 |
+| `mockups/decided/` | 채택된 시안과 결정 기록(`DECISIONS.md`) |
+| `mockups/old/` | 검토가 끝난 대안·이전 라운드 |
 | `docs/references.md` | 개인 홈페이지 레퍼런스 조사 |
 | `docs/copy-ko.md` | 국문 카피 검수 AS-IS → TO-BE |
 | `tools/serve.js` | 로컬 정적 서버 |
-| `tools/gen-interact.js` | 인터랙션 시안 생성기(시안 단계에만) |
+| `tools/old/gen-interact.js` | 인터랙션 시안 생성기(시안 단계에만) |
 
 ## 로컬에서 보기
 ```sh

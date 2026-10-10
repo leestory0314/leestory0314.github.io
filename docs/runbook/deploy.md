@@ -4,7 +4,7 @@
 - **push 가 곧 배포다.** 보통 1~3분 안에 반영되고 CDN 캐시 `max-age=600` 이라 최대 10분 지연될 수 있다.
 
 ## 배포 (에이전트)
-1. 로컬 확인: `node tools/serve.js` → `http://127.0.0.1:8765` 를 390px · 1280px 로 본다. 스크린샷은 `mockups/` 에 `desktop-1280.png` · `mobile-390.png` 로 덮어쓴다.
+1. 로컬 확인: `node tools/serve.js` → `http://127.0.0.1:8765` 를 390px · 1280px 로 본다. 스크린샷은 `mockups/decided/` 에 둔다.
 2. 게이트: `docs/core/agent-rules.md` 의 세 줄.
 3. 커밋: `git add -A && git commit -m "feat(site): …"`.
 4. `[승인 대기]` 로 주인님께 변경 요약과 `mockups/` 스크린샷 경로를 보고한다.

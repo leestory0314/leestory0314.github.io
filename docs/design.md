@@ -34,7 +34,7 @@
 ## 항목 추가
 - `index.html` 의 `<ul class="project-list">` 에 `<li>` 하나를 복사해 주소(`.host`)와 한 줄 설명(`.desc`)을 바꾼다. 설명은 "이름 — 무엇" 한 줄, 60자 안.
 - CSS 는 건드릴 필요 없다. 넷째 칩부터는 자동으로 다음 줄로 흐른다.
-- 확인: `node tools/serve.js` → `mockups/desktop-1280.png` · `mockups/mobile-390.png` 를 같은 이름으로 다시 찍는다.
+- 확인: `node tools/serve.js` → `mockups/old/desktop-1280.png` · `mockups/old/mobile-390.png` 를 같은 이름으로 다시 찍는다.
 
 ## 콘셉트 시안 (2026-10-10 3차, 채택 대기)
 1차(기존 틀 변형)와 2차(레퍼런스식 미니멀)는 "전문가답지도 고급스럽지도 않다"로 반려됐다. 3차는 주인님이 고른 **세 톤에 하나씩**, 첫 화면은 **코드로 그린 추상 그래픽**, 메시지는 "집에서 운영"이 아니라 **기술을 계속 연구하고 개발해 나간다**로 잡았다.
@@ -43,13 +43,13 @@
 
 | 콘셉트 | 파일 | 톤 | 첫 화면 | 글꼴 | 바탕·강조 |
 |---|---|---|---|---|---|
-| Signal | `mockups/concept-signal.html` | 다크 시네마틱 (Linear · Vercel 류) | "Researching what’s next. Building what works." + 천천히 도는 궤도 다이어그램, 은은한 격자와 필름 그레인 | Inter Tight + Inter | `#06080f`, 파랑→하늘 빛 |
-| Clear | `mockups/concept-clear.html` | 라이트 프리미엄 (Apple · Stripe 류) | 가운데 정렬 "Always researching. Always building." + 흰 스테이지 위 등축 계층 다이어그램(Platform·Models·Product·Operations) | Manrope + Inter | 흰색/`#f5f5f7`, 파랑 `#0a58e0` |
-| Journal | `mockups/concept-journal.html` | 에디토리얼 럭셔리 (매거진 류) | 가벼운 세리프 "The quiet work of researching, and building, what comes next." + 브론즈 선으로 그린 계기판 다이얼 | Cormorant Garamond + Inter | 본색 `#f4f2ee`, 브론즈 `#8a6a3b` |
+| Signal | `mockups/old/concept-signal.html` | 다크 시네마틱 (Linear · Vercel 류) | "Researching what’s next. Building what works." + 천천히 도는 궤도 다이어그램, 은은한 격자와 필름 그레인 | Inter Tight + Inter | `#06080f`, 파랑→하늘 빛 |
+| Clear | `mockups/old/concept-clear.html` | 라이트 프리미엄 (Apple · Stripe 류) | 가운데 정렬 "Always researching. Always building." + 흰 스테이지 위 등축 계층 다이어그램(Platform·Models·Product·Operations) | Manrope + Inter | 흰색/`#f5f5f7`, 파랑 `#0a58e0` |
+| Journal | `mockups/old/concept-journal.html` | 에디토리얼 럭셔리 (매거진 류) | 가벼운 세리프 "The quiet work of researching, and building, what comes next." + 브론즈 선으로 그린 계기판 다이얼 | Cormorant Garamond + Inter | 본색 `#f4f2ee`, 브론즈 `#8a6a3b` |
 
 채택되면 해당 HTML 의 `<style>` 을 `assets/css/site.css` 로, 본문을 `index.html` 로 옮기고 나머지 두 파일을 지운다. 프로젝트 추가는 `#development` 목록에 `<li>` 하나를 복사해 이름·한 줄·호스트를 바꾸는 것뿐이다.
 
-## 채택 방향 (2026-10-10 4차) — `mockups/concept-blueprint.html`
+## 채택 방향 (2026-10-10 4차) — `mockups/old/concept-blueprint.html`
 주인님 지시: **B(Clear) 레이아웃 + C(Journal) 스타일**, 인터랙티브 요소 강조, 원형 다이얼 대신 **클라우드·아키텍트를 연상시키는 추상 요소**, "In development" 는 **A(Signal) 레이아웃**(촘촘한 카드), 히어로 카피는 카피라이터 후보 3안.
 
 - 구조: 가운데 정렬 히어로(역할 줄 · 세리프 헤드라인 · 리드 · 버튼 둘) → 도면 스테이지 → 2×2 Fields 타일 → 가운데 정렬 신조 → 촘촘한 프로젝트 카드(auto-fill) → 푸터.
@@ -72,8 +72,8 @@
 ### 히어로 카피 확정 (2026-10-10)
 주인님이 **3안(관점)** 을 택했다. 헤드라인 "The tool keeps changing. The goal doesn’t." / 리드 "So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them." `concept-blueprint.html` 에 반영했고 카피 전환 버튼은 제거했다.
 
-### 스테이지 인터랙션 후보 5안 (2026-10-10, 채택 대기) — `mockups/interact-*.html`
-`tools/gen-interact.js` 가 `concept-blueprint.html` 을 바탕으로 스테이지만 바꿔 생성한다(`node tools/gen-interact.js .`). 모두 `prefers-reduced-motion` 에서 정지하고, `#static` 해시로 완료 상태를 찍는다.
+### 스테이지 인터랙션 후보 5안 (2026-10-10, 채택 대기) — `mockups/old/interact-*.html`
+`tools/old/gen-interact.js` 가 `concept-blueprint.html` 을 바탕으로 스테이지만 바꿔 생성한다(`node tools/gen-interact.js .`). 모두 `prefers-reduced-motion` 에서 정지하고, `#static` 해시로 완료 상태를 찍는다.
 
 | # | 파일 | 그래픽 | 사용자가 하는 것 | 기술 | 연상 |
 |---|---|---|---|---|---|
@@ -91,7 +91,7 @@
 - Globe 구체감: 몸체 방사 음영, 가장자리 어두움(limb), 좌상단 광택, 경위선(30° 간격, 앞면만), 깊이에 따른 점 크기, 바깥 후광. 스테이지 배경을 **짙은 먹색**으로 바꿔 밝은 페이지 안의 한 장면처럼 보이게 했다.
 - Mesh 배경: 종이 그라데이션 + 20px 점 격자.
 
-## 채택 방향 정정 (2026-10-10) — `mockups/final-mesh.html` · `mockups/final-globe.html`
+## 채택 방향 정정 (2026-10-10) — `mockups/decided/final-mesh.html` · `mockups/old/final-globe.html`
 주인님 정정: **레이아웃은 `concept-signal.html`, 스타일은 `concept-clear.html`**. (앞서 B+C 로 만든 `concept-blueprint.html` 과 `interact-*.html` 은 반대로 적용한 것이라 참고용으로만 남긴다.)
 
 - 레이아웃(Signal): 투명 헤더 → 왼쪽 정렬 히어로(역할 줄 · 두 줄 헤드라인 · 리드 · Focus/In development/Contact 메타) + 오른쪽 그래픽 → 4열 카드 → 두 열 신조 박스 → 촘촘한 프로젝트 카드(auto-fill) → 푸터.
@@ -107,8 +107,11 @@
 
 ### 2026-10-10 결정
 - 히어로 그래픽 **Mesh 채택**(`final-mesh.html`). Globe 는 보류.
-- **실명은 넣지 않는다.** 헤더의 `leestory.com` 은 단순 텍스트 대신 작은 **노드 글리프**(점 세 개와 연결선, 파란 점 하나) + "leestory" 굵게 + ".com" 회색으로 처리(A안). 비교안 B 밑줄 · C 파란 타일 · D .com 파랑은 `mockups/brand-options.png`.
+- **실명은 넣지 않는다.** 헤더의 `leestory.com` 은 단순 텍스트 대신 작은 **노드 글리프**(점 세 개와 연결선, 파란 점 하나) + "leestory" 굵게 + ".com" 회색으로 처리(A안). 비교안 B 밑줄 · C 파란 타일 · D .com 파랑은 `mockups/decided/brand-options.png`.
 - 분야 카드 제목은 아이콘 아래 고정 높이에 정렬(본문 길이와 무관).
+
+### 폴더 정리 (2026-10-10)
+- `mockups/decided/` = 채택된 것과 결정 기록(`DECISIONS.md`). `mockups/old/` = 검토가 끝난 대안과 이전 라운드. 생성기는 `tools/gen-final.js` 만 현역, `tools/old/gen-interact.js` 는 보관.
 
 ## 주인님 판단이 필요한 것
 - 헤더 표기 A안 확정 여부(또는 B·C·D).

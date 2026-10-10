@@ -1,5 +1,5 @@
 // Signal layout + Clear style, hero graphic as an interactive canvas (mesh | globe), EN default + KO toggle for the whole page.
-// Usage: node tools/gen-final.js <repo root>  →  mockups/final-mesh.html (list), mockups/final-globe.html (cards)
+// Usage: node tools/gen-final.js <repo root>  →  mockups/decided/final-mesh.html (채택), mockups/old/final-globe.html (보류)
 const fs = require("fs"), path = require("path");
 const root = process.argv[2] || path.resolve(__dirname, "..");
 
@@ -338,6 +338,6 @@ c.addEventListener('pointermove',function(e){if(!drag)return;rotY=drag.ry+(e.cli
 c.addEventListener('pointerup',function(){drag=null;timer=setTimeout(function(){auto=true},1800)});
 function loop(){if(auto)rotY+=.0018;draw();requestAnimationFrame(loop)}window.__redraw=draw;draw();if(!still)loop()})();`;
 
-fs.writeFileSync(path.join(root, "mockups/final-mesh.html"), page(meshArt, meshCss, meshJs, LIST_DEV, LIST_CSS));
-fs.writeFileSync(path.join(root, "mockups/final-globe.html"), page(globeArt, globeCss, globeJs, CARDS_DEV, ""));
-console.log("wrote mockups/final-mesh.html (list, EN/KO), mockups/final-globe.html (cards, EN/KO)");
+fs.writeFileSync(path.join(root, "mockups/decided/final-mesh.html"), page(meshArt, meshCss, meshJs, LIST_DEV, LIST_CSS));
+fs.writeFileSync(path.join(root, "mockups/old/final-globe.html"), page(globeArt, globeCss, globeJs, CARDS_DEV, ""));
+console.log("wrote mockups/decided/final-mesh.html, mockups/old/final-globe.html");

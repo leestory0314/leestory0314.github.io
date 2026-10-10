@@ -17,12 +17,12 @@
 | REQ-008 | 2026-10-10 | "기본 랜딩은 그냥 기존처럼 내 프로필만 표시하고, 진행중인 프로젝트는 별도로 작은 영역에 표기만 해야해" | 세션 지시 | 완료 |
 | REQ-009 | 2026-10-10 | "기존 랜딩페이지를 좀더 고급스럽게 고도화해서 시안 3가지 보고해. 그리고 LS라고 적힌 부분은 빼" | 세션 지시 | LS 제거 완료(e33bcff). 1차 시안 3종은 "기존 틀의 변형"으로 반려 → REQ-011 |
 | REQ-010 | 2026-10-10 | "빌드중인 프로젝트는 4가지로, auto-minutes, omnisecure, archlens, runon 한다" · "프로젝트 거는 링크는 blank로 해 새창또는 새탭으로 뜨게" | 세션 지시 | 완료 (index.html 반영, 시안에도 적용) |
-| REQ-011 | 2026-10-10 | "각각 다른 목표와 관점으로 3가지를 만들어서 보고" · "우주최강 UIUX 에이전트 소환해서 다시 점검" · "leestory 라는 키워드 자체를 강조할 필요 없다" · "유명한 개인홈페이지 레퍼런스들을 우선 조사" | 세션 지시 | 완료 — `docs/references.md`, `mockups/concept-{dossier,essay,index}.html`, 비평 반영. 채택 대기 |
-| REQ-012 | 2026-10-10 | "프로젝트 4개중 runon은 빼자" · "at home 이라는건 중요하지 않아. 기술적인 것들을 계속 연구하고 개발해 나간다는게 중요" · 톤별 시안 3가지, 첫 화면은 추상 그래픽 · "프로젝트는 계속 추가될 수 있으니 그점도 고려해" | 세션 지시 | 시안 3종(`mockups/concept-{signal,clear,journal}.html`) 보고, 채택 대기 |
-| REQ-013 | 2026-10-10 | "B 레이아웃으로 C스타일로 하고 인터랙티브한 요소를 좀더 강조" · "원으로 표현한 이 부분을 IT engineer를 연상되는 추상적인요소로" · "in development는 A 레이아웃으로" · "hero영역의 문구 … 카피라이터 소환해서 후보 3가지" | 세션 지시 | `mockups/concept-blueprint.html` 보고, 카피 후보 3안 제시. 채택 대기 |
+| REQ-011 | 2026-10-10 | "각각 다른 목표와 관점으로 3가지를 만들어서 보고" · "우주최강 UIUX 에이전트 소환해서 다시 점검" · "leestory 라는 키워드 자체를 강조할 필요 없다" · "유명한 개인홈페이지 레퍼런스들을 우선 조사" | 세션 지시 | 완료 — `docs/references.md`, `mockups/old/concept-{dossier,essay,index}.html`(삭제됨), 비평 반영. 채택 대기 |
+| REQ-012 | 2026-10-10 | "프로젝트 4개중 runon은 빼자" · "at home 이라는건 중요하지 않아. 기술적인 것들을 계속 연구하고 개발해 나간다는게 중요" · 톤별 시안 3가지, 첫 화면은 추상 그래픽 · "프로젝트는 계속 추가될 수 있으니 그점도 고려해" | 세션 지시 | 시안 3종(`mockups/old/concept-{signal,clear,journal}.html`) 보고, 채택 대기 |
+| REQ-013 | 2026-10-10 | "B 레이아웃으로 C스타일로 하고 인터랙티브한 요소를 좀더 강조" · "원으로 표현한 이 부분을 IT engineer를 연상되는 추상적인요소로" · "in development는 A 레이아웃으로" · "hero영역의 문구 … 카피라이터 소환해서 후보 3가지" | 세션 지시 | `mockups/old/concept-blueprint.html` 보고, 카피 후보 3안 제시. 채택 대기 |
 | REQ-014 | 2026-10-10 | "카피는 3번으로 하고... 인터랙티브한 요소는 다른걸로 시안을 5개 정도 만들어서 보고해" | 세션 지시 | 카피 3안 반영. `mockups/interact-{1..5}-*.html` 보고, 채택 대기 |
 | REQ-015 | 2026-10-10 | "in development만 리스트형" · "인터랙티브 1번과 5번에 내 강점에 대한 텍스트를 넣어서" · "5번은 좀더 원구형체처럼" · "둘다 배경도 어울리게" | 세션 지시 | 완료 — 기준 시안·변형 재생성, 채택 대기 |
-| REQ-016 | 2026-10-10 | "레이아웃은 concept-signal.html 스타일은 concept-clear.html 였다" | 세션 지시 | `mockups/final-mesh.html` · `final-globe.html` 보고, 채택 대기 |
+| REQ-016 | 2026-10-10 | "레이아웃은 concept-signal.html 스타일은 concept-clear.html 였다" | 세션 지시 | `mockups/decided/final-mesh.html` · `final-globe.html` 보고, 채택 대기 |
 | REQ-017 | 2026-10-10 | "In development는 목록화 되어 있던 시안 journal 처럼 해봐 그리고 mesh에만 적용해" · "한글버전과 영문 버전을 두고 기본을 영문으로" · "전체 사이트를 영문과 국문으로" | 세션 지시 | 완료 — `final-mesh.html` 행 목록, 두 시안 모두 EN 기본 + KO 전환. 채택 대기 |
 | REQ-018 | 2026-10-10 | "한글 표기에 대해 … 우주최강 번역가와 카피라이터를 소환해서 … asis tobe 변경 사항을 보고후 변경" · "hero 영역의 mesh영역은 영문 그대로" · (확정 표 전달) "수정사항 반영해" | 세션 지시 | 완료 — `docs/copy-ko.md`, `tools/gen-final.js` T.ko 확정본, 그래픽 라벨 영문 유지 |
 
@@ -48,7 +48,7 @@
 | REQ-007 | ADR-0005 · ADR-0001 개정 | `assets/css/site.css` · `mockups/` · `tools/serve.js` · `README.md` 디렉토리 표 |
 | REQ-008 | ADR-0006 | `index.html` `#projects` · `assets/css/site.css` 마지막 절 · `docs/design.md` |
 | REQ-009 | — | 반려(파일 삭제) |
-| REQ-011 | — (채택 후 ADR) | `docs/references.md` · `mockups/concept-*.html` + 1280/390 스크린샷 · `docs/design.md` 콘셉트 표 |
-| REQ-012 | — (채택 후 ADR) | `mockups/concept-signal.html` · `concept-clear.html` · `concept-journal.html` + 1280/390 스크린샷 · `docs/design.md` 3차 표 |
-| REQ-013 | — (채택 후 ADR) | `mockups/concept-blueprint.html` + 1280/390/copy1~3 스크린샷 · `docs/design.md` 4차 절 |
-| REQ-014 | — (채택 후 ADR) | `mockups/interact-*.html` + 스크린샷 · `tools/gen-interact.js` · `docs/design.md` 인터랙션 표 |
+| REQ-011 | — (채택 후 ADR) | `docs/references.md` · `mockups/old/concept-*.html` + 1280/390 스크린샷 · `docs/design.md` 콘셉트 표 |
+| REQ-012 | — (채택 후 ADR) | `mockups/old/concept-signal.html` · `concept-clear.html` · `concept-journal.html` + 1280/390 스크린샷 · `docs/design.md` 3차 표 |
+| REQ-013 | — (채택 후 ADR) | `mockups/old/concept-blueprint.html` + 1280/390/copy1~3 스크린샷 · `docs/design.md` 4차 절 |
+| REQ-014 | — (채택 후 ADR) | `mockups/old/interact-*.html` + 스크린샷 · `tools/old/gen-interact.js` · `docs/design.md` 인터랙션 표 |
