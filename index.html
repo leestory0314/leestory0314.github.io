@@ -3,203 +3,413 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f6fbff" />
-  <meta name="description" content="LEESTORY — Cloud Architect · AI Technologist · Builder" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#eef1ec" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e161d" media="(prefers-color-scheme: dark)" />
+  <meta name="description" content="LEESTORY. 클라우드 아키텍트이자 AI 기술자가 집에 둔 작은 클라우드에서 직접 운영하는 프로젝트들의 입구." />
   <meta property="og:title" content="LEESTORY" />
-  <meta property="og:description" content="Cloud Architect · AI Technologist · Builder" />
-  <title>LEESTORY — Cloud Architect · AI Technologist · Builder</title>
+  <meta property="og:description" content="클라우드 아키텍트이자 AI 기술자가 직접 설계하고 운영하는 프로젝트들의 입구." />
+  <meta property="og:url" content="https://leestory.com/" />
+  <meta property="og:type" content="website" />
+  <title>LEESTORY</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet" />
+
   <style>
-    :root{
-      --ink:#0c1a3a;
-      --ink-2:#294261;
-      --muted:#6f86a0;
-      --blue:#0c7cff;
-      --cyan:#42d8ff;
-      --line:rgba(32,92,150,.14);
-      --glass:rgba(255,255,255,.68);
-      --white:#fff;
-      --bg:#f5faff;
-      --max:1180px;
-      --radius:24px;
-      --shadow:0 20px 60px rgba(41,98,147,.13);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--ink);
-      background:
-        radial-gradient(circle at 10% 8%, rgba(66,216,255,.18), transparent 24%),
-        radial-gradient(circle at 86% 18%, rgba(12,124,255,.14), transparent 22%),
-        linear-gradient(180deg,#fbfdff 0%,#eef8ff 48%,#f8fcff 100%);
-      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",Arial,sans-serif;
-      overflow-x:hidden;
-    }
-    body:before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.28;
-      background-image:linear-gradient(rgba(13,80,140,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(13,80,140,.04) 1px,transparent 1px);
-      background-size:44px 44px;
-      mask-image:linear-gradient(to bottom,black,transparent 75%);
-      z-index:-1;
-    }
-    a{color:inherit;text-decoration:none}
-    .shell{width:min(calc(100% - 40px),var(--max));margin:0 auto}
-    header{
-      position:sticky;top:0;z-index:20;
-      backdrop-filter:blur(16px);
-      background:rgba(248,252,255,.76);
-      border-bottom:1px solid rgba(23,81,136,.08);
-    }
-    .nav{height:76px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em}
-    .mark{width:34px;height:34px;border:1px solid var(--line);border-radius:11px;display:grid;place-items:center;background:rgba(255,255,255,.78);box-shadow:0 8px 20px rgba(28,99,162,.08);font-family:Georgia,serif;font-size:18px}
-    .navlinks{display:flex;align-items:center;gap:28px;font-size:13px;color:var(--ink-2)}
-    .navlinks a{position:relative}
-    .navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:.25s}
-    .navlinks a:hover:after{right:0}
-    .pill{padding:10px 16px;border:1px solid rgba(12,124,255,.25);border-radius:999px;background:rgba(255,255,255,.74)}
+    /* ---------- tokens ---------- */
+    :root {
+      --paper: #eef1ec;
+      --paper-deep: #e3e8e1;
+      --ink: #111c2b;
+      --ink-soft: #2e3b48;
+      --mute: #5a6873;
+      --celadon: #1b7a6e;
+      --celadon-soft: rgba(27, 122, 110, 0.12);
+      --line: #c9d1ca;
+      --line-strong: #9fb0a6;
+      --focus: #0f5f55;
 
-    .hero{padding:66px 0 36px}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:56px}
-    .kicker{font-size:11px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#298bc6;margin-bottom:16px}
-    h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(64px,8vw,104px);line-height:.88;letter-spacing:-.065em;font-weight:500}
-    h1 .accent{background:linear-gradient(120deg,#13336d 12%,#0c7cff 70%,#20c4e8);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .roles{margin-top:20px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(18px,2.3vw,26px);color:#193357}
-    .rule{width:54px;height:3px;margin:24px 0;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:99px}
-    .lead{max-width:650px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(20px,2.4vw,28px);line-height:1.45;color:#1d3554}
-    .micro{margin-top:24px;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#3f84ac;font-weight:700}
+      --latin: "Instrument Serif", "Noto Serif KR", Georgia, serif;
+      --hangul: "Noto Serif KR", "Apple SD Gothic Neo", "Malgun Gothic", serif;
 
-    .visual{position:relative;min-height:470px;border-radius:34px;overflow:hidden;border:1px solid rgba(12,124,255,.14);box-shadow:var(--shadow);background:#dff3ff}
-    .visual img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center}
-    .visual:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(244,251,255,.34),transparent 35%,rgba(22,116,189,.08))}
-    .visual:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;right:-68px;top:-60px;border:1px solid rgba(255,255,255,.8);box-shadow:0 0 70px rgba(255,255,255,.65);z-index:1}
-
-    .identity{padding:28px 0 70px}
-    .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}
-    .section-head p{margin:0;color:var(--muted);font-size:13px}
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .card{min-height:255px;padding:24px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(150deg,rgba(255,255,255,.82),rgba(238,248,255,.62));box-shadow:0 12px 30px rgba(59,113,164,.07);display:flex;flex-direction:column;justify-content:space-between;transition:.25s}
-    .card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(42,110,170,.12);border-color:rgba(12,124,255,.24)}
-    .card-top{display:flex;justify-content:space-between;align-items:start}
-    .icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%,#fff,rgba(106,207,255,.35));border:1px solid rgba(12,124,255,.13);box-shadow:inset 0 0 24px rgba(72,193,255,.2)}
-    .icon svg{width:34px;height:34px;stroke:#2087d4;fill:none;stroke-width:1.6}
-    .num{font-size:10px;color:#5c7fa1;letter-spacing:.12em}
-    .card h2{font-family:Georgia,"Times New Roman",serif;font-size:23px;font-weight:500;margin:22px 0 7px}
-    .card p{margin:0;color:var(--ink-2);font-size:14px;line-height:1.55}
-    .tags{margin-top:22px;font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:#5f96bc;white-space:nowrap}
-
-    .philosophy{padding:24px 0 78px}
-    .philosophy-box{border:1px solid var(--line);border-radius:28px;background:rgba(255,255,255,.6);backdrop-filter:blur(12px);overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-columns:.88fr 1.12fr;min-height:320px}
-    .philosophy-visual{position:relative;background:linear-gradient(145deg,#e6f6ff 0%,#c7ebff 50%,#eefaff 100%);overflow:hidden}
-    .philosophy-visual:before,.philosophy-visual:after{content:"";position:absolute;border:1px solid rgba(41,135,199,.19);border-radius:50%}
-    .philosophy-visual:before{width:360px;height:360px;left:-130px;top:70px}
-    .philosophy-visual:after{width:440px;height:220px;border-radius:50%;right:-180px;top:65px;transform:rotate(-16deg)}
-    .philosophy-visual .words{position:absolute;left:46px;bottom:42px;font-size:10px;line-height:2.05;letter-spacing:.28em;font-weight:800;color:#3b779e;text-transform:uppercase}
-    .philosophy-copy{padding:58px 60px;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
-    .label{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#1796d1;font-weight:800;margin-bottom:16px}
-    .statement{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,3.4vw,45px);line-height:1.12;letter-spacing:-.025em}
-    .philosophy-copy p{color:var(--ink-2);line-height:1.7;font-size:14px;margin:0}
-    .tiny-rule{width:34px;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));margin:22px 0}
-    .smallcaps{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:#3f94be;font-weight:800}
-
-    footer{border-top:1px solid var(--line);background:rgba(255,255,255,.58)}
-    .foot{min-height:100px;display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:center}
-    .footbrand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.09em;font-size:13px}
-    .contact{font-size:13px;color:#294261;padding:12px 18px;border:1px solid var(--line);background:rgba(255,255,255,.74);border-radius:999px;transition:.2s}
-    .contact:hover{border-color:rgba(12,124,255,.35);box-shadow:0 8px 24px rgba(12,124,255,.10)}
-    .footnote{text-align:right;font-size:9px;letter-spacing:.22em;color:#6889a6;text-transform:uppercase}
-
-    @media(max-width:980px){
-      .hero-grid{grid-template-columns:1fr;gap:34px}.visual{min-height:390px}.cards{grid-template-columns:repeat(2,1fr)}
-      .philosophy-box{grid-template-columns:1fr}.philosophy-visual{min-height:180px}.philosophy-copy{padding:44px 38px}.foot{grid-template-columns:1fr 1fr}.footnote{display:none}
+      --measure: 36em;
+      --gutter: clamp(16px, 5vw, 56px);
+      --wide: 1080px;
     }
-    @media(max-width:620px){
-      .shell{width:min(calc(100% - 28px),var(--max))}.nav{height:66px}.navlinks a:not(.pill){display:none}.pill{font-size:11px;padding:8px 12px}
-      .hero{padding:38px 0 26px}.hero-grid{gap:24px}.kicker{font-size:9px;letter-spacing:.24em;margin-bottom:12px}h1{font-size:clamp(54px,18vw,74px)}
-      .roles{font-size:17px;margin-top:16px}.lead{font-size:20px}.micro{font-size:8px;letter-spacing:.24em}.visual{min-height:300px;border-radius:24px}
-      .identity{padding:18px 0 52px}.section-head{align-items:start;flex-direction:column;gap:4px}.cards{grid-template-columns:1fr}.card{min-height:168px;padding:20px;display:grid;grid-template-columns:62px 1fr;gap:16px;align-items:center}.card-top{align-self:start}.card .content{align-self:center}.card h2{margin:0 0 6px;font-size:20px}.tags{display:none}.icon{width:54px;height:54px}.num{position:absolute;right:20px;top:20px}.card{position:relative}
-      .philosophy{padding-bottom:52px}.philosophy-box{border-radius:22px}.philosophy-visual{min-height:150px}.philosophy-copy{padding:34px 24px;grid-template-columns:1fr;gap:28px}.statement{font-size:34px}
-      .foot{padding:22px 0;grid-template-columns:1fr;justify-items:start}.contact{font-size:12px;padding:10px 14px}
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --paper: #0e161d;
+        --paper-deep: #141f28;
+        --ink: #e8ece7;
+        --ink-soft: #c4cbc6;
+        --mute: #93a0a8;
+        --celadon: #5fc3b4;
+        --celadon-soft: rgba(95, 195, 180, 0.14);
+        --line: #243039;
+        --line-strong: #3a4a55;
+        --focus: #8fe0d2;
+      }
     }
+    :root[data-theme="dark"] {
+      --paper: #0e161d;
+      --paper-deep: #141f28;
+      --ink: #e8ece7;
+      --ink-soft: #c4cbc6;
+      --mute: #93a0a8;
+      --celadon: #5fc3b4;
+      --celadon-soft: rgba(95, 195, 180, 0.14);
+      --line: #243039;
+      --line-strong: #3a4a55;
+      --focus: #8fe0d2;
+    }
+
+    /* ---------- base ---------- */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--hangul);
+      font-size: 17px;
+      line-height: 1.85;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+    p { margin: 0 0 1.1em; max-width: var(--measure); }
+    h1, h2, h3 { font-weight: 400; margin: 0; line-height: 1.2; }
+
+    .wrap { width: min(100% - 2 * var(--gutter), var(--wide)); margin: 0 auto; }
+
+    /* ---------- masthead ---------- */
+    .masthead {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 28px 0 0;
+      font-size: 15px; color: var(--mute);
+    }
+    .masthead .brand {
+      font-family: var(--latin);
+      font-size: 22px; letter-spacing: 0.02em; color: var(--ink);
+    }
+    .masthead nav { display: flex; gap: 22px; }
+    .masthead nav a { border-bottom: 1px solid transparent; }
+    .masthead nav a:hover { border-bottom-color: var(--line-strong); }
+
+    /* ---------- hero: the domain tree ---------- */
+    .hero { padding: clamp(56px, 10vw, 128px) 0 clamp(40px, 7vw, 88px); }
+    .tree {
+      display: grid;
+      grid-template-columns: max-content max-content 1fr;
+      column-gap: 0;
+      row-gap: 0.1em;
+      align-items: baseline;
+      font-family: var(--latin);
+      font-size: clamp(34px, 7.2vw, 84px);
+      line-height: 1.12;
+      letter-spacing: -0.012em;
+    }
+    .tree a { display: contents; }
+    .tree .pre {
+      text-align: right;
+      color: var(--celadon);
+      font-style: italic;
+      padding-right: 0;
+    }
+    .tree .pre.ghost { color: transparent; }
+    .tree .dom { color: var(--ink); }
+    .tree .gloss {
+      font-family: var(--hangul);
+      font-size: clamp(14px, 1.45vw, 17px);
+      line-height: 1.5;
+      color: var(--mute);
+      padding-left: clamp(14px, 2.2vw, 28px);
+      align-self: center;
+      letter-spacing: 0;
+      transform: translateY(0.08em);
+    }
+    .tree a:hover .dom, .tree a:focus-visible .dom { text-decoration: underline; text-decoration-thickness: 0.04em; text-underline-offset: 0.12em; }
+    .tree a:hover .gloss { color: var(--ink-soft); }
+    .tree .self .dom { font-weight: 400; }
+
+    .lead {
+      margin-top: clamp(32px, 5vw, 56px);
+      font-size: clamp(18px, 2vw, 21px);
+      line-height: 1.8;
+      max-width: 34em;
+      color: var(--ink-soft);
+    }
+
+    /* page-load moment: prefixes settle into place, once */
+    @media (prefers-reduced-motion: no-preference) {
+      .tree .pre, .tree .gloss { animation: settle 720ms cubic-bezier(.2,.7,.2,1) both; }
+      .tree .r2 .pre { animation-delay: 140ms; }
+      .tree .r3 .pre { animation-delay: 260ms; }
+      .tree .r4 .dom, .tree .r4 .gloss { animation: settle 720ms cubic-bezier(.2,.7,.2,1) 380ms both; }
+      .tree .r1 .gloss { animation-delay: 60ms; }
+      .tree .r2 .gloss { animation-delay: 200ms; }
+      .tree .r3 .gloss { animation-delay: 320ms; }
+      @keyframes settle {
+        from { opacity: 0; transform: translateX(-0.35em); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+      .tree .gloss { animation-name: settle-gloss; }
+      @keyframes settle-gloss {
+        from { opacity: 0; transform: translateY(0.08em) translateX(0.5em); }
+        to   { opacity: 1; transform: translateY(0.08em) translateX(0); }
+      }
+    }
+
+    /* ---------- sections ---------- */
+    section { padding: clamp(40px, 6vw, 72px) 0; border-top: 1px solid var(--line); }
+    .section-head {
+      display: grid; grid-template-columns: 1fr; gap: 6px;
+      margin-bottom: clamp(24px, 3vw, 36px);
+    }
+    .section-head h2 { font-size: clamp(26px, 3vw, 34px); font-weight: 600; letter-spacing: -0.01em; }
+    .section-head .note { color: var(--mute); font-size: 15px; max-width: var(--measure); }
+
+    /* about */
+    .about { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .about .pillars { list-style: none; margin: 0.6em 0 1.6em; padding: 0; max-width: var(--measure); }
+    .about .pillars li { display: grid; grid-template-columns: 7em 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+    .about .pillars li:last-child { border-bottom: 1px solid var(--line); }
+    .about .pillars b { font-weight: 600; color: var(--ink); }
+    .about .pillars span { color: var(--ink-soft); }
+    .creed {
+      font-size: clamp(22px, 2.6vw, 30px);
+      line-height: 1.45;
+      max-width: 22em;
+      margin: 1.2em 0 0.8em;
+      color: var(--ink);
+    }
+    .links { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 1.4em; font-size: 16px; }
+    .links a { color: var(--celadon); border-bottom: 1px solid var(--celadon-soft); }
+    .links a:hover { border-bottom-color: var(--celadon); }
+
+    /* projects: ledger */
+    .ledger { list-style: none; margin: 0; padding: 0; }
+    .ledger > li {
+      display: grid;
+      grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
+      gap: 18px clamp(24px, 4vw, 64px);
+      padding: clamp(28px, 3.5vw, 44px) 0;
+      border-top: 1px solid var(--line);
+    }
+    .ledger > li:last-child { border-bottom: 1px solid var(--line); }
+    .ledger .addr {
+      font-family: var(--latin);
+      font-size: clamp(26px, 2.8vw, 34px);
+      line-height: 1.15;
+      letter-spacing: -0.005em;
+    }
+    .ledger .addr .pre { color: var(--celadon); font-style: italic; }
+    .ledger .addr a { border-bottom: 1px solid transparent; }
+    .ledger .addr a:hover { border-bottom-color: var(--line-strong); }
+    .ledger .addr small {
+      display: block; margin-top: 10px;
+      font-family: var(--hangul); font-size: 14px; line-height: 1.6; color: var(--mute);
+    }
+    .ledger .status {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 14px; font-family: var(--hangul); font-size: 14px; color: var(--ink-soft);
+    }
+    .ledger .status::before {
+      content: ""; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--celadon); box-shadow: 0 0 0 3px var(--celadon-soft);
+    }
+    .ledger h3 { font-size: clamp(20px, 2.1vw, 24px); font-weight: 600; margin-bottom: 4px; }
+    .ledger .tag { color: var(--ink-soft); font-size: 17px; margin-bottom: 0.9em; }
+    .ledger p { margin-bottom: 1em; }
+    .facts { margin: 0.4em 0 0; max-width: var(--measure); font-size: 15px; }
+    .facts div { display: grid; grid-template-columns: 6em 1fr; gap: 12px; padding: 7px 0; border-top: 1px dashed var(--line); }
+    .facts dt { color: var(--mute); margin: 0; }
+    .facts dd { margin: 0; color: var(--ink-soft); }
+    .ledger .open {
+      display: inline-block; margin-top: 1.2em;
+      color: var(--celadon); border-bottom: 1px solid var(--celadon-soft); font-size: 16px;
+    }
+    .ledger .open:hover { border-bottom-color: var(--celadon); }
+
+    /* footer */
+    footer { border-top: 1px solid var(--line); padding: 36px 0 56px; color: var(--mute); font-size: 15px; }
+    footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; }
+    footer a { color: var(--ink-soft); border-bottom: 1px solid var(--line); }
+    footer a:hover { border-bottom-color: var(--line-strong); }
+    footer .brand { font-family: var(--latin); font-size: 20px; color: var(--ink); }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 760px) {
+      body { font-size: 16px; }
+      .masthead nav { gap: 16px; font-size: 14px; }
+      .tree { grid-template-columns: max-content 1fr; font-size: clamp(28px, 9.6vw, 44px); row-gap: 0.18em; max-width: 100%; }
+      .tree .gloss { display: none; }
+      .tree-notes { display: block !important; }
+      .ledger > li { grid-template-columns: 1fr; gap: 10px; }
+      .ledger .addr small { margin-top: 6px; }
+      .about .pillars li { grid-template-columns: 5.5em 1fr; }
+      .facts div { grid-template-columns: 5.6em 1fr; }
+    }
+    .tree-notes { display: none; margin-top: 18px; color: var(--mute); font-size: 14px; line-height: 1.7; }
+    .tree-notes span { display: block; }
+    .tree-notes i { font-family: var(--latin); font-style: italic; color: var(--celadon); }
   </style>
 </head>
 <body>
-  <header>
-    <div class="shell nav">
-      <a class="brand" href="#top" aria-label="LEESTORY home"><span class="mark">LS</span><span>LEESTORY</span></a>
-      <nav class="navlinks" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#philosophy">Philosophy</a>
-        <a class="pill" href="mailto:leestory0314@gmail.com">Contact</a>
-      </nav>
-    </div>
+
+  <header class="wrap masthead">
+    <a class="brand" href="#top" aria-label="LEESTORY 처음으로">LEESTORY</a>
+    <nav aria-label="페이지 안내">
+      <a href="#about">소개</a>
+      <a href="#projects">프로젝트</a>
+      <a href="mailto:leestory0314@gmail.com">연락</a>
+    </nav>
   </header>
 
   <main id="top">
-    <section class="hero" id="about">
-      <div class="shell hero-grid">
-        <div>
-          <div class="kicker">Ideas · Systems · People · A Brighter Tomorrow</div>
-          <h1><span>LEE</span><span class="accent">STORY</span></h1>
-          <div class="roles">Cloud Architect · AI Technologist · Builder</div>
-          <div class="rule"></div>
-          <div class="lead">I design systems, explore technology, and turn complex ideas into working realities.</div>
-          <div class="micro">Technology for a more human tomorrow</div>
-        </div>
-        <div class="visual" aria-label="Futuristic city and technology visual">
-          <img src="./assets/hero.jpg" alt="A person looking toward a futuristic city skyline" />
+
+    <section class="wrap hero" aria-labelledby="hero-title" style="border-top:0">
+      <h1 id="hero-title" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">LEESTORY, 직접 운영하는 프로젝트들의 입구</h1>
+
+      <div class="tree" role="list">
+        <a class="r1 self" role="listitem" href="#about">
+          <span class="pre ghost" aria-hidden="true">omni.</span>
+          <span class="dom">leestory.com</span>
+          <span class="gloss">이 사람에 대해</span>
+        </a>
+        <a class="r2" role="listitem" href="https://am.leestory.com/">
+          <span class="pre">am.</span>
+          <span class="dom">leestory.com</span>
+          <span class="gloss">녹음만 올리면 회의록이 완성되는 Auto-Minutes</span>
+        </a>
+        <a class="r3" role="listitem" href="https://omni.leestory.com/">
+          <span class="pre">omni.</span>
+          <span class="dom">leestory.com</span>
+          <span class="gloss">공공 규제 기준 웹과 AI 보안 진단, OmniSecure</span>
+        </a>
+        <a class="r4" role="listitem" href="https://runon.life/">
+          <span class="pre ghost" aria-hidden="true">omni.</span>
+          <span class="dom">runon.life</span>
+          <span class="gloss">동네의 검증된 스포츠 코치를 찾는 루논</span>
+        </a>
+      </div>
+      <div class="tree-notes" aria-hidden="true">
+        <span><i>am.</i> 녹음만 올리면 회의록이 완성되는 Auto-Minutes</span>
+        <span><i>omni.</i> 공공 규제 기준 웹과 AI 보안 진단, OmniSecure</span>
+        <span><i>runon.life</i> 동네의 검증된 스포츠 코치를 찾는 루논</span>
+      </div>
+
+      <p class="lead">클라우드 아키텍트이자 AI 기술자, 그리고 직접 만드는 사람입니다. 위 주소들은 제가 집에 둔 작은 클라우드에서 설계부터 운영까지 맡고 있는 프로젝트입니다.</p>
+    </section>
+
+    <section class="wrap" id="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <h2 id="about-title">소개</h2>
+        <div class="note">시스템을 설계하고, 기술을 탐구하고, 복잡한 생각을 돌아가는 것으로 바꿉니다.</div>
+      </div>
+
+      <div class="about">
+        <ul class="pillars">
+          <li><b>아키텍처</b><span>다음을 견딜 수 있도록, 확장 가능하고 복원력 있는 클라우드 기반을 설계합니다.</span></li>
+          <li><b>AI와 기술</b><span>AI와 새로운 기술을 실제 문제에 대 보고, 되는 것과 안 되는 것을 가립니다.</span></li>
+          <li><b>전략</b><span>기술과 사람과 기회를 실행할 수 있는 방향으로 잇습니다.</span></li>
+          <li><b>만들기</b><span>생각을 동작하는 제품과 플랫폼, 측정할 수 있는 진전으로 바꿉니다.</span></li>
+        </ul>
+
+        <p class="creed">기술은 도구이고, 더 나은 내일이 목적입니다.</p>
+        <p>기술은 사람의 가능성을 대신하는 것이 아니라 넓히는 것이라고 믿습니다. 신중하게 시스템을 만들고, 과감한 생각을 탐구하고, 실제로 쓸모 있고 오래 가는 해법에 집중합니다.</p>
+        <p>운영 환경은 집에 있습니다. NAS 한 대와 쿠버네티스 클러스터, GPU 서버 한 대로 빌드부터 배포, 모니터링까지 직접 돌립니다. 아래 프로젝트는 모두 거기서 나왔습니다.</p>
+
+        <div class="links">
+          <a href="https://blog.leestory.com/">블로그</a>
+          <a href="https://github.com/leestory0314">GitHub</a>
+          <a href="mailto:leestory0314@gmail.com">leestory0314@gmail.com</a>
         </div>
       </div>
     </section>
 
-    <section class="identity">
-      <div class="shell">
-        <div class="section-head">
-          <div><div class="label">What defines me</div></div>
-          <p>Technology, architecture, strategy, and execution.</p>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <div class="card-top"><div class="icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 35h23a8 8 0 0 0 1-15.94A13 13 0 0 0 12.4 16.9 9 9 0 0 0 13 35Z"/></svg></div><div class="num">01</div></div>
-            <div class="content"><h2>Architecture</h2><p>Designing scalable, resilient cloud foundations for what’s next.</p><div class="tags">People · Platforms · Possibilities</div></div>
-          </article>
-          <article class="card">
-            <div class="card-top"><div class="icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M8 24h32M24 8c5 5 8 10 8 16s-3 11-8 16c-5-5-8-10-8-16s3-11 8-16Z"/><path d="M13 14c7 4 15 4 22 0M13 34c7-4 15-4 22 0"/></svg></div><div class="num">02</div></div>
-            <div class="content"><h2>AI &amp; Technology</h2><p>Exploring AI and emerging technology to solve real-world problems.</p><div class="tags">Curiosity · Research · Real Impact</div></div>
-          </article>
-          <article class="card">
-            <div class="card-top"><div class="icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7 40 39 24 31 8 39 24 7Z"/><path d="M24 7v24"/></svg></div><div class="num">03</div></div>
-            <div class="content"><h2>Strategy</h2><p>Connecting technology, people, and opportunity with practical direction.</p><div class="tags">Insight · Alignment · Lasting Value</div></div>
-          </article>
-          <article class="card">
-            <div class="card-top"><div class="icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m15 11 9-5 9 5-9 5-9-5Z"/><path d="m7 27 9-5 9 5-9 5-9-5Zm16 0 9-5 9 5-9 5-9-5Z"/><path d="M16 32v9m16-9v9M24 16v9"/></svg></div><div class="num">04</div></div>
-            <div class="content"><h2>Build</h2><p>Turning ideas into working products, platforms, and measurable progress.</p><div class="tags">Ideas · Execution · Real-world Results</div></div>
-          </article>
-        </div>
+    <section class="wrap" id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <h2 id="projects-title">프로젝트</h2>
+        <div class="note">지금 운영 중인 것들입니다. 준비 중인 프로젝트는 공개할 수 있을 때 여기에 더합니다.</div>
       </div>
+
+      <ol class="ledger">
+        <!-- 항목 추가 방법: 아래 <li> 하나를 복사해 주소·이름·설명·사실 세 줄을 바꾼다. 순서는 공개한 순. -->
+        <li>
+          <div class="addr">
+            <a href="https://am.leestory.com/"><span class="pre">am.</span>leestory.com</a>
+            <small>Auto-Minutes</small>
+            <span class="status">운영 중, 2026년 9월 공개</span>
+          </div>
+          <div>
+            <h3>녹음만 올리면 회의록이 완성됩니다</h3>
+            <p>스마트폰으로 녹음한 파일을 올리면 결정사항과 액션아이템까지 담긴 회의록이 몇 분 안에 만들어집니다. md, docx, hwpx로 내려받거나 노션에 바로 올라갑니다. 전사와 요약은 집 안의 서버에서 처리하므로 녹음과 회의 내용이 외부 AI 서비스로 나가지 않습니다.</p>
+            <dl class="facts">
+              <div><dt>쓰는 사람</dt><dd>회의를 기록해야 하는 팀과 개인</dd></div>
+              <div><dt>만든 것</dt><dd>Whisper 기반 전사 파이프라인, 웹 업로드, 회의록 양식, 노션 연동</dd></div>
+              <div><dt>돌아가는 곳</dt><dd>집의 NAS, 외부 AI 서비스 미사용</dd></div>
+            </dl>
+            <a class="open" href="https://am.leestory.com/">am.leestory.com 열기</a>
+          </div>
+        </li>
+
+        <li>
+          <div class="addr">
+            <a href="https://omni.leestory.com/"><span class="pre">omni.</span>leestory.com</a>
+            <small>OmniSecure</small>
+            <span class="status">운영 중</span>
+          </div>
+          <div>
+            <h3>대한민국 공공 규제 기준으로 웹과 AI를 진단합니다</h3>
+            <p>행정안전부 SW 보안약점과 KISA 기준에 맞춰 웹 서비스를 점검하고, 폐쇄망에서 소스코드를 진단하며, AI가 작성한 코드의 보안을 확인합니다. 무엇이 되고 무엇이 안 되는지를 숨기지 않고 공개합니다.</p>
+            <dl class="facts">
+              <div><dt>쓰는 사람</dt><dd>공공기관과 공공 SI의 보안 담당자</dd></div>
+              <div><dt>만든 것</dt><dd>국가 표준 92개 규제 룰셋 매핑, 분산 스캐너, 폐쇄망 SAST, 성적서 발급</dd></div>
+              <div><dt>돌아가는 곳</dt><dd>집의 쿠버네티스 클러스터</dd></div>
+            </dl>
+            <a class="open" href="https://omni.leestory.com/">omni.leestory.com 열기</a>
+          </div>
+        </li>
+
+        <li>
+          <div class="addr">
+            <a href="https://runon.life/">runon.life</a>
+            <small>RUNON 루논. leestory.com 바깥의 주소지만 같은 곳에서 운영합니다.</small>
+            <span class="status">운영 중</span>
+          </div>
+          <div>
+            <h3>우리 동네의 검증된 스포츠 코치를 찾습니다</h3>
+            <p>자격증과 실명이 확인된 코치를 종목별로 찾고 매칭합니다. 러닝 커뮤니티에서 출발해, 동네에서 믿고 배울 수 있는 코치와 함께 달릴 메이트를 잇는 서비스로 넓혔습니다.</p>
+            <dl class="facts">
+              <div><dt>쓰는 사람</dt><dd>코치를 찾는 사람, 그리고 코치</dd></div>
+              <div><dt>만든 것</dt><dd>자격증과 실명 검증, 종목별 검색과 매칭, 포인트와 이벤트</dd></div>
+              <div><dt>돌아가는 곳</dt><dd>집의 쿠버네티스 클러스터</dd></div>
+            </dl>
+            <a class="open" href="https://runon.life/">runon.life 열기</a>
+          </div>
+        </li>
+      </ol>
     </section>
 
-    <section class="philosophy" id="philosophy">
-      <div class="shell philosophy-box">
-        <div class="philosophy-visual"><div class="words">Human<br>Ideas<br>Brighter<br>Tomorrow</div></div>
-        <div class="philosophy-copy">
-          <div><div class="label">My philosophy</div><div class="statement">Technology is a tool.<br>A better tomorrow is the goal.</div></div>
-          <div><p>I believe in the power of technology to expand human potential — not replace it. I build thoughtful systems, explore bold ideas, and focus on solutions that create practical, lasting value.</p><div class="tiny-rule"></div><div class="smallcaps">Same curiosity. A brighter tomorrow.</div></div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer>
-    <div class="shell foot">
-      <div class="footbrand"><span class="mark">LS</span><span>LEESTORY</span></div>
-      <a class="contact" href="mailto:leestory0314@gmail.com">Contact point · leestory0314@gmail.com</a>
-      <div class="footnote">Ideas · People · Progress · Always</div>
+    <div class="wrap row">
+      <span class="brand">LEESTORY</span>
+      <span><a href="mailto:leestory0314@gmail.com">leestory0314@gmail.com</a></span>
+      <span>2026년 10월 갱신</span>
     </div>
   </footer>
+
 </body>
 </html>

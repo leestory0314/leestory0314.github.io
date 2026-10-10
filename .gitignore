@@ -1,0 +1,14 @@
+# 자격증명·로컬 전용
+.env
+.env.*
+*.pem
+*.key
+*-token*.txt
+*credentials*
+kubeconfig*
+
+# 작업 임시
+scratch/
+*.log
+.DS_Store
+Thumbs.db
