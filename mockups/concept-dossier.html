@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud architect · AI technologist · Builder</title>
+  <meta name="description" content="Cloud architect who runs a private cloud at home and builds AI products on it. Architecture, applied AI, strategy, build. Four products in operation." />
+  <meta property="og:title" content="Cloud architect · AI technologist · Builder" />
+  <meta property="og:description" content="Runs a private cloud at home and builds AI products on it, end to end." />
+  <meta property="og:url" content="https://leestory.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#f6f6f3;--panel:#fdfdfb;--ink:#17191c;--ink-2:#3f434a;--muted:#5f636a;--rule:#d9dad5;--accent:#2f4bb0;--max:1120px;--serif:"IBM Plex Serif",Georgia,serif;--sans:"IBM Plex Sans",-apple-system,"Segoe UI","Noto Sans KR",sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .shell{width:min(calc(100% - 48px),var(--max));margin:0 auto}
+    header .shell{height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);font-size:14px}
+    .site{color:var(--muted)}
+    nav{display:flex;gap:26px;color:var(--ink-2)}
+    nav a:hover{color:var(--accent)}
+
+    .hero{padding:72px 0 56px;display:grid;grid-template-columns:1fr 340px;gap:72px;align-items:start}
+    h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(32px,4vw,50px);line-height:1.12;letter-spacing:-.01em;max-width:18em}
+    .lead{margin:28px 0 0;font-size:18px;line-height:1.6;color:var(--ink-2);max-width:34em}
+    .lead a{color:var(--accent);border-bottom:1px solid rgba(47,75,176,.35)}
+    .record{background:var(--panel);border:1px solid var(--rule);padding:14px 14px 6px}
+    .record .pic{overflow:hidden;aspect-ratio:16/10}
+    .record img{display:block;width:140%;max-width:none;height:100%;object-fit:cover;object-position:0 30%;filter:saturate(.8)}
+    .record dl{margin:14px 0 0;display:grid;grid-template-columns:84px 1fr;column-gap:12px;font-size:14.5px}
+    .record dt{color:var(--muted);padding:9px 0;border-top:1px solid var(--rule)}
+    .record dd{margin:0;padding:9px 0;border-top:1px solid var(--rule);color:var(--ink)}
+    .record dd a{color:var(--accent)}
+
+    section{padding:48px 0 8px}
+    .head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:4px}
+    .head h2{margin:0;font-family:var(--serif);font-weight:500;font-size:26px}
+    .head span{font-size:14px;color:var(--muted)}
+    .rows{list-style:none;margin:0;padding:0}
+    .rows li{display:grid;grid-template-columns:220px 1fr 1fr;gap:32px;padding:20px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+    .rows h3{margin:0;font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.25}
+    .rows p{margin:0;color:var(--ink-2);font-size:15.5px}
+    .rows .ev{color:var(--ink-2);font-size:15px}
+    .rows .ev b{font-weight:500;color:var(--ink)}
+
+    .building{padding-bottom:0}
+    .building ul{list-style:none;margin:0;padding:0}
+    .building li{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:11px 0;border-bottom:1px solid var(--rule);align-items:baseline;font-size:15.5px}
+    .building a{color:var(--accent);font-weight:500}
+    .building a::after{content:" \2197";font-weight:400;color:var(--muted)}
+    .building a:hover{border-bottom:1px solid var(--accent)}
+    .building span{color:var(--ink-2)}
+
+    .creed{padding:64px 0 72px;display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:baseline}
+    .creed span{font-size:14px;color:var(--muted)}
+    .creed p{margin:0;font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.3;max-width:22em}
+    .creed p small{display:block;margin-top:14px;font-family:var(--sans);font-size:15.5px;color:var(--ink-2);line-height:1.6;max-width:40em}
+
+    footer .shell{border-top:1px solid var(--rule);padding:22px 0 48px;display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+    footer a{color:var(--ink-2)}
+
+    @media(max-width:900px){.hero{grid-template-columns:1fr;gap:36px}.record{max-width:460px}.record .pic{display:none}.record dl{margin-top:0}.record dt:first-child,.record dd:nth-of-type(1){border-top:0}.rows li{grid-template-columns:1fr;gap:8px}.creed{grid-template-columns:1fr;gap:12px}}
+    @media(max-width:620px){.shell{width:min(calc(100% - 32px),var(--max))}header .shell{height:56px}nav{gap:18px}.hero{padding:44px 0 28px}.lead{font-size:17px}.record .opt{display:none}.building li{grid-template-columns:1fr;gap:2px;padding:12px 0}footer .shell{flex-direction:column;gap:8px}}
+  </style>
+</head>
+<body>
+  <header><div class="shell">
+    <span class="site">leestory.com</span>
+    <nav><a href="#fields">Fields</a><a href="#building">Building</a><a href="mailto:leestory0314@gmail.com">Contact</a></nav>
+  </div></header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <h1>Cloud architect. I run a private cloud at home and build AI products on it, end to end.</h1>
+        <p class="lead">I design systems, explore technology, and turn complex ideas into working realities. Four products are in operation today, each carried from platform to product to day-two operations by one person. <a href="#building">See what is running.</a></p>
+      </div>
+      <aside class="record" aria-label="Profile record">
+        <div class="pic"><img src="../assets/hero.jpg" alt="" /></div>
+        <dl>
+          <dt>Role</dt><dd>Cloud Architect · AI Technologist · Builder</dd>
+          <dt>Focus</dt><dd>Platform design, applied AI, security for the public sector</dd>
+          <dt class="opt">Base</dt><dd class="opt">A small Kubernetes cloud at home, run as production</dd>
+          <dt>Contact</dt><dd><a href="mailto:leestory0314@gmail.com">leestory0314@gmail.com</a></dd>
+        </dl>
+      </aside>
+    </section>
+
+    <section id="fields">
+      <div class="head"><h2>Fields</h2><span>What I do, and the evidence for it</span></div>
+      <ul class="rows">
+        <li><h3>Architecture</h3><p>Designing scalable, resilient cloud foundations for what’s next.</p><p class="ev"><b>In practice</b> — the platform every product below runs on: a Kubernetes cluster at home with Git-driven delivery, built and operated alone.</p></li>
+        <li><h3>AI &amp; Technology</h3><p>Exploring AI and emerging technology to solve real-world problems.</p><p class="ev"><b>In practice</b> — on-premises speech-to-text and language-model pipelines, so meeting audio never leaves the building.</p></li>
+        <li><h3>Strategy</h3><p>Connecting technology, people, and opportunity with practical direction.</p><p class="ev"><b>In practice</b> — products aimed at real regulation: OmniSecure maps its checks to Korean public-sector security standards.</p></li>
+        <li><h3>Build</h3><p>Turning ideas into working products, platforms, and measurable progress.</p><p class="ev"><b>In practice</b> — ArchLens checks a built architecture against its design, and is itself in operation today.</p></li>
+      </ul>
+    </section>
+
+    <section id="building" class="building">
+      <div class="head"><h2>Building now</h2><span>Four products, all in operation</span></div>
+      <ul>
+        <li><a href="https://am.leestory.com/" target="_blank" rel="noopener">Auto-Minutes<span class="sr"> (opens in a new tab)</span></a><span>Minutes with decisions and action items from a recording, processed on-premises.</span></li>
+        <li><a href="https://omni.leestory.com/" target="_blank" rel="noopener">OmniSecure<span class="sr"> (opens in a new tab)</span></a><span>Web and AI security assessment mapped to Korean public-sector standards.</span></li>
+        <li><a href="https://archlens.leestory.com/" target="_blank" rel="noopener">ArchLens<span class="sr"> (opens in a new tab)</span></a><span>Splits a monolith into services, then checks the build against the design.</span></li>
+        <li><a href="https://runon.life/" target="_blank" rel="noopener">RUNON<span class="sr"> (opens in a new tab)</span></a><span>Verified local sports coaches, matched by sport.</span></li>
+      </ul>
+    </section>
+
+    <section class="creed">
+      <span>Philosophy</span>
+      <p>Technology is a tool. A better tomorrow is the goal.<small>I believe in the power of technology to expand human potential, not replace it. I build thoughtful systems, explore bold ideas, and focus on solutions that create practical, lasting value.</small></p>
+    </section>
+  </main>
+
+  <footer><div class="shell">
+    <a href="mailto:leestory0314@gmail.com">leestory0314@gmail.com</a>
+    <span>Updated October 2026</span>
+  </div></footer>
+</body>
+</html>

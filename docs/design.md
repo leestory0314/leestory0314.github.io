@@ -36,13 +36,18 @@
 - CSS 는 건드릴 필요 없다. 넷째 칩부터는 자동으로 다음 줄로 흐른다.
 - 확인: `node tools/serve.js` → `mockups/desktop-1280.png` · `mockups/mobile-390.png` 를 같은 이름으로 다시 찍는다.
 
-## 고도화 시안 (2026-10-10, 채택 대기)
-세 시안 모두 구조·문구·사진은 기존 그대로이고, LS 마크는 없다. 파일은 `mockups/variant-*.html`, 사진은 `../assets/hero.jpg` 를 참조한다.
+## 콘셉트 시안 (2026-10-10 2차, 채택 대기)
+1차 시안(기존 틀의 변형 3종)은 반려됐다. 2차는 `docs/references.md` 의 조사를 바탕으로 **목표·독자·관점이 다른 셋**을 만들고 UI/UX 비평 에이전트의 지적을 반영했다. 공통: 프로필 우선, 프로젝트는 작은 영역에 링크만(새 탭, ↗ 표시, 스크린리더 문구), `leestory` 는 작은 도메인 표기뿐, LS 마크 없음, `:focus-visible` 스타일, 메타 설명·og 태그, 작은 글자 대비 4.5:1 이상.
 
-| 시안 | 한 줄 | 글꼴 | 바탕 | 프로젝트 띠 |
-|---|---|---|---|---|
-| A · Quiet | 여백과 가는 선으로 정리한 밝은 편집 디자인. 카드·그림자·격자 배경을 걷어냄 | Cormorant Garamond + Inter | 쿨 화이트 `#f9fafc` | 밑줄 링크 한 줄 |
-| B · Midnight | 짙은 남색 히어로에 사진을 녹이고 제목에 빛을 줌. 아래는 밝은 카드 | Fraunces + Inter | 남색 `#06102a` ↔ 밝은 `#f5f8fe` | 흰 칩 |
-| C · Gallery | 사진이 왼쪽 절반을 꽉 채우는 분할 히어로. 네 기둥은 큰 제목의 행 목록 | Newsreader + Inter | 순백 `#fff`, 파랑 `#0b4fd6` 한 점 | 타일 3칸 |
+| 콘셉트 | 파일 | 목표·독자 | 구조 | 글꼴 | 바탕 |
+|---|---|---|---|---|---|
+| Dossier | `mockups/concept-dossier.html` | 30초 안에 신뢰 · 채용·협업·공공 담당자 | 역할 선언 H1 + 프로필 레코드(사진·역할·초점·거점·연락) → Fields 표(주장 + In practice 근거) → Building now 압축 목록 → 철학 | IBM Plex Serif + Plex Sans | 웜그레이 `#f6f6f3`, 남색 링크 |
+| Essay | `mockups/concept-essay.html` | 생각과 관점 · 동료 | 1열 680px 산문. "I am a cloud architect…" H1 → 리드 → Fields 원문 + 이탤릭 한 문장씩 → 철학 → Now building(각 "왜 만들었나" 1인칭 한 줄) | Newsreader | 흰색, 녹색 링크 |
+| Index | `mockups/concept-index.html` | 한 화면에서 다 보고 떠남 · 급한 방문자 | 600px 색인. 역할 H1 → Fields → Philosophy → Now building → 푸터. 다크 모드 자동 | Geist | 흑백, 다크 모드 |
 
-채택되면 그 시안의 CSS 를 `assets/css/site.css` 로 옮기고 `index.html` 을 맞춘 뒤 이 문서의 "기존 페이지의 시각 언어" 절을 갱신한다. 나머지 두 시안 파일은 지운다.
+비평 결과 순위: Dossier > Index > Essay (근거는 보고 본문). 채택되면 해당 HTML 의 `<style>` 을 `assets/css/site.css` 로 옮기고 `index.html` 을 맞춘 뒤 나머지 두 파일을 지운다.
+
+## 주인님 판단이 필요한 것
+- 이름: 세 시안 어디에도 주인님 이름이 없다(도메인 강조 금지 지시 때문). 헤더의 `leestory.com` 자리에 실명 한 줄을 둘지.
+- 사진: 현재 `assets/hero.jpg` 에는 "BIGGER IDEAS A BRIGHTER TOMORROW" 문구가 박혀 있어 Essay·Index 는 사진을 쓰지 않고 Dossier 는 문구가 안 보이게 잘랐다. 문구 없는 사진으로 교체할지.
+- 언어: 공공 접점을 위해 한국어 한 줄 요약(역할·연락처)을 둘지.

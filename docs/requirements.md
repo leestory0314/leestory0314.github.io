@@ -15,8 +15,9 @@
 | REQ-006 | 2026-10-10 | "상위 base-environment 폴더 확인해서 에이전트 규칙 준수" | 세션 지시 | 완료 (CLAUDE.md · docs/) |
 | REQ-007 | 2026-10-10 | "스크린샷은 지금 프로젝트 폴더 아래로 폴더 만들어서 옮겨" · "소스와 문서 목업등은 다 디렉토리로 나누어서 저장해" | 세션 지시 | 완료 |
 | REQ-008 | 2026-10-10 | "기본 랜딩은 그냥 기존처럼 내 프로필만 표시하고, 진행중인 프로젝트는 별도로 작은 영역에 표기만 해야해" | 세션 지시 | 완료 |
-| REQ-009 | 2026-10-10 | "기존 랜딩페이지를 좀더 고급스럽게 고도화해서 시안 3가지 보고해. 그리고 LS라고 적힌 부분은 빼" | 세션 지시 | 시안 3종 `mockups/variant-{a,b,c}.html` 보고, LS 제거 완료(e33bcff). 채택 대기 |
+| REQ-009 | 2026-10-10 | "기존 랜딩페이지를 좀더 고급스럽게 고도화해서 시안 3가지 보고해. 그리고 LS라고 적힌 부분은 빼" | 세션 지시 | LS 제거 완료(e33bcff). 1차 시안 3종은 "기존 틀의 변형"으로 반려 → REQ-011 |
 | REQ-010 | 2026-10-10 | "빌드중인 프로젝트는 4가지로, auto-minutes, omnisecure, archlens, runon 한다" · "프로젝트 거는 링크는 blank로 해 새창또는 새탭으로 뜨게" | 세션 지시 | 완료 (index.html 반영, 시안에도 적용) |
+| REQ-011 | 2026-10-10 | "각각 다른 목표와 관점으로 3가지를 만들어서 보고" · "우주최강 UIUX 에이전트 소환해서 다시 점검" · "leestory 라는 키워드 자체를 강조할 필요 없다" · "유명한 개인홈페이지 레퍼런스들을 우선 조사" | 세션 지시 | 완료 — `docs/references.md`, `mockups/concept-{dossier,essay,index}.html`, 비평 반영. 채택 대기 |
 
 ## 결정
 
@@ -39,4 +40,5 @@
 | REQ-006 | — | `CLAUDE.md` · `docs/**` · `README.md` |
 | REQ-007 | ADR-0005 · ADR-0001 개정 | `assets/css/site.css` · `mockups/` · `tools/serve.js` · `README.md` 디렉토리 표 |
 | REQ-008 | ADR-0006 | `index.html` `#projects` · `assets/css/site.css` 마지막 절 · `docs/design.md` |
-| REQ-009 | — (채택 후 ADR) | `mockups/variant-a.html` · `variant-b.html` · `variant-c.html` + 각 1280/390 스크린샷 |
+| REQ-009 | — | 반려(파일 삭제) |
+| REQ-011 | — (채택 후 ADR) | `docs/references.md` · `mockups/concept-*.html` + 1280/390 스크린샷 · `docs/design.md` 콘셉트 표 |
