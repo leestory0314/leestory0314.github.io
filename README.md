@@ -30,6 +30,7 @@
 | `docs/runbook/` | 배포·장애 런북 |
 | `mockups/*.png` · `concept-*.html` | 현재 페이지 스크린샷과 콘셉트 시안 |
 | `docs/references.md` | 개인 홈페이지 레퍼런스 조사 |
+| `docs/copy-ko.md` | 국문 카피 검수 AS-IS → TO-BE |
 | `tools/serve.js` | 로컬 정적 서버 |
 | `tools/gen-interact.js` | 인터랙션 시안 생성기(시안 단계에만) |
 
