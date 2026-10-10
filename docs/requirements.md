@@ -19,6 +19,7 @@
 | REQ-010 | 2026-10-10 | "빌드중인 프로젝트는 4가지로, auto-minutes, omnisecure, archlens, runon 한다" · "프로젝트 거는 링크는 blank로 해 새창또는 새탭으로 뜨게" | 세션 지시 | 완료 (index.html 반영, 시안에도 적용) |
 | REQ-011 | 2026-10-10 | "각각 다른 목표와 관점으로 3가지를 만들어서 보고" · "우주최강 UIUX 에이전트 소환해서 다시 점검" · "leestory 라는 키워드 자체를 강조할 필요 없다" · "유명한 개인홈페이지 레퍼런스들을 우선 조사" | 세션 지시 | 완료 — `docs/references.md`, `mockups/concept-{dossier,essay,index}.html`, 비평 반영. 채택 대기 |
 | REQ-012 | 2026-10-10 | "프로젝트 4개중 runon은 빼자" · "at home 이라는건 중요하지 않아. 기술적인 것들을 계속 연구하고 개발해 나간다는게 중요" · 톤별 시안 3가지, 첫 화면은 추상 그래픽 · "프로젝트는 계속 추가될 수 있으니 그점도 고려해" | 세션 지시 | 시안 3종(`mockups/concept-{signal,clear,journal}.html`) 보고, 채택 대기 |
+| REQ-013 | 2026-10-10 | "B 레이아웃으로 C스타일로 하고 인터랙티브한 요소를 좀더 강조" · "원으로 표현한 이 부분을 IT engineer를 연상되는 추상적인요소로" · "in development는 A 레이아웃으로" · "hero영역의 문구 … 카피라이터 소환해서 후보 3가지" | 세션 지시 | `mockups/concept-blueprint.html` 보고, 카피 후보 3안 제시. 채택 대기 |
 
 ## 결정
 
@@ -44,3 +45,4 @@
 | REQ-009 | — | 반려(파일 삭제) |
 | REQ-011 | — (채택 후 ADR) | `docs/references.md` · `mockups/concept-*.html` + 1280/390 스크린샷 · `docs/design.md` 콘셉트 표 |
 | REQ-012 | — (채택 후 ADR) | `mockups/concept-signal.html` · `concept-clear.html` · `concept-journal.html` + 1280/390 스크린샷 · `docs/design.md` 3차 표 |
+| REQ-013 | — (채택 후 ADR) | `mockups/concept-blueprint.html` + 1280/390/copy1~3 스크린샷 · `docs/design.md` 4차 절 |

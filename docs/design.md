@@ -49,6 +49,27 @@
 
 채택되면 해당 HTML 의 `<style>` 을 `assets/css/site.css` 로, 본문을 `index.html` 로 옮기고 나머지 두 파일을 지운다. 프로젝트 추가는 `#development` 목록에 `<li>` 하나를 복사해 이름·한 줄·호스트를 바꾸는 것뿐이다.
 
+## 채택 방향 (2026-10-10 4차) — `mockups/concept-blueprint.html`
+주인님 지시: **B(Clear) 레이아웃 + C(Journal) 스타일**, 인터랙티브 요소 강조, 원형 다이얼 대신 **클라우드·아키텍트를 연상시키는 추상 요소**, "In development" 는 **A(Signal) 레이아웃**(촘촘한 카드), 히어로 카피는 카피라이터 후보 3안.
+
+- 구조: 가운데 정렬 히어로(역할 줄 · 세리프 헤드라인 · 리드 · 버튼 둘) → 도면 스테이지 → 2×2 Fields 타일 → 가운데 정렬 신조 → 촘촘한 프로젝트 카드(auto-fill) → 푸터.
+- 재료: Cormorant Garamond 300/이탤릭 + Inter. 본색 `#f4f2ee`, 종이 `#faf9f6`, 브론즈 `#8a6a3b`, 헤어라인 `#d9d4cb`.
+- 스테이지 그래픽: SVG 시스템 도면. Edge → 버스 → Gateway · Services · Models · Pipelines → 버스 → Data · Events, 점선 피드백 루프. 도면 테두리의 눈금과 제목 블록.
+- 인터랙션(전부 `prefers-reduced-motion` 에서 꺼짐, JS 없으면 정지 상태로 보임):
+  1. 로드 시 도면이 **선부터 그려지며** 나타난다(`stroke-dashoffset`, 계층별 0.4초 간격).
+  2. 선 위로 **신호 점이 흐른다**(SMIL `animateMotion`, 시작 전에는 숨김).
+  3. **노드에 마우스를 올리면** 채워지고 한 줄 설명(hint)이 뜬다.
+  4. 스테이지가 **마우스 위치로 살짝 기운다**(최대 3°, 호버 가능한 기기만).
+  5. 섹션·타일·카드가 **스크롤에 맞춰 한 번 떠오른다**(IntersectionObserver).
+  6. 타일 호버 시 브론즈 밑줄이 왼쪽에서 그어지고, 프로젝트 카드 호버 시 왼쪽 브론즈 막대와 ↗ 이동.
+- 시안 전용 장치: `#static` 해시 = 애니메이션 완료 상태(스크린샷용). 오른쪽 아래 "Copy 1·2·3" 버튼과 `#copy1~3` 해시 = 히어로 카피 후보 전환. **채택 시 둘 다 제거**한다.
+- 히어로 카피 후보(카피라이터 에이전트, 영문):
+  1. 방법 — "Research it, build it, run it." / "I design cloud platforms and AI systems, then build on them end to end: platform, models, product, operations. The research never stops, and neither does the building." (추천)
+  2. 결과 — "Complex ideas, running in production." / "I design systems, explore technology, and turn complex ideas into working realities: a production-grade cloud platform of my own, and the products that run on it today."
+  3. 관점 — "The tool keeps changing. The goal doesn’t." / "So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them."
+  - 1안의 보수적 변형: "From research to running systems." / "I design cloud platforms and AI systems and build on them end to end, from platform and models to product and operations. The study of technology is continuous; so is the building."
+
 ## 주인님 판단이 필요한 것
-- 이름: 도메인 강조 금지 지시로 세 시안 어디에도 실명이 없다. 헤더의 `leestory.com` 자리에 이름 한 줄을 둘지.
-- 언어: 공공 접점을 위해 한국어 한 줄 요약(역할·연락처)을 둘지.
+- 히어로 카피 1·2·3 중 선택(또는 1안 보수 변형).
+- 이름: 헤더의 `leestory.com` 자리에 실명 한 줄을 둘지.
+- 언어: 공공 접점을 위해 한국어 한 줄 요약을 둘지.
