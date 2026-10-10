@@ -23,9 +23,7 @@
 | `assets/js/site.js` | 언어 사전(EN/KO)과 전환, 스크롤 리빌, 히어로 Mesh |
 | `CNAME` | 사용자 지정 도메인. 지우지 않는다 |
 | `ads.txt` | AdSense 소유 확인. 지우지 않는다 |
-| `CLAUDE.md` | 작업 규칙(공통 baseline v1.0 + 이 저장소 규칙) |
 | `docs/design.md` | 시각 언어와 항목 추가 방법 |
-| `docs/core/agent-rules.md` | 실행·커밋·게이트 규칙 |
 | `docs/requirements.md` | 요건(REQ)·결정(ADR) 추적표 |
 | `docs/runbook/` | 배포·장애 런북 |
 | `mockups/decided/` | 채택된 시안과 결정 기록(`DECISIONS.md`) |

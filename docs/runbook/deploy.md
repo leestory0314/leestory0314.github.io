@@ -5,7 +5,7 @@
 
 ## 배포
 1. 로컬 확인: `node tools/serve.js` → `http://127.0.0.1:8765` 를 390px · 1280px 로 본다. 스크린샷은 `mockups/decided/` 에 둔다.
-2. 게이트: `docs/core/agent-rules.md` 의 세 줄.
+2. 게이트: 평문 자격 검색 0건, 프로젝트 링크 3개 200, 390px·1280px 육안 확인.
 3. 커밋: `git add -A && git commit -m "feat(site): …"`.
 4. `[승인 대기]` 로 주인님께 변경 요약과 `mockups/` 스크린샷 경로를 보고한다.
 5. 승인 후 🖥️ PC: `git fetch origin && git status -sb` 가 `ahead` 만 보이면 `git push origin main`.
