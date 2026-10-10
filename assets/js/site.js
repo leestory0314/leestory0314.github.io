@@ -11,10 +11,10 @@
 
   var COPY = {
     en: {
-      title: 'Cloud Architect · AI Technologist · Builder',
+      title: 'Cloud Native Architect · AI Technologist · Builder',
       desc: 'The tool keeps changing; the goal doesn’t. Cloud architecture, AI systems, strategy, and the products in development.',
       nav_fields: 'Fields', nav_dev: 'In development', nav_contact: 'Contact',
-      eyebrow: 'Cloud Architect · AI Technologist · Builder',
+      eyebrow: 'Cloud Native Architect · AI Technologist · Builder',
       h1a: 'The tool keeps changing.', h1b: 'The goal doesn’t.',
       lead: 'So I keep studying what changes and building what holds up: cloud platforms, AI systems, and products that put both to work for the people who need them.',
       m_focus: 'Focus', m_focus_v: 'Cloud platforms · Applied AI · Security',
