@@ -63,10 +63,11 @@
     .head h2{margin:0;font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.03em}
     .head span{font-size:14px;color:var(--muted)}
     .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .card{position:relative;padding:28px 26px;border-radius:22px;background:var(--bg-2);min-height:232px;display:flex;flex-direction:column;gap:14px;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,background .3s}
+    .card{position:relative;padding:28px 26px;border-radius:22px;background:var(--bg-2);min-height:232px;display:flex;flex-direction:column;gap:0;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,background .3s}
     .card:hover{background:#fff;transform:translateY(-3px);box-shadow:0 30px 60px -36px rgba(29,29,31,.28),0 0 0 1px var(--line)}
     .card svg{width:28px;height:28px;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-    .card h3{margin:auto 0 0;font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.02em}
+    .card svg{flex:none}
+    .card h3{margin:40px 0 10px;font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.02em;line-height:1.25;min-height:1.25em}
     .card p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.55}
 
     .creed{padding:72px 0 88px}
