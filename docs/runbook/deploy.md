@@ -11,7 +11,7 @@
 5. 승인 후 🖥️ PC: `git fetch origin && git status -sb` 가 `ahead` 만 보이면 `git push origin main`.
 6. 확인: `curl -sI https://leestory.com/ | grep -i last-modified` 가 새 시각. 브라우저 강력 새로고침.
 
-## 되돌리기
+## 롤백
 - 직전 커밋으로: `git revert HEAD` → 승인 → push. (`reset --hard` · `--force` 금지.)
 - 2026-09-15 브랜딩 페이지로 통째 복원: `git checkout 83e6f39 -- index.html` 뒤 `git show 83e6f39:image/hero.jpg > assets/hero.jpg` 로 이미지 복원, `assets/css/site.css` · `assets/js/site.js` 삭제 → 커밋 → 승인 → push.
 

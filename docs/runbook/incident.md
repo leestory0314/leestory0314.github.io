@@ -8,7 +8,7 @@ nslookup leestory.com                      # leestory0314.github.io 로 풀려�
 curl -sI https://leestory.com/ | head -5   # Server: GitHub.com, 200
 ```
 - DNS 가 다른 곳을 가리키면: 주인님이 DNS 를 되돌린다(이 저장소 권한 밖).
-- 200 인데 GitHub 404 페이지면: `CNAME` 파일이 지워졌거나 `index.html` 이 없다 → `git log --oneline -3` 로 마지막 커밋 확인 → `docs/runbook/deploy.md` 되돌리기.
+- 200 인데 GitHub 404 페이지면: `CNAME` 파일이 지워졌거나 `index.html` 이 없다 → `git log --oneline -3` 로 마지막 커밋 확인 → `docs/runbook/deploy.md` 롤백 절.
 - GitHub 자체 장애: `https://www.githubstatus.com` 확인, 기다린다.
 
 ## 2. 프로젝트 링크가 죽었다
