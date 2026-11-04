@@ -29,7 +29,7 @@
 | REQ-020 | 2026-10-10 | "Technology is a tool. <줄바꿈> A better…" · "Archlens 설명에 Monolith-to-Microservices … 로 변경" · "Cloud Architect -> Cloud Native Architect 로 변경" | 세션 지시 | 완료 — `a442516` · `0748318` · `34a46a6`, push 승인 획득 |
 | REQ-021 | 2026-10-10 | "Hero title … 강조점이 뭐가 있을까 … The goal doesn’t. 가 더 상징적" → "C 시안으로 하고 The tool keeps changing.의 사이즈를 약간 작게(B보다는 크지만 줄바꿈은 안되게)" | 세션 지시 | 완료 — `d1cdeed`, 첫 줄 .72em·회색, 둘째 줄 파랑. `mockups/decided/hero-emphasis*` |
 | REQ-022 | 2026-10-10 | "L자를 모티브로 … favicon … 시안 5개(3개는 L, 2개는 자유)" → "파비콘은 1로 하자" | 세션 지시 | 완료 — `d1cdeed`, `assets/img/favicon.svg`·`favicon-32.png`·`apple-touch-icon.png`. 비교 시트 `mockups/decided/favicon/sheet.png` |
-| REQ-023 | 2026-11-04 | "구글 서치와 네이버서치를 셋팅할거야. 준비해" | 세션 지시 | 준비 완료 — `robots.txt` · `sitemap.xml` · canonical · `docs/runbook/search-console.md`. 검증 메타 태그는 주인님이 콘솔에서 받은 값을 전달하면 반영 |
+| REQ-023 | 2026-11-04 | "구글 서치와 네이버서치를 셋팅할거야. 준비해" | 세션 지시 | 준비 완료 — `robots.txt` · `sitemap.xml` · canonical · `docs/runbook/search-console.md`. 네이버 검증 메타 반영(11-04), 구글은 기존 소유 확인 유지 |
 
 ## 결정
 

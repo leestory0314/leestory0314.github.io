@@ -9,8 +9,8 @@
 | `robots.txt` | 전체 허용, `docs/`·`mockups/`·`tools/` 수집 제외, 사이트맵 위치 |
 | `sitemap.xml` | `/` 한 줄. 사이트를 바꾼 커밋 날짜로 `lastmod` 손 갱신 |
 | `index.html` `<link rel="canonical">` | 정규 URL `https://leestory.com/` |
-| `index.html` `<meta name="google-site-verification">` | **아직 없음** — 콘솔이 주는 값을 받아 넣는다 |
-| `index.html` `<meta name="naver-site-verification">` | **아직 없음** — 위와 같음 |
+| `index.html` `<meta name="google-site-verification">` | 없음 — 2026-11-04 주인님 "완료"(기존 방식으로 소유 확인됨, 태그 불요). 콘솔이 태그를 요구하면 그때 추가 |
+| `index.html` `<meta name="naver-site-verification">` | 반영(2026-11-04) |
 
 ## 1. 소유 확인 값 받기 (🌐 브라우저, 주인님)
 1. Google: `https://search.google.com/search-console` → 속성 추가 → **URL 접두어** `https://leestory.com/` → 확인 방법 **HTML 태그** → `content="..."` 안의 값을 복사. (도메인 속성은 DNS TXT 가 필요하고 `am`·`omni`·`archlens` 까지 한 속성에 묶이므로 쓰지 않는다.)
@@ -27,7 +27,7 @@
 3. 커밋 `feat(site): 검색 콘솔 소유 확인 메타 추가` → `[승인 대기]` → 승인 후 `git push origin main`.
 4. 반영 확인(보통 1분, CDN 캐시 최대 10분):
    ```
-   curl -s https://leestory.com/ | grep -c site-verification     # 2
+   curl -s https://leestory.com/ | grep -c site-verification     # 1 (네이버만. 구글 태그를 넣었다면 2)
    curl -sI https://leestory.com/robots.txt | head -1              # 200
    curl -sI https://leestory.com/sitemap.xml | head -1             # 200
    ```
