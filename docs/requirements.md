@@ -29,7 +29,7 @@
 | REQ-020 | 2026-10-10 | "Technology is a tool. <줄바꿈> A better…" · "Archlens 설명에 Monolith-to-Microservices … 로 변경" · "Cloud Architect -> Cloud Native Architect 로 변경" | 세션 지시 | 완료 — `a442516` · `0748318` · `34a46a6`, push 승인 획득 |
 | REQ-021 | 2026-10-10 | "Hero title … 강조점이 뭐가 있을까 … The goal doesn’t. 가 더 상징적" → "C 시안으로 하고 The tool keeps changing.의 사이즈를 약간 작게(B보다는 크지만 줄바꿈은 안되게)" | 세션 지시 | 완료 — `d1cdeed`, 첫 줄 .72em·회색, 둘째 줄 파랑. `mockups/decided/hero-emphasis*` |
 | REQ-022 | 2026-10-10 | "L자를 모티브로 … favicon … 시안 5개(3개는 L, 2개는 자유)" → "파비콘은 1로 하자" | 세션 지시 | 완료 — `d1cdeed`, `assets/img/favicon.svg`·`favicon-32.png`·`apple-touch-icon.png`. 비교 시트 `mockups/decided/favicon/sheet.png` |
-| REQ-023 | 2026-11-04 | "구글 서치와 네이버서치를 셋팅할거야. 준비해" | 세션 지시 | 준비 완료 — `robots.txt` · `sitemap.xml` · canonical · `docs/runbook/search-console.md`. 네이버 검증 메타 반영(11-04), 구글은 기존 소유 확인 유지 |
+| REQ-023 | 2026-11-04 | "구글 서치와 네이버서치를 셋팅할거야. 준비해" | 세션 지시 | 완료 — `robots.txt` · `sitemap.xml` · canonical · 네이버 검증 메타(`2b45a29`). 2026-11-04 네이버 소유 확인·사이트맵 제출, 구글 사이트맵 제출 완료(주인님) |
 | REQ-024 | 2026-11-04 | "아래 레퍼런스에 academyfit.leestory.com 도 넣어야 하는데, 어떻게 넣을건지 정리해서 보고해" | 세션 지시 | 완료 — `#development` 행 추가(`p4`), 표기 `AcademyFit`, 카피는 주인님 지시 문장("우리 아이 학원 고민될 때, 1분 진단으로…")과 같은 맥락의 영문 |
 | REQ-025 | 2026-11-04 | "개발중인 부분에 대해서 정렬은 서비스명칭으로 오름차순으로 정리해" | 세션 지시 | 완료 — AcademyFit · ArchLens · Auto-Minutes · OmniSecure 순. 규칙은 `docs/design.md` 항목 추가 절 |
 
