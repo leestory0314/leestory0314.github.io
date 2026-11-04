@@ -41,7 +41,7 @@ node tools/serve.js
 ```
 
 ## 프로젝트 항목 추가
-`docs/design.md` 마지막 절. `#projects` 띠에 칩 하나를 더하는 것뿐이며, 싣는 프로젝트는 주인님 지시로만 늘린다(현재 `am` · `omni` · `archlens`).
+`docs/design.md` "항목 추가" 절. `#development` 목록에 행 하나를 더하는 것뿐이며, 싣는 프로젝트는 주인님 지시로만 늘린다(현재 `academyfit` · `archlens` · `am` · `omni`). 정렬은 서비스 이름 오름차순(2026-11-04).
 
 ## 연락
 `leestory0314@gmail.com`

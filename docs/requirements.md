@@ -30,6 +30,8 @@
 | REQ-021 | 2026-10-10 | "Hero title … 강조점이 뭐가 있을까 … The goal doesn’t. 가 더 상징적" → "C 시안으로 하고 The tool keeps changing.의 사이즈를 약간 작게(B보다는 크지만 줄바꿈은 안되게)" | 세션 지시 | 완료 — `d1cdeed`, 첫 줄 .72em·회색, 둘째 줄 파랑. `mockups/decided/hero-emphasis*` |
 | REQ-022 | 2026-10-10 | "L자를 모티브로 … favicon … 시안 5개(3개는 L, 2개는 자유)" → "파비콘은 1로 하자" | 세션 지시 | 완료 — `d1cdeed`, `assets/img/favicon.svg`·`favicon-32.png`·`apple-touch-icon.png`. 비교 시트 `mockups/decided/favicon/sheet.png` |
 | REQ-023 | 2026-11-04 | "구글 서치와 네이버서치를 셋팅할거야. 준비해" | 세션 지시 | 준비 완료 — `robots.txt` · `sitemap.xml` · canonical · `docs/runbook/search-console.md`. 네이버 검증 메타 반영(11-04), 구글은 기존 소유 확인 유지 |
+| REQ-024 | 2026-11-04 | "아래 레퍼런스에 academyfit.leestory.com 도 넣어야 하는데, 어떻게 넣을건지 정리해서 보고해" | 세션 지시 | 완료 — `#development` 행 추가(`p4`), 표기 `AcademyFit`, 카피는 주인님 지시 문장("우리 아이 학원 고민될 때, 1분 진단으로…")과 같은 맥락의 영문 |
+| REQ-025 | 2026-11-04 | "개발중인 부분에 대해서 정렬은 서비스명칭으로 오름차순으로 정리해" | 세션 지시 | 완료 — AcademyFit · ArchLens · Auto-Minutes · OmniSecure 순. 규칙은 `docs/design.md` 항목 추가 절 |
 
 ## 결정
 
@@ -63,3 +65,4 @@
 | REQ-021 | ADR-0007 보완 | `assets/css/site.css` `h1 span` 규칙 · `mockups/decided/DECISIONS.md` · `docs/design.md` 2026-10-11 절 |
 | REQ-022 | ADR-0005 유지(루트에 두지 않음) | `assets/img/` 3파일 · `index.html` `<link rel="icon">` 3줄 |
 | REQ-023 | ADR-0008 | `robots.txt` · `sitemap.xml` · `index.html` canonical/검증 메타 · `docs/runbook/search-console.md` |
+| REQ-024 · REQ-025 | — | `index.html` `#development` · `assets/js/site.js` `p4` · `docs/runbook/incident.md` 점검 목록 · `docs/copy-ko.md` 9-4 · `docs/design.md` 항목 추가 절 |

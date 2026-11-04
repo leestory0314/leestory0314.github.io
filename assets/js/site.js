@@ -31,6 +31,7 @@
       p1: 'Meeting minutes from a recording, with decisions and action items.',
       p2: 'Web and AI security assessment mapped to public-sector standards.',
       p3: 'Monolith-to-Microservices design, verified against the build.',
+      p4: 'Unsure about your child’s academy? A one-minute quiz finds the right one.',
       newtab: '(opens in a new tab)',
       foot: 'Updated October 2026',
       lang_btn: 'KO', lang_aria: '한국어로 보기'
@@ -56,6 +57,7 @@
       p1: '회의 녹음 하나로 결정 사항과 할 일까지 정리된 회의록을 만듭니다.',
       p2: '공공기관 보안 기준에 맞춰 웹과 AI 서비스를 진단합니다.',
       p3: '모놀리스를 마이크로서비스로 나누는 설계를 그리고, 코드가 설계대로인지 검증합니다.',
+      p4: '우리 아이 학원 고민될 때, 1분 진단으로 아이에게 맞는 학원을 찾아주세요.',
       newtab: '(새 탭에서 열림)',
       foot: '최근 업데이트: 2026년 10월',
       lang_btn: 'EN', lang_aria: 'View in English'
