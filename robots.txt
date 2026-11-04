@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /docs/
+Disallow: /mockups/
+Disallow: /tools/
+
+Sitemap: https://leestory.com/sitemap.xml

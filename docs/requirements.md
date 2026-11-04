@@ -29,6 +29,7 @@
 | REQ-020 | 2026-10-10 | "Technology is a tool. <줄바꿈> A better…" · "Archlens 설명에 Monolith-to-Microservices … 로 변경" · "Cloud Architect -> Cloud Native Architect 로 변경" | 세션 지시 | 완료 — `a442516` · `0748318` · `34a46a6`, push 승인 획득 |
 | REQ-021 | 2026-10-10 | "Hero title … 강조점이 뭐가 있을까 … The goal doesn’t. 가 더 상징적" → "C 시안으로 하고 The tool keeps changing.의 사이즈를 약간 작게(B보다는 크지만 줄바꿈은 안되게)" | 세션 지시 | 완료 — `d1cdeed`, 첫 줄 .72em·회색, 둘째 줄 파랑. `mockups/decided/hero-emphasis*` |
 | REQ-022 | 2026-10-10 | "L자를 모티브로 … favicon … 시안 5개(3개는 L, 2개는 자유)" → "파비콘은 1로 하자" | 세션 지시 | 완료 — `d1cdeed`, `assets/img/favicon.svg`·`favicon-32.png`·`apple-touch-icon.png`. 비교 시트 `mockups/decided/favicon/sheet.png` |
+| REQ-023 | 2026-11-04 | "구글 서치와 네이버서치를 셋팅할거야. 준비해" | 세션 지시 | 준비 완료 — `robots.txt` · `sitemap.xml` · canonical · `docs/runbook/search-console.md`. 검증 메타 태그는 주인님이 콘솔에서 받은 값을 전달하면 반영 |
 
 ## 결정
 
@@ -41,6 +42,7 @@
 | ADR-0005 | 2026-10-10 | 디렉토리 배치: 루트 = Pages 필수 파일만(`index.html` · `CNAME` · `ads.txt`), `assets/` 스타일·이미지, `docs/` 문서, `mockups/` 스크린샷·목업, `tools/` 로컬 도구 | REQ-007. GitHub Pages 는 소스를 루트 또는 `/docs` 로만 잡을 수 있어 `index.html` 은 루트를 떠날 수 없다(Pages 설정 변경은 주인님 권한이고 `docs/` 는 문서용으로 쓴다) |
 | ADR-0006 | 2026-10-10 | 2026-09-15 브랜딩 페이지를 그대로 되살리고(`assets/hero.jpg` 복원), 프로젝트는 철학 영역과 푸터 사이 `#projects` 띠에 칩 3개로만 표기. 다크 모드·새 글꼴은 도입하지 않는다 | REQ-008. 주인님이 목업을 보고 "기존처럼 프로필만, 프로젝트는 작은 영역에 표기만" 으로 정했다 |
 | ADR-0007 | 2026-10-10 | 최종 디자인 채택: Signal 레이아웃 + Clear 스타일 + Mesh 히어로 + 카피 3안 + 행 목록 + EN 기본/KO 전환 + 노드 글리프 헤더. 소스는 `index.html` · `assets/css/site.css` · `assets/js/site.js`. 외부 글꼴은 Google Fonts(Manrope · Inter · Noto Sans KR), 스크립트는 자체 파일만 | REQ-012~019. ADR-0001(빌드 없음)·ADR-0005(디렉토리) 유지. 2026-09-15 페이지 복원 경로는 `git checkout 83e6f39 -- index.html` + `image/hero.jpg` 복원 |
+| ADR-0008 | 2026-11-04 | 루트 예외 2개 추가: `robots.txt` · `sitemap.xml`. 검색 엔진은 두 파일을 루트에서만 찾으므로 ADR-0005(루트 = Pages 필수 파일만)의 예외로 둔다. 그 외 루트 추가 금지는 유지. 사이트맵은 `/` 한 줄, `lastmod` 는 사이트 변경 커밋 날짜로 손 갱신 | REQ-023. 검색 소유 확인은 `<meta>` 태그 방식(파일 방식은 루트에 또 파일을 만든다) |
 
 ## 추적표 (요건 → 결정 → 산출물)
 
@@ -60,3 +62,4 @@
 | REQ-020 | — | `index.html` 신조 `span` 2개 · `assets/js/site.js` `creed_a`/`creed_b`·`p3`·`title`/`eyebrow` |
 | REQ-021 | ADR-0007 보완 | `assets/css/site.css` `h1 span` 규칙 · `mockups/decided/DECISIONS.md` · `docs/design.md` 2026-10-11 절 |
 | REQ-022 | ADR-0005 유지(루트에 두지 않음) | `assets/img/` 3파일 · `index.html` `<link rel="icon">` 3줄 |
+| REQ-023 | ADR-0008 | `robots.txt` · `sitemap.xml` · `index.html` canonical/검증 메타 · `docs/runbook/search-console.md` |

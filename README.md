@@ -9,7 +9,7 @@
 ## 디렉토리
 | 자리 | 무엇 |
 |---|---|
-| `/` (루트) | GitHub Pages 가 읽는 파일만: `index.html` · `CNAME` · `ads.txt` |
+| `/` (루트) | GitHub Pages·검색 엔진이 읽는 파일만: `index.html` · `CNAME` · `ads.txt` · `robots.txt` · `sitemap.xml` |
 | `assets/` | 스타일(`css/site.css`)·이미지 |
 | `docs/` | 요건·결정·규칙·런북·디자인 문서 |
 | `mockups/` | 확인용 스크린샷·목업 |
@@ -23,6 +23,7 @@
 | `assets/js/site.js` | 언어 사전(EN/KO)과 전환, 스크롤 리빌, 히어로 Mesh |
 | `CNAME` | 사용자 지정 도메인. 지우지 않는다 |
 | `ads.txt` | AdSense 소유 확인. 지우지 않는다 |
+| `robots.txt` · `sitemap.xml` | 검색 엔진 수집 규칙·페이지 목록. 루트에만 둘 수 있다(ADR-0008) |
 | `docs/design.md` | 시각 언어와 항목 추가 방법 |
 | `docs/requirements.md` | 요건(REQ)·결정(ADR) 추적표 |
 | `docs/runbook/` | 배포·장애 런북 |
