@@ -1,0 +1,46 @@
+{
+ "at": "2026-11-07T11:12:12.590Z",
+ "target": "https://leestory.com/ (live)",
+ "gtagLoaded": 1,
+ "pageViews": [
+  {
+   "en": "page_view",
+   "dl": "https://leestory.com/",
+   "dt": "/",
+   "dr": "https://search.naver.com",
+   "npa": "1",
+   "tid": "G-TX4SCQ4QYE"
+  }
+ ],
+ "allEvents": [
+  "page_view",
+  "user_engagement"
+ ],
+ "cookies": [
+  {
+   "name": "_ga",
+   "domain": "leestory.com",
+   "days": "60"
+  },
+  {
+   "name": "_ga_TX4SCQ4QYE",
+   "domain": "leestory.com",
+   "days": "60"
+  }
+ ],
+ "state": {
+  "title": "Cloud Native Architect · AI Technologist · Builder",
+  "stateText": "Analytics is on in this browser.",
+  "btn": "Turn off",
+  "hidden": false
+ },
+ "csp": [],
+ "errors": [],
+ "hosts": [
+  "leestory.com",
+  "fonts.googleapis.com",
+  "fonts.gstatic.com",
+  "www.googletagmanager.com",
+  "www.google-analytics.com"
+ ]
+}

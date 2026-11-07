@@ -9,3 +9,9 @@
 | 8-5 · 8-6(5) · 8-7(3) · 8-8 · 호스트 조건 · 쿠키 | ✅ | 1차와 동일 값(`dl=https://leestory.com/` · `dt=/` · `dr=https://www.google.com` · `npa=1` · page_view 1건 · 끄기 0건 · CSP 0 · 2차 도메인 0건 · `_ga` domain `leestory.com` 60일) |
 
 이 결과로 `enabled: true` 커밋을 올린다. 운영 반영 뒤 같은 명령을 한 번 더 돌려 `docs/qa/runs/` 에 남긴다.
+
+## 운영 라이브 실측 (2차 push `ba990ab` 반영 뒤, 2026-11-07 11:12 UTC = 20:12 KST)
+- 대상: 운영 `https://leestory.com/` 그대로(파일 대체 없음). 진입 `/?utm_source=live&x=1#ko`, 참조 `search.naver.com/search.naver?query=…`, 해시 이동·언어 전환 뒤 이탈. 수집 요청은 204 로 차단. 원본 `live-check.json`.
+- gtag.js 1회 로드 · `page_view` **1건**: `dl=https://leestory.com/` · `dt=/` · `dr=https://search.naver.com` · `npa=1` · `em`/`uid` 없음. 이탈 시 `user_engagement` 1건(GA4 표준 체류 이벤트, 같은 정리값).
+- 쿠키 `_ga`·`_ga_TX4SCQ4QYE` domain `leestory.com`(host-only) 60일. CSP 위반 0, 스크립트 오류 0. 외부 호스트는 Google Fonts 2개 + `www.googletagmanager.com` + `www.google-analytics.com` 뿐.
+- 푸터 상태 "Analytics is on in this browser." + [Turn off] 버튼 표시.
