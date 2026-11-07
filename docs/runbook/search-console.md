@@ -58,3 +58,4 @@
 - `og:image`(`/assets/img/og.png` 1200×630) · `og:type` · `og:site_name` · `og:locale`(ko_KR, alternate en_US) · `twitter:card` 추가. JSON-LD `WebSite`+`Person` 추가(페이지에 있는 값만, 실명·메일 없음).
 - `sitemap.xml` `lastmod` 를 사이트 변경 커밋 날짜로 갱신했다(10-31 → 11-07). 유지 절대로 **페이지를 바꾸는 커밋마다** 같이 올린다.
 - 확인(🌐): 카카오톡 공유 미리보기는 `https://developers.kakao.com/tool/debugger/sharing` 에서 캐시 초기화 뒤 조회. 구글 구조화 데이터는 `https://search.google.com/test/rich-results` 에 URL 입력. 네이버는 URL 실시간 조회의 Open Graph 항목.
+- **2026-11-07 22:45 결과(`96cbf37` 반영 뒤)**: ① 네이버 URL 실시간 조회 — 제목·설명·OG 제목 길이 지적 **해결**. ② 카카오 공유 디버거 — 미리보기 이미지 나옴. ③ 구글 리치 결과 테스트 — 크롤링 완료·색인 허용 "예", **"감지된 항목 없음"**. 이것은 정상이다: 리치 결과는 FAQ·리뷰·상품·빵부스러기처럼 검색 결과에 특수 표시가 붙는 유형만 세고, `WebSite`·`Person` 은 그 유형이 아니다(구글이 사이트 이름·인물 정보로 읽을 뿐 리치 표시가 없다). 마크업 문법은 `https://validator.schema.org` 로 확인 — 2026-11-07 결과 **오류 0 · 경고 0**(WebSite 1건, publisher 로 Person 중첩 인식). 이 페이지에 붙일 만한 리치 결과 유형은 없다 — 억지로 넣지 않는다.
