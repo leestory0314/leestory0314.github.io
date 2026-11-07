@@ -73,10 +73,16 @@
     gtag('js', new Date());
     gtag('config', ANALYTICS.id);
 
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ANALYTICS.id);
-    document.head.appendChild(script);
+    // The tag script is fetched only after the page has finished loading, so it never
+    // competes with the first paint. Queued dataLayer calls are replayed when it arrives.
+    function loadTag() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ANALYTICS.id);
+      document.head.appendChild(script);
+    }
+    if (document.readyState === 'complete') loadTag();
+    else window.addEventListener('load', loadTag, { once: true });
     analyticsLoaded = true;
   }
 
@@ -197,9 +203,23 @@
 
   var lang = 'en';
 
+  // Noto Sans KR is fetched only when Korean is shown: its stylesheet alone is ~290 KB
+  // (372 @font-face blocks) and would block the first paint of the English default view.
+  var KO_FONT_URL = 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap';
+  var koFontRequested = false;
+  function ensureKoreanFont() {
+    if (koFontRequested) return;
+    koFontRequested = true;
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = KO_FONT_URL;
+    document.head.appendChild(link);
+  }
+
   function setLanguage(code) {
     var copy = COPY[code] || COPY.en;
     lang = code;
+    if (code === 'ko') ensureKoreanFont();
     document.documentElement.lang = code;
     document.title = copy.title;
 

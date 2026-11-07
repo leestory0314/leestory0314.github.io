@@ -135,3 +135,9 @@
 - `assets/img/og.png` 1200×630. 히어로 C안을 그대로 옮긴 구성: 상단 브랜드 글리프 + `leestory.com`, 가는 가로선, 제목 두 줄(첫 줄 회색 500 · 둘째 줄 `--accent` 700), 하단 아이브로우 + 도메인, 오른쪽에 Mesh 를 8% 투명도로. 새 색·새 글꼴 없음.
 - 국문 안(히어로 KO 문구)을 채택했다 — `og:title`·`og:description` 이 국문이고 카카오톡·네이버 공유가 주 경로. 영문 안은 `mockups/decided/og/og-en.png` 에 두었고 바꾸려면 파일만 교체한다.
 - 다시 만들 때: 원본 HTML 은 보관하지 않는다. 위 구성대로 1200×630 뷰포트에서 글꼴 로드 뒤 캡처(`document.fonts.ready`).
+
+## 2026-11-08 글꼴 로드 분리 (REQ-030)
+- 정적 `<link>` 는 **Manrope 500/600/700 + Inter 400/500** 만. **Noto Sans KR 400/500/700 은 `setLanguage('ko')` 가 처음 불릴 때** `site.js` 가 `<link>` 를 넣는다(`ensureKoreanFont`). 글꼴·굵기·토큰은 그대로다.
+- 이유(실측 2026-11-07): Google Fonts CSS 원문 294 KB 중 Noto Sans KR 이 `@font-face` 372/404 개. EN 기본 화면은 한글을 그리지 않는데도 이 CSS 가 첫 그리기를 막았다(PageSpeed 모바일 82, 렌더링 차단 1,230 ms). 분리 뒤 CSS 11 KB·32개, 로컬 재현(느린 4G·CPU 4배) FCP 1,316→928 ms · LCP 1,784→1,428 ms.
+- 부작용: KO 로 처음 전환하는 순간과 KO 를 저장한 방문자의 첫 그림은 시스템 한글 글꼴이었다가 약 0.3초 뒤 Noto Sans KR 로 바뀐다(`display=swap`). 감수한다.
+- 글꼴을 추가·변경할 때: 영문 글꼴은 `index.html` 의 `<link>`, 한글 글꼴은 `site.js` 의 `KO_FONT_URL` 두 곳이다. CSP `style-src`·`font-src` 는 이미 두 Google 호스트를 허용한다.

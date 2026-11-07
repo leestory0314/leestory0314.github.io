@@ -58,7 +58,8 @@ async function run(browser, name, { enabled, optOut, host = 'leestory.com', path
       const f = localFile(u.pathname);
       if (!f) return req.respond({ status: 404, body: '' });
       let body = f.body;
-      if (enabled && u.pathname === '/assets/js/site.js') body = Buffer.from(f.body.toString('utf8').replace('enabled: false,', 'enabled: true,'));
+      // 저장소의 현재 값과 무관하게 시나리오가 요구하는 상태로 맞춘다(켜짐 커밋 뒤에도 8-5 를 잴 수 있게, 2026-11-08)
+      if (u.pathname === '/assets/js/site.js') body = Buffer.from(f.body.toString('utf8').replace(/enabled: (true|false),/, 'enabled: ' + enabled + ','));
       return req.respond({ status: 200, contentType: f.type, body });
     }
     if (ANALYTICS_HOST.test(u.hostname)) {

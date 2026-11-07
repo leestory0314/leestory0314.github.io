@@ -10,7 +10,7 @@
 | `ANALYTICS.enabled === false` (기본) | gtag.js 를 **요청하지 않는다**. 외부 요청 0. 푸터에는 "모든 방문자에게 꺼져 있습니다" 만 보인다 |
 | `location.hostname !== 'leestory.com'` | 요청하지 않는다. 로컬 미리보기(`127.0.0.1`)·2차 도메인은 켜져 있어도 0 (`www.` 는 GitHub Pages 가 301 로 apex 로 보낸다) |
 | `localStorage.ga_optout === '1'` (푸터 끄기 버튼) | 요청하지 않고 `window['ga-disable-G-TX4SCQ4QYE'] = true` |
-| 셋 다 통과 | `gtag('set')` 으로 정리한 값(경로만 · 제목=경로 · 참조=외부는 출처만 · 광고 신호 false · 쿠키 host-only 60일) → `gtag('config')` → gtag.js 1회 로드 → `page_view` 1건 |
+| 셋 다 통과 | `gtag('set')` 으로 정리한 값(경로만 · 제목=경로 · 참조=외부는 출처만 · 광고 신호 false · 쿠키 host-only 60일) → `gtag('config')` → gtag.js 1회 로드(**`load` 이벤트 뒤**, 2026-11-08 — 첫 화면 그리기와 경쟁하지 않게. 쌓인 호출은 도착 후 그대로 처리된다) → `page_view` 1건 |
 
 - 🔴 **쿠키 설정(`cookie_domain` · `cookie_expires` · `cookie_update` · `cookie_flags`)은 `gtag('set', …)` 으로만 먹는다.** `gtag('config', ID, {…})` 에 넣으면 이 Google 태그는 무시한다(2026-11-07 실측: config 는 `.leestory.com` 400일, set 은 `leestory.com` host-only 60일). 옮기지 않는다.
 - 처리 고지(행태정보 수집·거부 방법·국외 이전 표)는 푸터 `<details id="privacy">` 안에 EN/KO 로 있다. 루트에 새 파일을 만들지 않는 규칙(ADR-0005) 때문에 별도 `privacy.html` 을 두지 않았다.
@@ -33,6 +33,9 @@
 - 실행: `node tools/ga4-check.mjs <그 디렉터리> --out docs/qa/runs/<YYYYMMDD>-ga4 [--shots mockups/decided/privacy]`
 - 시나리오: 스위치 꺼짐 · 켜짐(검색 참조 + `?utm&q` + `#ko` 로 진입 → 해시 이동 · 언어 전환 · pushState) · 끄기 저장됨 · 토글 클릭 · 2차 도메인 호스트 · 실 원문 `vtp_*:true` grep.
 - 판정 13항목: 표준 8-3 · 8-5 · 8-6(5) · 8-7(3) · 8-8 + 호스트 조건 + 쿠키 host-only. 하나라도 ❌ 면 켜지 않는다.
+
+- 도구는 저장소의 `enabled` 값과 무관하게 시나리오마다 켜짐/꺼짐을 맞춘다(2026-11-08 수정). 그 전 버전은 저장소가 `true` 이면 8-5 가 틀리게 ❌ 로 나왔다.
+- 실행 기록: `docs/qa/runs/20261107-ga4`(1차) · `20261107-ga4-2`(2차, 켜기 직전) · `20261108-ga4-3`(지연 로드 뒤).
 
 ## 4. 관리 화면 (주인님만 — 🌐 analytics.google.com)
 
