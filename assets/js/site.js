@@ -13,7 +13,7 @@
   // Runtime switch. `enabled: false` means the tag is never requested (zero external calls).
   // Flipping it is a production change: see docs/runbook/analytics.md.
   var ANALYTICS = {
-    enabled: false,
+    enabled: true,
     id: 'G-TX4SCQ4QYE',
     host: 'leestory.com',             // only this host loads the tag; subdomains and local previews never do
     cookieSeconds: 60 * 24 * 60 * 60, // 60 days, the retention stated in the footer
