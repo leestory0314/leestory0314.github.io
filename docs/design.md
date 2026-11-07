@@ -124,3 +124,9 @@
 - **파비콘**: 5안 중 **1안 L · Block** 채택. `assets/img/favicon.svg`(원본) · `favicon-32.png`(대체) · `apple-touch-icon.png`(180, 모서리 없는 정사각형 — iOS 가 자체 마스크를 씌운다). 루트에는 두지 않고 `<link rel="icon">` 으로 연결한다. 비교 시트 `mockups/decided/favicon/sheet.png`.
 - **신조 제목**: 두 문장을 각각 블록 `span` 으로 나눠 줄바꿈 위치를 고정했다(언어 키 `creed_a` / `creed_b`).
 - **직함**: "Cloud Architect" → "Cloud Native Architect"(제목·OG·아이브로우). ArchLens 설명은 "Monolith-to-Microservices design, verified against the build."
+
+## 2026-11-07 푸터 처리 고지 (REQ-026)
+- 푸터 행(메일 · 갱신일) 아래에 `<details class="privacy">` 한 덩어리. 접힌 상태가 기본이라 첫 화면에는 "Privacy & analytics / 개인정보 · 방문 통계" 한 줄만 보인다.
+- 글자 13px · `--muted`, 요약 줄은 `--ink-2`, 표는 `--line` 가로선만(세로선·배경 없음), 버튼은 헤더 언어 버튼과 같은 알약형 테두리. 새 색·새 글꼴 없음.
+- 390px 에서는 표 머리 칸 폭 6.5em. 캡처 `mockups/decided/privacy/privacy-{1280,390}-{en,ko}.png`.
+- 문구는 `COPY.en/ko` 의 `pv_*` 키. 보유 기간·거부 방법은 코드(`cookieSeconds` · 끄기 버튼)와 한 몸이라 한쪽만 고치지 않는다.

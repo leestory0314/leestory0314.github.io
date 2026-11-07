@@ -20,5 +20,14 @@ for h in https://academyfit.leestory.com/ https://archlens.leestory.com/ https:/
 ## 3. 글꼴이 깨져 보인다
 - Google Fonts 차단·장애. 폴백(시스템 세리프)으로 읽히는지 확인하고, 길어지면 주인님과 자체 호스팅 여부를 정한다.
 
+## 4. 방문 통계(GA4)가 이상하다
+```sh
+curl -s https://leestory.com/assets/js/site.js | grep -E "enabled: (true|false)"      # 운영 스위치
+node tools/ga4-check.mjs <puppeteer-core 디렉터리>                                      # 13항목 — 8-3 ❌ 면 관리 화면이 바뀐 것
+```
+- **보고서에 0건**: 스위치가 `false` 거나(의도된 상태), 관리 화면에서 스트림이 지워졌거나, CSP 가 `googletagmanager.com` 을 막고 있다(브라우저 콘솔). 코드가 맞으면 `docs/runbook/analytics.md` §2.
+- **과수집 의심**(8-3 ❌, 검색어·제목이 보고서에 보임): 즉시 **스위치를 끄고 push**(승인) → 관리 화면 끄기 → 15분 뒤 재측정 → 다시 켜기. 35 §8 "사고가 났을 때" 대로 기록.
+- **2차 도메인 트래픽이 섞임**: 그 도메인 페이지에 같은 측정 ID 가 들어간 것이다. 이 저장소 문제가 아니다 — 해당 프로젝트에 `!exchange`.
+
 ## 사후 보고
 - 주인님께 보고가 필요한 건(DNS·도메인 만료·GitHub 계정)은 base-env 30 E-4 R6 형식으로 `.docx` 를 만든다.

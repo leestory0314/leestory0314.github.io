@@ -1,4 +1,5 @@
 /* leestory.com
+   0. Analytics: Google Analytics 4, off by default; loads only on leestory.com, sends one clean page_view, opt-out in the footer
    1. Language: English by default, Korean on demand (header button, #ko, remembered in localStorage)
    2. Reveal: sections rise into view once as they scroll in
    3. Hero mesh: a drifting node network that connects toward the pointer */
@@ -6,6 +7,108 @@
   'use strict';
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- 0. Analytics ---------- */
+
+  // Runtime switch. `enabled: false` means the tag is never requested (zero external calls).
+  // Flipping it is a production change: see docs/runbook/analytics.md.
+  var ANALYTICS = {
+    enabled: false,
+    id: 'G-TX4SCQ4QYE',
+    host: 'leestory.com',             // only this host loads the tag; subdomains and local previews never do
+    cookieSeconds: 60 * 24 * 60 * 60, // 60 days, the retention stated in the footer
+    optOutKey: 'ga_optout'
+  };
+
+  function analyticsOptedOut() {
+    try { return localStorage.getItem(ANALYTICS.optOutKey) === '1'; } catch (e) { return false; }
+  }
+
+  function setAnalyticsOptOut(off) {
+    try {
+      if (off) localStorage.setItem(ANALYTICS.optOutKey, '1');
+      else localStorage.removeItem(ANALYTICS.optOutKey);
+    } catch (e) { /* storage unavailable: applies to this page only */ }
+    window['ga-disable-' + ANALYTICS.id] = !!off;
+  }
+
+  // Values sent with every hit: path only, title = path, referrer = own site as origin+path, other sites as origin.
+  function cleanPageValues() {
+    var referrer = '';
+    try {
+      if (document.referrer) {
+        var r = new URL(document.referrer);
+        referrer = r.origin + (r.hostname === location.hostname ? r.pathname : '');
+      }
+    } catch (e) { referrer = ''; }
+    return {
+      page_location: location.origin + location.pathname,
+      page_title: location.pathname,
+      page_referrer: referrer,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    };
+  }
+
+  var analyticsLoaded = false;
+
+  function initAnalytics() {
+    if (!ANALYTICS.enabled || analyticsLoaded) return;
+    if (location.hostname !== ANALYTICS.host) return;
+    if (analyticsOptedOut()) { window['ga-disable-' + ANALYTICS.id] = true; return; }
+
+    var values = cleanPageValues();
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted' });
+    gtag('set', values);
+    // Cookie settings must go through gtag('set'): this Google tag ignores cookie_* passed to gtag('config')
+    // (measured 2026-11-07: config gave a .leestory.com cookie for 400 days; set gives host-only for 60 days).
+    gtag('set', {
+      cookie_domain: 'none',          // host-only cookie: never shared with subdomains
+      cookie_expires: ANALYTICS.cookieSeconds,
+      cookie_update: false,           // do not extend the cookie on every visit
+      cookie_flags: 'SameSite=Lax;Secure'
+    });
+    gtag('js', new Date());
+    gtag('config', ANALYTICS.id);
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ANALYTICS.id);
+    document.head.appendChild(script);
+    analyticsLoaded = true;
+  }
+
+  // Footer control: shows the state in the current language and lets any visitor turn it off (or back on).
+  function renderAnalyticsState() {
+    var state = document.getElementById('ga-state');
+    var button = document.getElementById('ga-toggle');
+    if (!state || !button) return;
+    var copy = COPY[lang] || COPY.en;
+    if (!ANALYTICS.enabled) {
+      state.textContent = copy.pv_gl_off;
+      button.hidden = true;
+      return;
+    }
+    var off = analyticsOptedOut();
+    state.textContent = off ? copy.pv_off : copy.pv_on;
+    button.textContent = off ? copy.pv_btn_on : copy.pv_btn_off;
+    button.hidden = false;
+  }
+
+  function initAnalyticsControl() {
+    var button = document.getElementById('ga-toggle');
+    if (button) {
+      button.addEventListener('click', function () {
+        var off = !analyticsOptedOut();
+        setAnalyticsOptOut(off);
+        if (!off) initAnalytics();
+        renderAnalyticsState();
+      });
+    }
+    renderAnalyticsState();
+  }
 
   /* ---------- 1. Language ---------- */
 
@@ -34,10 +137,24 @@
       p4: 'Unsure about your child’s academy? A one-minute quiz finds the right one.',
       newtab: '(opens in a new tab)',
       foot: 'Updated October 2026',
+      pv_sum: 'Privacy & analytics',
+      pv_p1: 'This page uses Google Analytics 4 for visit statistics. It sends one record per page view: the page path (/), the origin of the site you came from, browser, operating system, device type, screen size, language, a random identifier kept in a cookie, and an approximate region estimated from your IP address. No name, e-mail, or input is sent (there are no input fields). Google signals and ad personalization are off, and no advertising script is loaded.',
+      pv_cap: 'Transfer of data outside Korea',
+      pv_r1k: 'Recipient', pv_r1v: 'Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA · policies.google.com/privacy)',
+      pv_r2k: 'Country', pv_r2v: 'United States, and the countries where Google operates data centers',
+      pv_r3k: 'Items', pv_r3v: 'The page-view record listed above',
+      pv_r4k: 'When and how', pv_r4v: 'Sent over the network by your browser when the page opens',
+      pv_r5k: 'Purpose', pv_r5v: 'Visit statistics in aggregate. Not viewed per person, not used for advertising',
+      pv_r6k: 'Retention', pv_r6v: '2 months on Google servers · cookies _ga and _ga_* for 60 days',
+      pv_r7k: 'How to refuse', pv_r7v: 'The button below (this browser only, remembered) · block google-analytics.com and googletagmanager.com with your browser’s content blocker · delete cookies',
+      pv_on: 'Analytics is on in this browser.', pv_off: 'Analytics is off in this browser.',
+      pv_gl_off: 'Analytics is currently off for all visitors.',
+      pv_btn_off: 'Turn off', pv_btn_on: 'Turn on',
+      pv_date: 'Notice posted 7 November 2026.',
       lang_btn: 'KO', lang_aria: '한국어로 보기'
     },
     ko: {
-      title: '클라우드 네이티브 아키텍트 · AI 엔지니어 · 서비스 구축 전문가',
+      title: 'leestory | 클라우드 네이티브 아키텍트 · AI 엔지니어', // 정적 <title> 과 같은 값(네이버 40자 기준, REQ-027)
       desc: '도구는 계속 바뀌어도 목표는 변하지 않습니다. 클라우드 아키텍처와 AI 시스템, 전략, 그리고 그것들을 실현한 프로젝트를 소개합니다.',
       nav_fields: '전문 분야', nav_dev: '프로젝트', nav_contact: '연락처',
       eyebrow: '클라우드 네이티브 아키텍트 · AI 엔지니어 · 서비스 구축 전문가',
@@ -60,6 +177,20 @@
       p4: '우리 아이 학원 고민될 때, 1분 진단으로 아이에게 맞는 학원을 찾아주세요.',
       newtab: '(새 탭에서 열림)',
       foot: '최근 업데이트: 2026년 10월',
+      pv_sum: '개인정보 · 방문 통계',
+      pv_p1: '이 페이지는 방문 통계를 위해 Google 애널리틱스 4 를 씁니다. 보내는 것은 화면을 열었다는 기록 하나뿐입니다. 화면 경로(/), 바로 앞 사이트의 주소(출처만), 브라우저·운영체제·기기 종류·화면 크기·언어, 쿠키에 둔 무작위 식별자, 접속 IP 로 추정한 대략적 지역입니다. 이름·이메일·입력값은 보내지 않습니다(입력 칸이 없습니다). Google 신호와 광고 개인화는 꺼져 있고, 광고 스크립트는 없습니다.',
+      pv_cap: '개인정보 국외 이전',
+      pv_r1k: '이전받는 자', pv_r1v: 'Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, 미국 · policies.google.com/privacy)',
+      pv_r2k: '이전 국가', pv_r2v: '미국과 Google 데이터센터가 있는 나라',
+      pv_r3k: '이전 항목', pv_r3v: '위에 적은 화면 조회 기록',
+      pv_r4k: '시기·방법', pv_r4v: '화면을 열 때 브라우저가 네트워크로 전송',
+      pv_r5k: '목적', pv_r5v: '방문 통계(합계). 사람 단위로 보지 않고 광고에 쓰지 않습니다',
+      pv_r6k: '보유 기간', pv_r6v: 'Google 서버 2개월 · 쿠키 _ga·_ga_* 60일',
+      pv_r7k: '거부 방법', pv_r7v: '아래 버튼(이 브라우저에만 적용, 기억됨) · 브라우저의 콘텐츠 차단으로 google-analytics.com·googletagmanager.com 차단 · 쿠키 삭제',
+      pv_on: '이 브라우저에서 방문 통계가 켜져 있습니다.', pv_off: '이 브라우저에서 방문 통계가 꺼져 있습니다.',
+      pv_gl_off: '지금은 모든 방문자에게 방문 통계가 꺼져 있습니다.',
+      pv_btn_off: '끄기', pv_btn_on: '켜기',
+      pv_date: '고지일: 2026-11-07',
       lang_btn: 'EN', lang_aria: 'View in English'
     }
   };
@@ -87,6 +218,7 @@
     }
 
     try { localStorage.setItem('lang', code); } catch (e) { /* storage unavailable */ }
+    renderAnalyticsState();
   }
 
   function initLanguage() {
@@ -94,7 +226,7 @@
     try { saved = localStorage.getItem('lang'); } catch (e) { /* storage unavailable */ }
     if (location.hash.indexOf('ko') > -1) saved = 'ko';
     else if (location.hash.indexOf('en') > -1) saved = 'en';
-    if (saved === 'ko') setLanguage('ko');
+    setLanguage(saved === 'ko' ? 'ko' : 'en');
 
     var button = document.getElementById('lang');
     if (button) {
@@ -267,7 +399,9 @@
     if (!reduceMotion) requestAnimationFrame(step);
   }
 
+  initAnalytics();
   initLanguage();
+  initAnalyticsControl();
   initReveal();
   initMesh();
 })();

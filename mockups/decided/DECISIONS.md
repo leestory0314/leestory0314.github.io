@@ -24,3 +24,4 @@
 | 히어로 제목 위계 | C안 + 첫 줄 축소. 첫 줄 "The tool keeps changing." 은 72% 크기·회색·중간 굵기로 한 줄에, 둘째 줄 "The goal doesn’t." 은 본래 크기·파랑 `#0a58e0`·굵게 | `hero-emphasis.html`, `hero-emphasis-en.png`, `hero-emphasis-ko.png` |
 | 파비콘 | 1안 L · Block — 파랑 둥근 사각형에 흰 기하학 L. SVG 원본 + 32px PNG 대체 + 180px 터치 아이콘 | `favicon/f1.svg` → `assets/img/favicon.svg`, 비교 시트 `favicon/sheet.png` |
 | 신조 제목 | 문장 단위 두 줄 고정("Technology is a tool." / "A better tomorrow is the goal.") | `index.html` |
+| 푸터 처리 고지(2026-11-07) | GA4 행태정보 고지·국외 이전 표·끄기 토글을 접히는 `details` 로 푸터 아래에. 별도 페이지 없음(루트 파일 금지) | `privacy/privacy-1280-en.png` · `-1280-ko` · `-390-en` · `-390-ko` |

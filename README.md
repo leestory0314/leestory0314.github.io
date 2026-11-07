@@ -20,18 +20,20 @@
 |---|---|
 | `index.html` | 페이지 구조와 내용 |
 | `assets/css/site.css` | 스타일(변수·배치·반응형) |
-| `assets/js/site.js` | 언어 사전(EN/KO)과 전환, 스크롤 리빌, 히어로 Mesh |
+| `assets/js/site.js` | 방문 통계(GA4, 스위치 기본 꺼짐), 언어 사전(EN/KO)과 전환, 스크롤 리빌, 히어로 Mesh |
 | `CNAME` | 사용자 지정 도메인. 지우지 않는다 |
 | `ads.txt` | AdSense 소유 확인. 지우지 않는다 |
 | `robots.txt` · `sitemap.xml` | 검색 엔진 수집 규칙·페이지 목록. 루트에만 둘 수 있다(ADR-0008) |
 | `docs/design.md` | 시각 언어와 항목 추가 방법 |
 | `docs/requirements.md` | 요건(REQ)·결정(ADR) 추적표 |
-| `docs/runbook/` | 배포·장애 런북 |
+| `docs/runbook/` | 배포·장애·검색 콘솔·방문 통계 런북 |
+| `docs/qa/runs/` | GA4 실측 결과(`tools/ga4-check.mjs` 출력) |
 | `mockups/decided/` | 채택된 시안과 결정 기록(`DECISIONS.md`) |
 | `mockups/old/` | 검토가 끝난 대안·이전 라운드 |
 | `docs/references.md` | 개인 홈페이지 레퍼런스 조사 |
 | `docs/copy-ko.md` | 국문 카피 검수 AS-IS → TO-BE |
 | `tools/serve.js` | 로컬 정적 서버 |
+| `tools/ga4-check.mjs` | GA4 실측 도구(실제 gtag.js, 수집 요청은 차단). puppeteer-core 는 저장소 밖에 설치 |
 | `tools/old/gen-interact.js` | 인터랙션 시안 생성기(시안 단계에만) |
 
 ## 로컬에서 보기

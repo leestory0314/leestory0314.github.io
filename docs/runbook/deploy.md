@@ -5,7 +5,7 @@
 
 ## 배포
 1. 로컬 확인: `node tools/serve.js` → `http://127.0.0.1:8765` 를 390px · 1280px 로 본다. 스크린샷은 `mockups/decided/` 에 둔다.
-2. 게이트: 평문 자격 검색 0건, 프로젝트 링크 3개 200, 390px·1280px 육안 확인.
+2. 게이트: 평문 자격 검색 0건, 프로젝트 링크 200, 390px·1280px 육안 확인, `node --check assets/js/site.js`. `index.html` 의 인라인 스크립트나 `assets/js/site.js` §0 을 건드렸으면 `node tools/ga4-check.mjs …` 의 CSP 위반 0·13항목(`docs/runbook/analytics.md` §3).
 3. 커밋: `git add -A && git commit -m "feat(site): …"`.
 4. `[승인 대기]` 로 주인님께 변경 요약과 `mockups/` 스크린샷 경로를 보고한다.
 5. 승인 후 🖥️ PC: `git fetch origin && git status -sb` 가 `ahead` 만 보이면 `git push origin main`.
@@ -18,3 +18,4 @@
 ## 주인님만 하는 일
 - GitHub 저장소 설정 → Pages → 사용자 지정 도메인·HTTPS 강제. DNS(`leestory.com` A/CNAME) 변경.
 - `ads.txt` 의 AdSense 게시자 ID 변경.
+- GA4 관리 화면(수집 스위치·Google 태그 설정·보관·필터) — `docs/runbook/analytics.md` §4. 방문 통계 **켜기/끄기 승인**(코드 스위치 한 줄, push = 운영).
