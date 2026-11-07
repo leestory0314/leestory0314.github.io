@@ -53,3 +53,8 @@
 - 네이버 URL 실시간 조회가 사이트 제목(40자)·사이트 설명(80자)·Open Graph 제목(40자) 초과를 지적했다. 정적 HTML 의 네 값을 국문으로 바꿨다: 제목·OG 제목 35자, 설명 74자, OG 설명 25자.
 - 검색 로봇은 JS 를 돌리지 않으므로 **정적 HTML 값이 색인**된다. 화면의 탭 제목은 `site.js` 가 언어별로 바꾼다(EN 화면은 영문 49자 — 네이버 기준과 무관).
 - 재진단: 서치어드바이저 → 검증 → URL 실시간 조회 → `https://leestory.com/` (www 는 301 이므로 apex 로). 반영은 push 후 10분 뒤.
+
+## 2026-11-07 공유 미리보기·구조화 데이터 (REQ-029)
+- `og:image`(`/assets/img/og.png` 1200×630) · `og:type` · `og:site_name` · `og:locale`(ko_KR, alternate en_US) · `twitter:card` 추가. JSON-LD `WebSite`+`Person` 추가(페이지에 있는 값만, 실명·메일 없음).
+- `sitemap.xml` `lastmod` 를 사이트 변경 커밋 날짜로 갱신했다(10-31 → 11-07). 유지 절대로 **페이지를 바꾸는 커밋마다** 같이 올린다.
+- 확인(🌐): 카카오톡 공유 미리보기는 `https://developers.kakao.com/tool/debugger/sharing` 에서 캐시 초기화 뒤 조회. 구글 구조화 데이터는 `https://search.google.com/test/rich-results` 에 URL 입력. 네이버는 URL 실시간 조회의 Open Graph 항목.
