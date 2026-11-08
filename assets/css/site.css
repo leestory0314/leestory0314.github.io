@@ -91,7 +91,7 @@ h1 span + span { color: var(--accent); font-weight: 700; }
 .reveal:nth-child(2) { animation-delay: .08s; }
 .reveal:nth-child(3) { animation-delay: .16s; }
 .reveal:nth-child(4) { animation-delay: .24s; }
-@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes rise { from { transform: translateY(14px); } to { transform: none; } } /* 페이드 없음 — opacity 0 으로 시작하면 LCP 가 site.js 뒤로 밀린다(design.md 2026-11-08) */
 .rv { transition: opacity .8s ease, transform .8s var(--ease); }
 .js .rv { opacity: 0; transform: translateY(18px); }
 .js .rv.in { opacity: 1; transform: none; }

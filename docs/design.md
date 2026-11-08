@@ -141,3 +141,9 @@
 - 이유(실측 2026-11-07): Google Fonts CSS 원문 294 KB 중 Noto Sans KR 이 `@font-face` 372/404 개. EN 기본 화면은 한글을 그리지 않는데도 이 CSS 가 첫 그리기를 막았다(PageSpeed 모바일 82, 렌더링 차단 1,230 ms). 분리 뒤 CSS 11 KB·32개, 로컬 재현(느린 4G·CPU 4배) FCP 1,316→928 ms · LCP 1,784→1,428 ms.
 - 부작용: KO 로 처음 전환하는 순간과 KO 를 저장한 방문자의 첫 그림은 시스템 한글 글꼴이었다가 약 0.3초 뒤 Noto Sans KR 로 바뀐다(`display=swap`). 감수한다.
 - 글꼴을 추가·변경할 때: 영문 글꼴은 `index.html` 의 `<link>`, 한글 글꼴은 `site.js` 의 `KO_FONT_URL` 두 곳이다. CSP `style-src`·`font-src` 는 이미 두 Google 호스트를 허용한다.
+
+## 2026-11-08 히어로 등장 동작: 페이드 없이 올라오기만 (REQ-030)
+- 히어로 네 덩어리(`.eyebrow`·`h1`·`.lead`·`.meta`, 클래스 `.reveal`)의 `rise` 키프레임은 **`translateY(14px) → 0` 이동만** 한다. 투명도는 처음부터 1. 시간 0.9 s·순차 지연 0.08 s 간격은 그대로.
+- 이유(실측 2026-11-08, Lighthouse 12.8 모바일): `opacity: 0` 에서 시작하면 Chrome 이 그 글자를 보이기 시작한 순간에야 LCP 후보로 세고, Lighthouse 는 그 이전에 끝난 `site.js`·글꼴 파일까지 LCP 의 선행 조건으로 넣어 느린 4G 로 다시 계산한다. 운영 PSI 에서 FCP 1.5 s 인데 LCP 4.3 s 였던 원인. 페이드만 빼면 LCP = FCP(로컬 2,741→1,526 ms).
+- 아래쪽 목록(`.rv`, 스크롤 등장)은 첫 화면 밖이라 페이드를 유지한다. 첫 화면에 **투명하게 시작하는 요소를 두지 않는다** — 새 섹션을 히어로에 넣을 때도 같다.
+- `site.js` 는 `defer` 로 둔다(문서 끝에 있어 동작은 같고, PageSpeed 의 "렌더링 차단" 지적만 없앤다).
